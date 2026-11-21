@@ -1,21 +1,11 @@
 {
-  "name": "NTB Gerätturnen App",
-  "short_name": "NTB Gerätturnen",
-  "description": "App für NTB Gerätturnen mit allen Geräten",
-  "start_url": "/",
+  "name": "NTB Gerätturnen weiblich",
+  "short_name": "NTB Turnen",
+  "description": "Pflicht (G1-G4) und Kür (LK1-LK4) im NTB Gerätturnen weiblich",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#F1F5F9",
   "theme_color": "#0284C7",
-  "icons": [
-    {
-      "src": "icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+  "icons": []
 }
