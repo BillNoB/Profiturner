@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>NTB Ger�tturnen weiblich</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <h1>NTB Ger�tturnen</h1>
+      <span class="subtitle">Trainings- & Element-Übersicht (weiblich)</span>
+      <div class="backup-buttons">
+        <button id="backup-save" class="btn-backup">💾 Backup sichern</button>
+        <button id="backup-load" class="btn-backup">📂 Backup laden</button>
+        <button id="btn-export-offline" class="filter-btn">📲 Offline-App</button>
+      </div>
+    </div>
+
+    <nav class="device-nav" id="device-nav">
+      <button class="device-btn active" data-geraet="boden">Boden</button>
+      <button class="device-btn" data-geraet="balken">Schwebebalken</button>
+      <button class="device-btn" data-geraet="barren">Parallel Stufenbarren</button>
+      <button class="device-btn" data-geraet="sprung">Sprung</button>
+    </nav>
+
+    <div class="mode-tabs" id="mode-tabs">
+      <button class="mode-btn active" data-mode="pflicht">Pflicht (G1-G4)</button>
+      <button class="mode-btn" data-mode="kuer">Kür (LK1-LK4)</button>
+    </div>
+
+    <div class="level-filters" id="level-filters"></div>
+  </header>
+
+  <main class="app-main">
+    <section id="info-banner" class="info-banner hidden"></section>
+    <section id="cards-grid" class="cards-grid"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

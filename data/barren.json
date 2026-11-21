@@ -1,0 +1,329 @@
+{
+  "geraet": "Stufenbarren",
+  "id": "barren",
+  "g_stufen": [
+    {
+      "stufe": "G1",
+      "ausgangswert": 11.0,
+      "beschreibung": "Grundstufe 1 – Stützen, Schwingen und Hang",
+      "schwierigkeitsgrad": 1,
+      "elemente": [
+        {
+          "id": "g1_barren_1",
+          "titel": "Sprung in den Stütz & Vorschwingen",
+          "beschreibung": "Am niedrigen Holm in den Stütz springen, 2 Sekunden halten und kontrolliert abspringen.",
+          "punkte": 3.0,
+          "kriterien": ["Schultern tief drücken (kein Einsinken)", "Gestreckte Beine"],
+          "voruebungen": [
+            {
+              "id": "vu_g1_barren_1",
+              "name": "Stütz-Halten auf zwei Kästen",
+              "erklaerung": "Zwischen zwei Kästen stützen und die Körperspannung 10 Sekunden halten."
+            }
+          ]
+        },
+        {
+          "id": "g1_barren_2",
+          "titel": "Hocken oder Grätschen in den Hang",
+          "beschreibung": "Im Hang am hohen Holm die Beine geschlossen anhocken und wieder lang strecken.",
+          "punkte": 2.5,
+          "kriterien": ["Gestaffelter Griff (Daumen umgreift Holm)", "Kein Pendeln des Oberkörpers"],
+          "voruebungen": [
+            {
+              "id": "vu_g1_barren_2",
+              "name": "Beinheben an der Sprossenwand",
+              "erklaerung": "Im Hang an der Sprossenwand die Knie bis zur Brust ziehen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stufe": "G2",
+      "ausgangswert": 12.0,
+      "beschreibung": "Grundstufe 2 – Hüftabschwung und Unterschwung",
+      "schwierigkeitsgrad": 2,
+      "elemente": [
+        {
+          "id": "g2_barren_1",
+          "titel": "Hüftabschwung vorwärts",
+          "beschreibung": "Aus dem Stütz mit gestrecktem Körper vorwärts um den Holm drehen und sicher landen.",
+          "punkte": 3.5,
+          "kriterien": ["Hüfte bleibt am Holm", "Langsames, kontrolliertes Abrollen"],
+          "voruebungen": [
+            {
+              "id": "vu_g2_barren_1",
+              "name": "Abschwung mit Hilfestellung",
+              "erklaerung": "Trainer führt die Beine langsam nach unten, während die Hände am Holm bleiben."
+            }
+          ]
+        },
+        {
+          "id": "g2_barren_2",
+          "titel": "Unterschwung aus dem Stand",
+          "beschreibung": "Am niedrigen Holm abspringen, Beine über die Horizontale schwingen und nach vorne abspringen.",
+          "punkte": 3.5,
+          "kriterien": ["Füße ziehen Richtung Holm", "Gestreckte Landung hinter der Matte"],
+          "voruebungen": [
+            {
+              "id": "vu_g2_barren_2",
+              "name": "Unterschwung über eine Zauberschnur",
+              "erklaerung": "Mit den Füßen über eine gespannte Schnur schwingen, um die Höhe zu trainieren."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stufe": "G3",
+      "ausgangswert": 13.0,
+      "beschreibung": "Grundstufe 3 – Hüftaufschwung und Rückschwung",
+      "schwierigkeitsgrad": 3,
+      "elemente": [
+        {
+          "id": "g3_barren_1",
+          "titel": "Hüftaufschwung am niedrigen Holm",
+          "beschreibung": "Mit einem Bein abdrücken, das andere schwingt hoch, Hüfte eng an den Holm ziehen und in den Stütz drehen.",
+          "punkte": 4.5,
+          "kriterien": ["Gebeugte Arme beim Hochziehen", "Hüfte bleibt durchgehend am Holm"],
+          "voruebungen": [
+            {
+              "id": "vu_g3_barren_1",
+              "name": "Aufschwung vom kleinen Kasten",
+              "erklaerung": "Vom Kastendeckel abspringen, um die Hüfte leichter über den Holm zu bringen."
+            }
+          ]
+        },
+        {
+          "id": "g3_barren_2",
+          "titel": "Vorschwingen & Rückschwingen im Stütz",
+          "beschreibung": "Aus dem Stütz die Beine nach vorne und anschließend kraftvoll nach hinten über die Waagerechte schwingen.",
+          "punkte": 3.5,
+          "kriterien": ["Gestreckte Arme", "Fester Bauch (kein Hohlkreuz)"],
+          "voruebungen": [
+            {
+              "id": "vu_g3_barren_2",
+              "name": "Stütz-Schwingen mit Trainerhilfe",
+              "erklaerung": "Trainer hält die Füße und führt die Pendelbewegung im Stütz."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stufe": "G4",
+      "ausgangswert": 14.0,
+      "beschreibung": "Grundstufe 4 – Hüftumschwung rückwärts und Holmwechsel",
+      "schwierigkeitsgrad": 4,
+      "elemente": [
+        {
+          "id": "g4_barren_1",
+          "titel": "Hüftumschwung rückwärts",
+          "beschreibung": "Aus dem Stütz rückschwingen, Hüfte an den Holm legen und schwungvoll rückwärts um den Holm in den Stütz drehen.",
+          "punkte": 5.5,
+          "kriterien": ["Kopf leicht in den Nacken", "Hände greifen rechtzeitig nach"],
+          "voruebungen": [
+            {
+              "id": "vu_g4_barren_1",
+              "name": "Umschwung mit Bauchband / Sicherung",
+              "erklaerung": "Bewegungsablauf mit leichter Trainerunterstützung an Hüfte und Schulter."
+            }
+          ]
+        },
+        {
+          "id": "g4_barren_2",
+          "titel": "Unterschwung aus dem Stütz",
+          "beschreibung": "Aus dem Stütz die Beine vorbringen und schwungvoll unter dem Holm durch nach vorne abspringen.",
+          "punkte": 4.0,
+          "kriterien": ["Hüfte streckt sich nach vorne oben", "Sichere Landung"],
+          "voruebungen": [
+            {
+              "id": "vu_g4_barren_2",
+              "name": "Unterschwung auf den Mattenberg",
+              "erklaerung": "Weiche Landung auf einem erhöhten Mattenberg trainieren."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lk_bereich": {
+    "anforderungen": [
+      {
+        "stufe": "LK4",
+        "max_elemente": "5 bis 7 Elemente",
+        "schwierigkeit_info": "Mind. A-Teile (0,10 Pkt.), max. 2 B-Teile erlaubt",
+        "pflicht_kriterien": [
+          "1 Aufgang (z. B. Hüftaufschwung oder Schwebekippe)",
+          "1 Umschwung am niedrigen oder hohen Holm (z. B. Hüftumschwung rückwärts)",
+          "1 Holmwechsel (vom niedrigen zum hohen Holm)",
+          "Abgang (mind. A-Teil, z. B. Unterschwung oder Rückschwung-Abgang)"
+        ]
+      },
+      {
+        "stufe": "LK3",
+        "max_elemente": "6 bis 7 Elemente",
+        "schwierigkeit_info": "A- und B-Teile (B = 0,20 Pkt.), max. 1 C-Teil erlaubt",
+        "pflicht_kriterien": [
+          "1 Kippe (Schwebekippe oder Langhangkippe)",
+          "1 Umschwung (z. B. Hüftumschwung oder Felgumschwung)",
+          "1 Holmwechsel vom niedrigen zum hohen Holm",
+          "Abgang (mind. A-Teil, z. B. Unterschwung mit 1/2 Drehung)"
+        ]
+      },
+      {
+        "stufe": "LK2",
+        "max_elemente": "7 bis 8 Elemente",
+        "schwierigkeit_info": "A-, B- und C-Teile (C = 0,30 Pkt.), mind. 2 B-Teile",
+        "pflicht_kriterien": [
+          "1 Schwebekippe UND 1 Langhangkippe",
+          "1 Element mit mind. 360°-Drehung im Handstand oder Schwung",
+          "1 holmnaher Umschwung ohne Hüftkontakt (z. B. Freie Felge / Sohlenumschwung)",
+          "Abgang (mind. B-Teil, z. B. Salto rückwärts gestreckt aus dem Schwung)"
+        ]
+      },
+      {
+        "stufe": "LK1",
+        "max_elemente": "8 Elemente",
+        "schwierigkeit_info": "B-, C- und D-Teile (D = 0,40 Pkt.), mind. 1 C-Teil",
+        "pflicht_kriterien": [
+          "2 verschiedene Kippen",
+          "1 Flugelement (vom niedrigen zum hohen Holm oder am selben Holm)",
+          "1 holmnaher Umschwung (mind. B-Teil)",
+          "1 Element mit Längsachsendrehung (mind. 180°/360°)",
+          "Abgang (mind. B- oder C-Teil, z. B. Salto rückwärts mit Schraube)"
+        ]
+      }
+    ],
+    "elemente": [
+      {
+        "id": "lk_barren_sohlenumschwung",
+        "titel": "Sohlenumschwung vorwärts oder rückwärts",
+        "wertigkeit": "A",
+        "punkte": 0.1,
+        "kategorie": "Umschwung",
+        "ab_stufe": "LK4",
+        "erklaerung": "Füße neben den Händen auf den Holm stellen und mit gestreckten Beinen um den Holm schwingen.",
+        "voruebungen": [
+          {
+            "id": "vu_lk_barren_sohle",
+            "name": "Aufhocken auf den niedrigen Holm",
+            "erklaerung": "Aus dem Stütz sicher mit beiden Füßen zwischen den Händen auf den Holm hocken."
+          }
+        ]
+      },
+      {
+        "id": "lk_barren_holmwechsel_sprung",
+        "titel": "Holmwechsel: Sprung vom niedrigen zum hohen Holm",
+        "wertigkeit": "A",
+        "punkte": 0.1,
+        "kategorie": "Holmwechsel",
+        "ab_stufe": "LK4",
+        "erklaerung": "Aus dem Stand oder Hockstand auf dem niedrigen Holm abspringen und den hohen Holm im Hang greifen.",
+        "voruebungen": [
+          {
+            "id": "vu_lk_barren_hw",
+            "name": "Aufhocken & Strecksprung zum hohen Holm mit Matte darunter",
+            "erklaerung": "Griff-Sicherheit am hohen Holm mit weicher Mattenunterlage trainieren."
+          }
+        ]
+      },
+      {
+        "id": "lk_barren_schwebekippe",
+        "titel": "Schwebekippe am niedrigen Holm",
+        "wertigkeit": "A",
+        "punkte": 0.1,
+        "kategorie": "Kippe / Aufgang",
+        "ab_stufe": "LK3",
+        "erklaerung": "Aus dem Stand am Brett abspringen, gestreckt vorschwingen, Fußspitzen an den Holm bringen und in den Stütz kippen.",
+        "voruebungen": [
+          {
+            "id": "vu_lk_barren_kippe",
+            "name": "Kipp-Aufzug auf dem Rücken (Boden)",
+            "erklaerung": "Mit einem Turnstab in den Händen die Klappmesser- und Kippbewegung am Boden simulieren."
+          }
+        ]
+      },
+      {
+        "id": "lk_barren_langhangkippe",
+        "titel": "Langhangkippe am hohen Holm",
+        "wertigkeit": "A",
+        "punkte": 0.1,
+        "kategorie": "Kippe",
+        "ab_stufe": "LK3",
+        "erklaerung": "Aus dem Vorschwung am hohen Holm die Fußspitzen an die Stange bringen und in den Stütz kippen.",
+        "voruebungen": [
+          {
+"id": "vu_lk_barren_lhk",
+"name": "Langhangkippe mit Trainerhilfe am Rücken/Oberschenkel",
+"erklaerung": "Richtigen Zeitpunkt des Hüftzugs am Ende des Vorschwungs spüren."
+}
+]
+},
+{
+"id": "lk_barren_freie_felge",
+"titel": "Freie Felge in den Stütz / Handstand",
+"wertigkeit": "B",
+"punkte": 0.2,
+"kategorie": "Holmnaher Umschwung",
+"ab_stufe": "LK2",
+"erklaerung": "Aus dem Rückschwung ohne Hüftberührung um den Holm schwingen und in den freien Stütz abdrücken.",
+"voruebungen": [
+{
+"id": "vu_lk_barren_felge",
+"name": "Felgumschwung mit großem Abstand (Schlaufe)",
+"erklaerung": "Den Schwung ohne Hüftkontakt an der Reckstange mit Sicherungsschlaufen trainieren."
+}
+]
+},
+{
+"id": "lk_barren_salto_abgang",
+"titel": "Abgang: Salto rückwärts gehockt oder gestreckt",
+"wertigkeit": "B",
+"punkte": 0.2,
+"kategorie": "Abgang",
+"ab_stufe": "LK2",
+"erklaerung": "Im Vorschwung am hohen Holm ablassen, Salto rückwärts drehen und sicher auf der Matte landen.",
+"voruebungen": [
+{
+"id": "vu_lk_barren_salto",
+"name": "Abgang aus dem Schaukeln auf Weichboden",
+"erklaerung": "Zeitpunkt des Loslassens im Vorschwung auf einer weichen Matte automatisieren."
+}
+]
+},
+{
+"id": "lk_barren_riesenfelge",
+"titel": "Riesenfelge rückwärts oder vorwärts",
+"wertigkeit": "B",
+"punkte": 0.2,
+"kategorie": "Schwungelement",
+"ab_stufe": "LK1",
+"erklaerung": "Aus dem Handstand am hohen Holm mit gestrecktem Körper einmal komplett um den Holm schwingen.",
+"voruebungen": [
+{
+"id": "vu_lk_barren_riese",
+"name": "Riesenfelge an der Schlaufenreckstange",
+"erklaerung": "Körperspannung und Peitschenbewegung (Tap) im unteren Umkehrpunkt mit Schlaufen üben."
+}
+]
+},
+{
+"id": "lk_barren_konterflug",
+"titel": "Flugelement: Konter-Holmwechsel (z. B. Pak-Salto / Schaposhnikova)",
+"wertigkeit": "C",
+"punkte": 0.3,
+"kategorie": "Flugelement",
+"ab_stufe": "LK1",
+"erklaerung": "Flugphase vom hohen zum niedrigen Holm oder umgekehrt mit Umgreifen.",
+"voruebungen": [
+{
+"id": "vu_lk_barren_flug",
+"name": "Flugphase mit Mattenberg zwischen den Holmen",
+"erklaerung": "Ablassen und Flugbahn mit erhöhter Mattenabsicherung trainieren."
+}
+]
+}
+]
+}
+}

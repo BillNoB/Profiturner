@@ -1,0 +1,21 @@
+{
+  "name": "NTB Gerätturnen App",
+  "short_name": "NTB Gerätturnen",
+  "description": "App für NTB Gerätturnen mit allen Geräten",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F1F5F9",
+  "theme_color": "#0284C7",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

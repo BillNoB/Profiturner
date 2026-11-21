@@ -1,0 +1,232 @@
+{
+  "geraet": "Sprung",
+  "id": "sprung",
+  "g_stufen": [
+    {
+      "stufe": "G1",
+      "ausgangswert": 11.0,
+      "beschreibung": "Grundstufe 1 – Anlauf, Absprung vom Sprungbrett und Aufhocken",
+      "schwierigkeitsgrad": 1,
+      "elemente": [
+        {
+          "id": "g1_sprung_1",
+          "titel": "Aufhocken auf den Mattenberg / Kasten",
+          "beschreibung": "Zügiger Anlauf, beidbeiniger Absprung vom Brett, Hände stützen auf und Füße hocken dazwischen.",
+          "punkte": 4.0,
+          "kriterien": ["Beidbeiniger Absprung", "Blick nach vorne gerichtet"],
+          "voruebungen": [
+            {
+              "id": "vu_g1_sprung_1",
+              "name": "Strecksprung vom Reutherbrett",
+              "erklaerung": "Aus kurzem Anlauf beidbeinig auf das Brett springen und hoch auf die Weichbodenmatte landen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stufe": "G2",
+      "ausgangswert": 12.0,
+      "beschreibung": "Grundstufe 2 – Sprunggrätsche oder Hockwende",
+      "schwierigkeitsgrad": 2,
+      "elemente": [
+        {
+          "id": "g2_sprung_1",
+          "titel": "Sprunggrätsche über den Bock",
+          "beschreibung": "Kraftvoller Absprung, Beine gestreckt grätschen und über das Gerät in den sicheren Stand turnen.",
+          "punkte": 5.0,
+          "kriterien": ["Gestreckte Knie in der Flugphase", "Schneller Abdruck der Hände"],
+          "voruebungen": [
+            {
+              "id": "vu_g2_sprung_1",
+              "name": "Grätsch-Übung am Boden",
+              "erklaerung": "Aus dem Liegestütz mit den Füßen vorwärts in die Grätsche neben die Hände springen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stufe": "G3",
+      "ausgangswert": 13.0,
+      "beschreibung": "Grundstufe 3 – Sprunghocke über den quer gestellten Kasten",
+      "schwierigkeitsgrad": 3,
+      "elemente": [
+        {
+          "id": "g3_sprung_1",
+          "titel": "Sprunghocke über den Kasten (quer)",
+          "beschreibung": "Beidbeiniger Absprung, Hüfte hochheben, Knie schnell zur Brust ziehen und über den Kasten in den Stand landen.",
+          "punkte": 6.0,
+          "kriterien": ["Hüfte steigt über Schulterhöhe", "Gestreckte Arme beim Stütz"],
+          "voruebungen": [
+            {
+              "id": "vu_g3_sprung_1",
+              "name": "Aufhocken & sofortiger Strecksprung",
+              "erklaerung": "Ohne Pause auf den Kasten hocken und direkt mit einem Strecksprung abspringen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stufe": "G4",
+      "ausgangswert": 14.0,
+      "beschreibung": "Grundstufe 4 – Handstand-Abrollen auf den Mattenberg (Vorstufe Überschlag)",
+      "schwierigkeitsgrad": 4,
+      "elemente": [
+        {
+          "id": "g4_sprung_1",
+          "titel": "Sprung in den Handstand & Abrollen (Mattenberg)",
+          "beschreibung": "Kraftvoller Absprung vom Brett, Hände stützen auf dem Mattenberg (60–80 cm), in den Handstand schwingen und gestreckt auf den Rücken fallen.",
+          "punkte": 7.0,
+          "kriterien": ["Gestreckter Körper beim Umfallen", "Blick auf die Hände, Arme bleiben oben"],
+          "voruebungen": [
+            {
+              "id": "vu_g4_sprung_1",
+              "name": "Handstand-Umfallen aus dem Stand",
+              "erklaerung": "Vor dem Mattenberg in den Handstand schwingen und wie ein Brett auf den Rücken fallen."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lk_bereich": {
+    "anforderungen": [
+      {
+        "stufe": "LK4",
+        "max_elemente": "1 Sprung (2 Versuche möglich, besserer zählt)",
+        "schwierigkeit_info": "Sprungtisch (1,10 m – 1,25 m) oder Mattenberg",
+        "pflicht_kriterien": [
+          "Sprunghocke oder Sprunggrätsche über den Sprungtisch (Ausgangswert ca. 11,60–12,00)",
+          "Alternativ: Handstandüberschlag auf den Mattenberg"
+        ]
+      },
+      {
+        "stufe": "LK3",
+        "max_elemente": "1 Sprung (2 Versuche möglich)",
+        "schwierigkeit_info": "Sprungtisch (1,25 m)",
+        "pflicht_kriterien": [
+          "Handstandüberschlag vorwärts über den Sprungtisch (Ausgangswert 12,40 Pkt.)",
+          "Alternativ: Yamashita (gebückter Überschlag) oder Überschlag mit 1/2 Drehung"
+        ]
+      },
+      {
+        "stufe": "LK2",
+        "max_elemente": "1 Sprung (2 Versuche möglich)",
+        "schwierigkeit_info": "Sprungtisch (1,25 m)",
+        "pflicht_kriterien": [
+          "Handstandüberschlag vorwärts (12,40 Pkt.) oder mit 1/2 / 1/1 Drehung (bis 13,20 Pkt.)",
+          "Alternativ: Tsukahara gehockt oder gebückt"
+        ]
+      },
+      {
+        "stufe": "LK1",
+        "max_elemente": "1 Sprung (2 Versuche möglich)",
+        "schwierigkeit_info": "Sprungtisch (1,25 m)",
+        "pflicht_kriterien": [
+          "Handstandüberschlag mit 1/1 Drehung (13,20 Pkt.) oder 1,5 Drehungen",
+          "Tsukahara gehockt/gebückt/gestreckt oder Yurchenko"
+        ]
+      }
+    ],
+    "elemente": [
+      {
+        "id": "lk_sprung_hocke",
+        "titel": "Sprunghocke über den Sprungtisch",
+        "wertigkeit": "LK4",
+        "punkte": 1.6,
+        "kategorie": "Stützsprung",
+        "ab_stufe": "LK4",
+        "erklaerung": "Kraftvoller Anlauf, Absprung vom Reutherbrett, kurzer Handstütz auf dem Sprungtisch und Anhocken der Beine.",
+        "voruebungen": [
+          {
+            "id": "vu_lk_sprung_hocke",
+            "name": "Sprunghocke über den quer gestellten Kasten",
+            "erklaerung": "Schnelles Anfersen und sofortige Körperstreckung vor der Landung üben."
+          }
+        ]
+      },
+      {
+        "id": "lk_sprung_graetsche",
+        "titel": "Sprunggrätsche über den Sprungtisch",
+        "wertigkeit": "LK4",
+        "punkte": 1.6,
+        "kategorie": "Stützsprung",
+        "ab_stufe": "LK4",
+        "erklaerung": "Kraftvoller Absprung vom Brett, Handstütz auf dem Sprungtisch und gestrecktes Grätschen der Beine.",
+        "voruebungen": [
+          {
+            "id": "vu_lk_sprung_graetsche",
+            "name": "Sprunggrätsche über den hochgestellten Bock",
+            "erklaerung": "Schnellen Armabdruck und aufrechte Landung trainieren."
+          }
+        ]
+      },
+      {
+        "id": "lk_sprung_ueberschlag",
+        "titel": "Handstandüberschlag vorwärts (Sprungtisch)",
+        "wertigkeit": "LK3",
+        "punkte": 2.4,
+        "kategorie": "Überschlag",
+        "ab_stufe": "LK3",
+        "erklaerung": "Dynamischer Absprung, Flug in den Handstand auf dem Sprungtisch, explosiver Schulterabdruck und gestreckte Landung.",
+        "voruebungen": [
+          {
+            "id": "vu_lk_sprung_ueberschlag",
+            "name": "Überschlag über den Mattenberg mit Brett",
+            "erklaerung": "Flugphase vor dem Stütz (First Flight) und explosiven Abdruck aus den Schultern trainieren."
+          }
+        ]
+      },
+      {
+        "id": "lk_sprung_yamashita",
+        "titel": "Yamashita (Handstandüberschlag gebückt)",
+        "wertigkeit": "LK3",
+        "punkte": 2.4,
+        "kategorie": "Überschlag",
+        "ab_stufe": "LK3",
+        "erklaerung": "Nach dem Handstandabdruck in der zweiten Flugphase kurz in der Hüfte abknicken und vor der Landung wieder strecken.",
+        "voruebungen": [
+          {
+            "id": "vu_lk_sprung_yama",
+            "name": "Überschlag mit aktivem Hüftwinkeln auf Weichboden",
+            "erklaerung": "Kontrolle über die zweite Flugphase durch gezieltes Anwinkeln und Öffnen."
+          }
+        ]
+      },
+      {
+        "id": "lk_sprung_ueberschlag_drehung",
+        "titel": "Handstandüberschlag mit 1/1 Drehung in der 2. Flugphase",
+        "wertigkeit": "LK1",
+        "punkte": 3.2,
+        "kategorie": "Überschlag mit Drehung",
+        "ab_stufe": "LK2",
+        "erklaerung": "Nach dem Abdruck vom Sprungtisch in gestreckter Haltung eine volle 360°-Drehung um die Längsachse ausführen.",
+        "voruebungen": [
+          {
+            "id": "vu_lk_sprung_drehung",
+            "name": "Überschlag mit 1/2 Drehung auf Weichboden",
+            "erklaerung": "Zuerst die halbe Drehung nach dem Schulterabdruck sicher beherrschen."
+          }
+        ]
+      },
+      {
+        "id": "lk_sprung_tsukahara",
+        "titel": "Tsukahara gehockt oder gebückt",
+        "wertigkeit": "LK1",
+        "punkte": 3.5,
+        "kategorie": "Tsukahara",
+        "ab_stufe": "LK2",
+        "erklaerung": "Anlauf mit 1/4- oder 1/2-Drehung auf den Sprungtisch und Salto rückwärts in der zweiten Flugphase.",
+        "voruebungen": [
+          {
+            "id": "vu_lk_sprung_tsuka",
+            "name": "Tsukahara-Vorbereitung in die Schnitzelgrube / Mattenberg",
+            "erklaerung": "Radwende-Absprung aufs Brett und Stützphase auf dem Sprungtisch isoliert üben."
+          }
+        ]
+      }
+    ]
+  }
+}
