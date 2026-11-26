@@ -4,7 +4,10 @@
   "g_stufen": [
     {
       "stufe": "G1",
-      "ausgangswert": 11.0,
+      "d_note": 3.0,
+      "e_note": 10.0,
+      "bonus_max": 0,
+      "ausgangswert": 13.0,
       "beschreibung": "Grundstufe 1 – Erste Balance- und Stützübungen",
       "schwierigkeitsgrad": 1,
       "elemente": [
@@ -12,13 +15,19 @@
           "id": "g1_balken_1",
           "titel": "Aufgang & Vorwärtsgehen",
           "beschreibung": "Sprung in den Stütz, Bein überheben zum Sitz, Aufstehen und 4 Schritte vorwärts auf den Fußballen gehen.",
-          "punkte": 3.0,
-          "kriterien": ["Gestreckte Arme im Stütz", "Aufrechte Haltung beim Gehen"],
+          "punkte": 2.0,
+          "kriterien": ["Gestreckte Arme im Stütz", "Aufrechte Haltung beim Gehen", "Bein ohne Berührung des Balkens überheben", "Schritte ruhig und gleichmäßig auf dem Ballen"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g1_balken_1",
               "name": "Ballengang auf der Linie",
               "erklaerung": "Auf einer Bodenlinie im hohen Ballenstand vorwärts gehen, Arme seitlich ausgestreckt."
+            },
+            {
+              "id": "vu_g1_balken_1b",
+              "name": "Stütz-Sitz-Aufstehen vom Kasten",
+              "erklaerung": "Vom kleinen Kasten in den Handstütz springen, ein Bein überheben zum Sitz und aufstehen – die Aufgangsschritte einzeln trainieren."
             }
           ]
         },
@@ -26,13 +35,59 @@
           "id": "g1_balken_2",
           "titel": "Strecksprung als Abgang",
           "beschreibung": "Vom Balkenende abspringen, Körper im Flug strecken, sicher auf der Matte landen.",
-          "punkte": 2.0,
-          "kriterien": ["Körperspannung in der Luft", "Landung im sicheren Stand (2 Sek. halten)"],
+          "punkte": 1.0,
+          "kriterien": ["Körperspannung in der Luft", "Landung im sicheren Stand (2 Sek. halten)", "Gestreckte Flugphase ohne Kniebeugen", "Ruhige Landung ohne Wackler oder Nachlauf"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g1_balken_2",
               "name": "Strecksprung vom kleinen Kasten",
               "erklaerung": "Vom Kastendeckel auf eine Weichbodenmatte springen und die Landeposition einfrieren."
+            },
+            {
+              "id": "vu_g1_balken_2b",
+              "name": "Strecksprung über die Bodenlinie",
+              "erklaerung": "Vom Stand vor einer Bodenlinie mit gestreckten Beinen abspringen, in der Luft strecken und auf der Weichbodenmatte ruhig landen."
+            }
+          ]
+        },
+        {
+          "id": "g1_balken_w1",
+          "titel": "Ballengang mit Armdrehungen",
+          "beschreibung": "Auf dem Ballen vorwärts gehen, die Arme seitlich ruhig oder kontrolliert bewegen.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Aufrechte Haltung, Blick nach vorne", "Arme seitlich ruhig oder kontrolliert bewegt", "Schritte gleichmäßig auf dem Ballen"],
+          "voruebungen": [
+            {
+              "id": "vu_g1_balken_w1",
+              "name": "Ballengang auf der Linie",
+              "erklaerung": "Im hohen Ballenstand auf einer Bodenlinie gehen."
+            },
+            {
+              "id": "vu_g1_balken_w1b",
+              "name": "Armdrehungen im Gehen",
+              "erklaerung": "Arme kontrolliert kreisen lassen beim Gehen."
+            }
+          ]
+        },
+        {
+          "id": "g1_balken_w2",
+          "titel": "Stütz-Sitz vom kleinen Kasten",
+          "beschreibung": "Vom kleinen Kasten in den Stütz springen, ein Bein überheben zum Sitz und aufstehen.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Gestreckte Arme im Stütz", "Bein sauber überheben zum Sitz", "Kontrolliertes Aufstehen ohne Schwung"],
+          "voruebungen": [
+            {
+              "id": "vu_g1_balken_w2",
+              "name": "Stütz-Halten auf zwei Kästen",
+              "erklaerung": "Körperspannung 10 Sek. halten."
+            },
+            {
+              "id": "vu_g1_balken_w2b",
+              "name": "Beinüberheben im Sitz vom Kasten",
+              "erklaerung": "Ein Bein überheben, aufsitzen, aufstehen."
             }
           ]
         }
@@ -40,7 +95,10 @@
     },
     {
       "stufe": "G2",
-      "ausgangswert": 12.0,
+      "d_note": 4.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 14.0,
       "beschreibung": "Grundstufe 2 – Erste Drehungen und Standwaage",
       "schwierigkeitsgrad": 2,
       "elemente": [
@@ -48,13 +106,19 @@
           "id": "g2_balken_1",
           "titel": "Standwaage (2 Sekunden)",
           "beschreibung": "Ein Bein nach hinten anheben bis zur Waagerechten, Oberkörper leicht vorbeugen, 2 Sekunden halten.",
-          "punkte": 3.5,
-          "kriterien": ["Standbein und Spielbein gestreckt", "Blick nach vorne gerichtet"],
+          "punkte": 2.5,
+          "kriterien": ["Standbein und Spielbein gestreckt", "Blick nach vorne gerichtet", "Spielbein erreicht die Waagerechte (Hüfthöhe)", "Oberkörper ruhig, keine Armbewegung zum Ausgleich"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g2_balken_1",
               "name": "Standwaage mit Handstütz an der Sprossenwand",
               "erklaerung": "Leicht an der Sprossenwand festhalten und das hintere Bein sauber aus der Hüfte heben."
+            },
+            {
+              "id": "vu_g2_balken_1b",
+              "name": "Standwaage vom Kasten mit Hilfestellung",
+              "erklaerung": "Vom kleinen Kasten in den einbeinigen Stand wechseln, das Spielbein bis zur Waagerechten heben und kurz halten – bei Bedarf leichte Handkontrolle am Rumpf."
             }
           ]
         },
@@ -62,13 +126,59 @@
           "id": "g2_balken_2",
           "titel": "1/2 Drehung (180°) auf beiden Fußballen",
           "beschreibung": "Aus dem Ballenstand kontrolliert um 180 Grad drehen, ohne die Fersen abzusetzen.",
-          "punkte": 2.5,
-          "kriterien": ["Hoher Ballenstand", "Blickpunkt am Balkenende fixieren"],
+          "punkte": 1.5,
+          "kriterien": ["Hoher Ballenstand", "Blickpunkt am Balkenende fixieren", "Kein Fersenabsetzen während der Drehung", "Körper gestreckt, Arme seitlich ruhig"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g2_balken_2",
               "name": "Drehung auf der umgedrehten Turnbank",
               "erklaerung": "Auf der schmalen Leiste der Turnbank 1/2 Drehungen üben."
+            },
+            {
+              "id": "vu_g2_balken_2b",
+              "name": "Ballendrehungen an der Bodenlinie",
+              "erklaerung": "Auf einer Bodenlinie in den Ballenstand gehen und sich dort kontrolliert um 180 Grad drehen, ohne die Fersen abzusetzen."
+            }
+          ]
+        },
+        {
+          "id": "g2_balken_w1",
+          "titel": "Waage vorwärts (2 Sekunden)",
+          "beschreibung": "Ein Bein nach vorne auf Hüfthöhe heben, Oberkörper waagerecht halten und 2 Sekunden ruhig stehen.",
+          "punkte": 1.5,
+          "wahl_uebung": true,
+          "kriterien": ["Spielbein nach vorne auf Hüfthöhe", "Oberkörper waagerecht, gerader Rücken", "2 Sekunden ruhiges Halten", "Standbein gestreckt"],
+          "voruebungen": [
+            {
+              "id": "vu_g2_balken_w1",
+              "name": "Waage mit Stütz an der Sprossenwand",
+              "erklaerung": "Leicht festhalten, Bein heben."
+            },
+            {
+              "id": "vu_g2_balken_w1b",
+              "name": "Waage vom Kasten",
+              "erklaerung": "Vom Kasten in die einbeinige Waage wechseln."
+            }
+          ]
+        },
+        {
+          "id": "g2_balken_w2",
+          "titel": "1/1 Drehung auf beiden Fußballen (360°)",
+          "beschreibung": "Aus dem Ballenstand kontrolliert um 360 Grad drehen, ohne die Fersen abzusetzen.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Volle 360-Grad-Drehung auf dem Ballen", "Fersen bleiben bis zum Abschluss oben", "Blickpunkt fixieren", "Körper gestreckt"],
+          "voruebungen": [
+            {
+              "id": "vu_g2_balken_w2",
+              "name": "1/2 Drehung auf dem Ballen",
+              "erklaerung": "Kontrollierte Teil-Drehung."
+            },
+            {
+              "id": "vu_g2_balken_w2b",
+              "name": "Ballendrehungen an der Linie",
+              "erklaerung": "Auf einer Bodenlinie drehen."
             }
           ]
         }
@@ -76,7 +186,10 @@
     },
     {
       "stufe": "G3",
-      "ausgangswert": 13.0,
+      "d_note": 5.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 15.0,
       "beschreibung": "Grundstufe 3 – Sprünge auf dem Balken und einbeinige Drehung",
       "schwierigkeitsgrad": 3,
       "elemente": [
@@ -84,13 +197,19 @@
           "id": "g3_balken_1",
           "titel": "Strecksprung auf dem Balken",
           "beschreibung": "Beidbeinig auf dem Balken abspringen, Körper voll strecken und sicher wieder auf dem Balken landen.",
-          "punkte": 4.0,
-          "kriterien": ["Füße hintereinander aufsetzen", "Weiches Abfedern in den Knien"],
+          "punkte": 2.5,
+          "kriterien": ["Füße hintereinander aufsetzen", "Weiches Abfedern in den Knien", "Gestreckte Flugphase, Beine bleiben zusammen", "Landung mittig auf der Balkenlinie ohne Korrekturen"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g3_balken_1",
               "name": "Strecksprung auf dem Bodenbalken",
               "erklaerung": "Auf einem niedrigen Übungsbalken oder einer aufgeklebten Linie springen."
+            },
+            {
+              "id": "vu_g3_balken_1b",
+              "name": "Bodenbalken mit Handkontrolle",
+              "erklaerung": "Auf dem niedrigen Übungsbalken springen, während der Trainer leicht die Hüfte oder den Rücken kontrolliert – nur bei Unsicherheit einsetzen."
             }
           ]
         },
@@ -98,13 +217,59 @@
           "id": "g3_balken_2",
           "titel": "1/2 Drehung im Passé (einbeinig)",
           "beschreibung": "Spielbeinfuß am Standbeinknie anlegen und um 180 Grad auf dem Fußballen drehen.",
-          "punkte": 3.5,
-          "kriterien": ["Knie des Spielbeins zeigt nach außen", "Stabile Körpermitte"],
+          "punkte": 2.5,
+          "kriterien": ["Knie des Spielbeins zeigt nach außen", "Stabile Körpermitte", "Hoher Ballenstand ohne Fersenabsetzen", "Spielbeinfuß bleibt am Standbeinknie angelegt"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g3_balken_2",
               "name": "Passé-Stand halten (5 Sekunden)",
               "erklaerung": "Auf dem Balken im hohen Ballenstand mit angelegtem Fuß balancieren."
+            },
+            {
+              "id": "vu_g3_balken_2b",
+              "name": "1/2 Drehung Passé vom Stand",
+              "erklaerung": "Im einbeinigen Stand das Spielbein ins Passé legen und sich kontrolliert um 180 Grad drehen – zuerst am Boden, dann auf dem niedrigen Übungsbalken."
+            }
+          ]
+        },
+        {
+          "id": "g3_balken_w1",
+          "titel": "Wolfssprung 135°",
+          "beschreibung": "Kraftvoller Absprung vom Balken, volle 135-Grad-Beinspreizung in der Wolfshaltung in der Flugphase, sichere Landung auf dem Balken.",
+          "punkte": 1.5,
+          "wahl_uebung": true,
+          "kriterien": ["Mindestens 135 Grad Spreizwinkel", "Ein Bein gestreckt, andere angewinkelt (Wolfshaltung)", "Kontrollierte Landung auf dem Balken"],
+          "voruebungen": [
+            {
+              "id": "vu_g3_balken_w1",
+              "name": "Wolfssprung auf dem Boden",
+              "erklaerung": "Die Wolfshaltung und den Absprung üben."
+            },
+            {
+              "id": "vu_g3_balken_w1b",
+              "name": "Spagatsprung-Vorbereitung",
+              "erklaerung": "Den Spreizwinkel schrittweise steigern."
+            }
+          ]
+        },
+        {
+          "id": "g3_balken_w2",
+          "titel": "Brücke auf dem Boden vorbereiten",
+          "beschreibung": "Aus dem Liegen die Hüfte drücken, Schultern über die Hände schieben und die Brücke 3 Sekunden stabil halten.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Schultern über die Hände schieben", "Gestreckte Arme", "Hüfte maximal hoch", "Stabile Haltephase 3 Sekunden"],
+          "voruebungen": [
+            {
+              "id": "vu_g3_balken_w2",
+              "name": "Schulter-Dehnung am Kasten",
+              "erklaerung": "Hände auf Kasten, Oberkörper sanft federn."
+            },
+            {
+              "id": "vu_g3_balken_w2b",
+              "name": "Brücke mit Unterstützung",
+              "erklaerung": "Partner stützt die Hüfte beim Hochdrücken."
             }
           ]
         }
@@ -112,7 +277,10 @@
     },
     {
       "stufe": "G4",
-      "ausgangswert": 14.0,
+      "d_note": 6.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 16.0,
       "beschreibung": "Grundstufe 4 – Erste Akrobatik und Sprungabgang mit Drehung",
       "schwierigkeitsgrad": 4,
       "elemente": [
@@ -120,13 +288,19 @@
           "id": "g4_balken_1",
           "titel": "Rolle vorwärts auf dem Balken",
           "beschreibung": "Hände greifen seitlich um den Balken, Kinn auf die Brust, rund über den Rücken in den Sitz oder Stand rollen.",
-          "punkte": 5.0,
-          "kriterien": ["Daumen oben, Finger greifen seitlich", "Runder Rücken ohne Seitwärtskippen"],
+          "punkte": 3.5,
+          "kriterien": ["Daumen oben, Finger greifen seitlich", "Runder Rücken ohne Seitwärtskippen", "Kinn bleibt auf der Brust, kein Hohlkreuz", "Flüssige Bewegung ohne Zwischenstopp"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g4_balken_1",
               "name": "Rolle vorwärts auf der Turnbank",
               "erklaerung": "Das seitliche Umfassen der Kanten auf einer normalen Turnbank automatisieren."
+            },
+            {
+              "id": "vu_g4_balken_1b",
+              "name": "Seitlich umfassen am Bodenbalken",
+              "erklaerung": "Auf dem niedrigen Übungsbalken die Hände seitlich um den Balken legen, Kinn auf die Brust nehmen und rund über den Rücken rollen – zuerst mit Handkontrolle."
             }
           ]
         },
@@ -134,13 +308,264 @@
           "id": "g4_balken_2",
           "titel": "Abgang: Strecksprung mit 1/2 Drehung",
           "beschreibung": "Vom Balkenende abspringen, in der Luft um 180 Grad drehen und sicher auf der Matte landen.",
-          "punkte": 4.0,
-          "kriterien": ["Erst hoch springen, dann drehen", "Ruhige Landung ohne Ausfallschritt"],
+          "punkte": 2.5,
+          "kriterien": ["Erst hoch springen, dann drehen", "Ruhige Landung ohne Ausfallschritt", "Gestreckte Flugphase bei der 1/2 Drehung", "Aufrechte Landung mit kurzem Verharren"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g4_balken_2",
               "name": "1/2 Drehung vom Kastendeckel",
               "erklaerung": "Vom Kastendeckel auf eine Weichbodenmatte springen und die Drehung sauber beenden."
+            },
+            {
+              "id": "vu_g4_balken_2b",
+              "name": "Strecksprung-Drehung an der Bodenlinie",
+              "erklaerung": "Beidbeinig von einer Bodenlinie abspringen, in der Streckung um 180 Grad drehen und auf der Weichbodenmatte ruhig landen."
+            }
+          ]
+        },
+        {
+          "id": "g4_balken_w1",
+          "titel": "Handstand-Vorbereitung am Balken",
+          "beschreibung": "Mit Hilfe in den Handstand am Balken drücken, die Schultern öffnen und kurz senkrecht halten, dann kontrolliert absenken.",
+          "punkte": 1.5,
+          "wahl_uebung": true,
+          "kriterien": ["Schultern voll geöffnet im Handstand", "Kurze deutliche Senkrechte", "Kontrolliertes Absenken in den Stand"],
+          "voruebungen": [
+            {
+              "id": "vu_g4_balken_w1",
+              "name": "Bauch-an-Wand-Handstand",
+              "erklaerung": "Füße an der Wand hochklettern."
+            },
+            {
+              "id": "vu_g4_balken_w1b",
+              "name": "Handstand vom Kasten mit Partner",
+              "erklaerung": "Mit Sicherung in den Handstand drücken."
+            }
+          ]
+        },
+        {
+          "id": "g4_balken_w2",
+          "titel": "Durchschlagsprung 135°",
+          "beschreibung": "Vom Stand abspringen, 135-Grad-Beinspreizung in der Flugphase, sauber auf dem Balken landen.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Mindestens 135 Grad Spreizwinkel", "Gestreckte Beine, Body Shape", "Ausreichende Höhe", "Saubere Landung"],
+          "voruebungen": [
+            {
+              "id": "vu_g4_balken_w2",
+              "name": "Durchschlagsprung am Boden",
+              "erklaerung": "Vom Stand aus mit 135 Grad üben."
+            },
+            {
+              "id": "vu_g4_balken_w2b",
+              "name": "Durchschlagsprung aus dem Chassé",
+              "erklaerung": "Tänzerische Vorbereitung verbinden."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stufe": "G5",
+      "d_note": 7.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 17.0,
+      "beschreibung": "NTB-Pflichtprogramm 2026 – Schwebebalken (Musik freiwillig; Bonus bis 1.00 P)",
+      "schwierigkeitsgrad": 5,
+      "elemente": [
+        {
+          "id": "g5_balken_1",
+          "titel": "Angang: Bückstand – Grätschschwebestütz – Reitsitz – Aufrichten",
+          "beschreibung": "Absprung oder Heben zum Bückstand, Senken in den Grätschschwebestütz (2 Sekunden), 1/4 Drehung in den Reitsitz, Rückaufhocken auf den Fußrist und gestrecktes Aufrichten.",
+          "punkte": 0.5,
+          "kriterien": ["Sauberer Absprung bzw. kontrolliertes Heben zum Bückstand", "Grätschschwebestütz zwei Sekunden ruhig gehalten", "Rückaufhocken auf den Fußrist und gestrecktes Aufrichten ohne Wackler"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_balken_1",
+              "name": "Angang am Bodenbalken",
+              "erklaerung": "Den gesamten Angang auf einer niedrigen Balkenlinie am Boden üben."
+            },
+            {
+              "id": "vu_g5_balken_1b",
+              "name": "Grätschschwebestütz mit Handhilfe",
+              "erklaerung": "Den Stütz am Schwebebalken mit Sicherung der Übungsleiterin zwei Sekunden halten."
+            }
+          ]
+        },
+        {
+          "id": "g5_balken_2",
+          "titel": "Heben/Senken ins Relevé mit drei Hüpfern",
+          "beschreibung": "Ein- bis zweimaliges Heben und Senken in den hohen Ballenstand (Relevé), anschließend drei Hüpfer im Demi-Plié bzw. Relevé auf dem Balken.",
+          "punkte": 0.2,
+          "kriterien": ["Volles Relevé mit gestreckten Beinen", "Drei Hüpfer im gleichmäßigen Rhythmus", "Ruhiger Stand ohne Absetzen der Fersen im Relevé"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_balken_2",
+              "name": "Relevé-Hüpfer auf der Bodenlinie",
+              "erklaerung": "Hüpfer im Relevé auf einer Linie am Boden üben."
+            },
+            {
+              "id": "vu_g5_balken_2b",
+              "name": "Heben und Senken auf dem niedrigen Balken",
+              "erklaerung": "Das Heben und Senken mit Sicherung auf dem niedrigen Balken üben."
+            }
+          ]
+        },
+        {
+          "id": "g5_balken_3",
+          "schluessel": true,
+          "titel": "Bogengang rückwärts",
+          "beschreibung": "Aus dem Stand rückwärts über den Bogen auf den Balken abrollen und kontrolliert wieder aufstehen.",
+          "punkte": 1.0,
+          "kriterien": ["Gleichmäßiger Bogen mit gestreckten Armen", "Sicheres Setzen der Hände auf der Balkenlinie", "Kontrolliertes Aufstehen ohne seitliches Abweichen"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_balken_3",
+              "name": "Bogengang rückwärts auf der Bodenlinie",
+              "erklaerung": "Den Bogengang auf einer Linie am Boden üben."
+            },
+            {
+              "id": "vu_g5_balken_3b",
+              "name": "Bogengang auf dem niedrigen Balken mit Handhilfe",
+              "erklaerung": "Mit Sicherung der Übungsleiterin auf dem niedrigen Balken turnen."
+            }
+          ]
+        },
+        {
+          "id": "g5_balken_4",
+          "titel": "Bonus – Flick-Flack auf dem Balken",
+          "beschreibung": "Flick-Flack rückwärts direkt auf dem Balken als Bonuselement.",
+          "punkte": 0.5,
+          "kriterien": ["Exakte Ausrichtung auf der Balkenlinie", "Schneller Handabdruck mit gestreckter Haltung", "Stabile Landung im Stand"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_balken_4",
+              "name": "Flick-Flack auf der Bodenlinie",
+              "erklaerung": "Den Flick-Flack auf einer Bodenlinie mit Blickkontrolle üben."
+            },
+            {
+              "id": "vu_g5_balken_4b",
+              "name": "Flick-Flack auf dem niedrigen Balken mit Sicherung",
+              "erklaerung": "Mit Handhilfe auf dem niedrigen Balken ausführen."
+            }
+          ]
+        },
+        {
+          "id": "g5_balken_5",
+          "titel": "Gymnastische Verbindung: Chassé und Spagatsprung (135°)",
+          "schluessel": true,
+          "beschreibung": "Chassé seitwärts, gefolgt von einem Spagatsprung mit mindestens 135 Grad Beinspreizung.",
+          "punkte": 0.8,
+          "kriterien": ["Mindestens 135 Grad Beinspreizung im Sprung", "Ruhige Landung ohne Wackler", "Fließende Verbindung aus dem Chassé"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_balken_5",
+              "name": "Spagatsprung 135° am Boden",
+              "erklaerung": "Den Spagatsprung mit 135 Grad Beinspreizung am Boden üben."
+            },
+            {
+              "id": "vu_g5_balken_5b",
+              "name": "Chassé-Spagatsprung auf dem niedrigen Balken",
+              "erklaerung": "Die Verbindung mit Sicherung auf dem niedrigen Balken üben."
+            }
+          ]
+        },
+        {
+          "id": "g5_balken_6",
+          "titel": "1/1 Drehung einbeinig mit Spielbein Passé",
+          "schluessel": true,
+          "beschreibung": "Enge Schrittstellung, dann eine volle Drehung auf einem Bein in der Passé-Position mit Armen in der Hochhalte.",
+          "punkte": 0.5,
+          "kriterien": ["Hoher Ballenstand während der gesamten Drehung", "Geschlossene Passé-Position", "Arme stabil in der Hochhalte"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_balken_6",
+              "name": "1/1 Drehung im Passé auf der Bodenlinie",
+              "erklaerung": "Die Drehung auf einer Linie am Boden mit festem Blickpunkt üben."
+            },
+            {
+              "id": "vu_g5_balken_6b",
+              "name": "Drehung auf dem niedrigen Balken mit Sicherung",
+              "erklaerung": "Mit Handhilfe auf dem niedrigen Balken drehen."
+            }
+          ]
+        },
+        {
+          "id": "g5_balken_7",
+          "titel": "Rolle vorwärts – gehockt in den Handstand – Abbücken gestreckt",
+          "beschreibung": "Rolle vorwärts mit gestreckten Armen, gehockt in den Handstand aufsteigen und gestreckt abbücken.",
+          "punkte": 1.0,
+          "kriterien": ["Erreichen der Senkrechten im Handstand", "Gestreckte Arme während der Rolle", "Kontrolliertes Abbücken ohne Zwischenschritt"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_balken_7",
+              "name": "Rolle vorwärts mit gestreckten Armen am Boden",
+              "erklaerung": "Die Rolle mit gestreckten Armen auf einer Bodenlinie üben."
+            },
+            {
+              "id": "vu_g5_balken_7b",
+              "name": "Handstand-Abbücken auf dem niedrigen Balken",
+              "erklaerung": "Den Handstand und das Abbücken mit Sicherung auf dem niedrigen Balken üben."
+            }
+          ]
+        },
+        {
+          "id": "g5_balken_8",
+          "titel": "Prellen in den Handstand – Abrollen – Aufrichten",
+          "beschreibung": "Prellen gestreckt in den Handstand, Abrollen mit gestreckten Armen über den Nacken und gestrecktes Aufrichten.",
+          "punkte": 1.0,
+          "kriterien": ["Kein Zwischenstopp zwischen Prellen und Handstand", "Abrollen über den Nacken mit gestreckten Armen", "Gestrecktes Aufrichten ohne Nachgreifen"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_balken_8",
+              "name": "Handstand-Abrollen am Boden",
+              "erklaerung": "Aus dem Handstand über den Nacken abrollen und gestreckt aufstehen."
+            },
+            {
+              "id": "vu_g5_balken_8b",
+              "name": "Handstand-Abrollen auf dem niedrigen Balken",
+              "erklaerung": "Das Handstand-Abrollen mit Sicherung auf dem niedrigen Balken üben."
+            }
+          ]
+        },
+        {
+          "id": "g5_balken_9",
+          "titel": "Abgang: Rondat oder Handstützüberschlag seitwärts vom Balkenende",
+          "beschreibung": "Vom Balkenende Abgang als Rondat oder Handstützüberschlag seitwärts mit gestreckter Landung.",
+          "punkte": 1.0,
+          "schluessel": true,
+          "kriterien": ["Sauberer Handabdruck vom Balkenende", "Gestreckte Landung mit sicherem Stand", "Keine Balkenberührung bei der Landung"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_balken_9",
+              "name": "Rondat am Boden",
+              "erklaerung": "Den Rondat auf einer Bodenlinie mit Landung in der Standwaage üben."
+            },
+            {
+              "id": "vu_g5_balken_9b",
+              "name": "Abgang vom niedrigen Balken auf Mattenberg",
+              "erklaerung": "Den Abgang mit Sicherung und weicher Landung üben."
+            }
+          ]
+        },
+        {
+          "id": "g5_balken_10",
+          "titel": "Bonus – Salto rückwärts gehockt als Abgang",
+          "beschreibung": "Salto rückwärts gehockt als Abgang vom Balkenende.",
+          "punkte": 0.5,
+          "kriterien": ["Kompletter Salto mit kompakter Hockphase", "Kontrollierte Landung im Stand", "Sichere Ausführung am Balkenende"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_balken_10",
+              "name": "Salto rückwärts gehockt am Boden",
+              "erklaerung": "Den gehockten Salto rückwärts am Boden mit Sicherung üben."
+            },
+            {
+              "id": "vu_g5_balken_10b",
+              "name": "Salto rückwärts gehockt von der Bank",
+              "erklaerung": "Von einer niedrigen Bank in die Weichbodenmatte springen, erst mit Handhilfe."
             }
           ]
         }
@@ -151,195 +576,264 @@
     "anforderungen": [
       {
         "stufe": "LK4",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "ca. 13,10 - 13,60 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = (Summe der gewerteten Elemente × 2) + bis zu 2,50 Pkt. Kompositionsanforderungen + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "6 Elemente à NE/A ≈ 0,80 × 2 = 1,60 D-Wert + 2,00 KA + 10,00 E-Note = 13,60 Pkt."
+        },
+        "regeln": {
+          "max_elemente": "5 bis 7 Elemente",
+          "abgang_min_wertigkeit": "NE (0,05 P.)",
+          "besonderheiten": [
+            "Die fünf Kompositionsanforderungen ergeben zusammen maximal 2,50 Punkte Kompositionswert.",
+            "Abgang mindestens NE (0,05 P.)."
+          ]
+        },
+        "anforderungen": [
+          {"ka": "KA1", "punkte": 0.5, "kriterium": "Tänzerische Passage mit mindestens 120 Grad Spreizung im Sprung."},
+          {"ka": "KA2", "punkte": 0.5, "kriterium": "Akro- oder gemischte Verbindung aus zwei Elementen."},
+          {"ka": "KA3", "punkte": 0.5, "kriterium": "Akrobatik ohne Flugphase mit stabiler Landung."},
+          {"ka": "KA4", "punkte": 0.5, "kriterium": "Akrobatik mit Flugphase (Flick-Flack) oder Salto-Schraube."},
+          {"ka": "KA5", "punkte": 0.5, "kriterium": "Abgangswert mindestens NE (0,05 P.)."}
+        ],
         "max_elemente": "5 bis 7 Elemente",
         "schwierigkeit_info": "Mind. A-Teile (0,10 Pkt.), max. 2 B-Teile erlaubt",
         "pflicht_kriterien": [
-          "1 gymnastischer Sprung (mind. 120° Spreizwinkel)",
+          "1 gymnastische Verbindung aus 2 Sprüngen (mind. ein 120°-Sprung)",
+          "1 akrobatische Verbindung aus 2 Elementen",
           "1 halbe Drehung (180°) auf einem Bein",
-          "1 akrobatisches Element (z. B. Rolle vorwärts oder Handstand-Ansatz)",
-          "Abgang (mind. A-Teil, z. B. Strecksprung mit 1/2 Drehung)"
+          "Akrobatik vorwärts UND rückwärts/seitwärts"
         ]
       },
       {
         "stufe": "LK3",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "ca. 13,90 - 14,50 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = (Summe der gewerteten Elemente × 2) + bis zu 2,50 Pkt. Kompositionsanforderungen + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "5× A-Teil + 2× B-Teil = 0,90 × 2 = 1,80 D-Wert + 2,50 KA + 10,00 E-Note = 14,30 Pkt."
+        },
+        "regeln": {
+          "max_elemente": "6 bis 7 Elemente",
+          "abgang_min_wertigkeit": "A-Teil (0,10 P.)",
+          "besonderheiten": [
+            "A- und B-Teile, max. 1 C-Teil erlaubt.",
+            "Abgang mindestens A-Teil (0,10 P.)."
+          ]
+        },
+        "anforderungen": [
+          {"ka": "KA1", "punkte": 0.5, "kriterium": "Tänzerische Passage mit mindestens 150 Grad Spreizung im Sprung."},
+          {"ka": "KA2", "punkte": 0.5, "kriterium": "Akro- oder gemischte Verbindung mit Serie und mindestens einem Flugphasen-Element."},
+          {"ka": "KA3", "punkte": 0.5, "kriterium": "Akrobatik ohne Flugphase mit stabiler Landung."},
+          {"ka": "KA4", "punkte": 0.5, "kriterium": "Akrobatik mit Flugphase (Flick-Flack) oder Salto-Schraube."},
+          {"ka": "KA5", "punkte": 0.5, "kriterium": "Abgangswert mindestens A-Teil (0,10 P.)."}
+        ],
         "max_elemente": "6 bis 7 Elemente",
         "schwierigkeit_info": "A- und B-Teile (B = 0,20 Pkt.), max. 1 C-Teil erlaubt",
         "pflicht_kriterien": [
-          "1 gymnastische Verbindung aus 2 Sprüngen (einer davon mind. 150°)",
+          "1 gymnastische Verbindung aus 2 Sprüngen (mind. ein 150°-Spagatsprung)",
+          "1 akrobatische Serie mit mind. 1 Flugphasen-Element",
           "1 volle Drehung (360°) auf einem Bein",
-          "1 akrobatisches Element (mind. A-Teil, z. B. Rad oder Handstand)",
-          "Abgang (mind. A-Teil, z. B. Radwende oder Salto vorwärts gehockt)"
+          "Akrobatik vorwärts UND rückwärts"
         ]
       },
       {
         "stufe": "LK2",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "ca. 14,50 - 15,30 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = (Summe der gewerteten Elemente × 2) + bis zu 2,50 Pkt. Kompositionsanforderungen + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "4× A-Teil + 3× B-Teil = 1,00 × 2 = 2,00 D-Wert + 2,50 KA + 10,00 E-Note = 14,50 Pkt."
+        },
+        "regeln": {
+          "max_elemente": "7 bis 8 Elemente",
+          "abgang_min_wertigkeit": "A-Teil (0,10 P.)",
+          "besonderheiten": [
+            "A-, B- und C-Teile (C = 0,30 Pkt.), mind. 2 B-Teile.",
+            "Abgang mindestens A-Teil (0,10 P.)."
+          ]
+        },
+        "anforderungen": [
+          {"ka": "KA1", "punkte": 0.5, "kriterium": "Tänzerische Passage mit mindestens 180 Grad Spreizung im Sprung."},
+          {"ka": "KA2", "punkte": 0.5, "kriterium": "Akro- oder gemischte Verbindung mit Salto."},
+          {"ka": "KA3", "punkte": 0.5, "kriterium": "Akrobatik mit Salto (Salto vorwärts gehockt) mit stabiler Landung."},
+          {"ka": "KA4", "punkte": 0.5, "kriterium": "Akrobatik mit Flugphase oder Salto-Schraube."},
+          {"ka": "KA5", "punkte": 0.5, "kriterium": "Abgangswert mindestens A-Teil (0,10 P.)."}
+        ],
         "max_elemente": "7 bis 8 Elemente",
         "schwierigkeit_info": "A-, B- und C-Teile (C = 0,30 Pkt.), mind. 2 B-Teile",
         "pflicht_kriterien": [
-          "1 gymnastische Verbindung aus 2 Sprüngen (mind. ein 180°-Spagatsprung)",
-          "1 volle Drehung (360°) auf einem Bein",
-          "1 akrobatische Serie oder 1 Element mit Flugphase (z. B. Bogengang/Flick-Flack)",
-          "Abgang (mind. B-Teil, z. B. Salto rückwärts gestreckt oder Vorwärtssalto)"
+          "1 gymnastische Serie mit mind. einem 180°-Spagatsprung",
+          "1 akrobatische Serie mit Salto",
+          "1 weitere akrobatische Linie (vorwärts oder rückwärts)",
+          "1 volle Drehung (360°) auf einem Bein"
         ]
       },
       {
         "stufe": "LK1",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "ca. 15,20 - 16,50 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = (Summe der gewerteten Elemente × 2) + bis zu 2,50 Pkt. Kompositionsanforderungen + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "3× A + 4× B + 1× C = 1,40 × 2 = 2,80 D-Wert + 2,50 KA + 10,00 E-Note = 15,30 Pkt."
+        },
+        "regeln": {
+          "max_elemente": "8 Elemente",
+          "abgang_min_wertigkeit": "B-Teil (0,20 P.)",
+          "besonderheiten": [
+            "B-, C- und D-Teile (D = 0,40 Pkt.), mind. 1 C-Teil.",
+            "Abgang mindestens B-Teil (0,20 P.)."
+          ]
+        },
+        "anforderungen": [
+          {"ka": "KA1", "punkte": 0.5, "kriterium": "Tänzerische Passage mit mindestens 180 Grad Spreizung im Sprung."},
+          {"ka": "KA2", "punkte": 0.5, "kriterium": "Akro- oder gemischte Verbindung mit Salto."},
+          {"ka": "KA3", "punkte": 0.5, "kriterium": "Akrobatik mit Salto (Salto vorwärts gehockt) mit stabiler Landung."},
+          {"ka": "KA4", "punkte": 0.5, "kriterium": "Akrobatik mit Flugphase oder Salto-Schraube."},
+          {"ka": "KA5", "punkte": 0.5, "kriterium": "Abgangswert mindestens B-Teil (0,20 P.)."}
+        ],
         "max_elemente": "8 Elemente",
         "schwierigkeit_info": "B-, C- und D-Teile (D = 0,40 Pkt.), mind. 1 C-Teil",
         "pflicht_kriterien": [
-          "1 gymnastische Verbindung mit 180°-Sprung",
-          "1 volle Drehung (360°) auf einem Bein",
-          "1 akrobatische Serie mit mind. 2 Elementen (eines mit Flugphase)",
-          "Akrobatische Elemente vorwärts UND rückwärts/seitwärts",
-          "Abgang (mind. B-Teil oder C-Teil)"
+          "1 gymnastische Serie mit 180°-Spagatsprung",
+          "2 akrobatische Serien mit Salti",
+          "1 Salto vorwärts UND 1 Salto rückwärts",
+          "1 volle Drehung (360°) auf einem Bein"
         ]
       }
     ],
     "elemente": [
       {
-        "id": "lk_balken_spagatsprung",
-        "titel": "Spagatsprung (150° / 180°)",
+        "id": "lk_balken_strecksprung_120",
+        "titel": "Strecksprung 120°",
         "wertigkeit": "A",
         "punkte": 0.1,
         "kategorie": "Gymnastischer Sprung",
         "ab_stufe": "LK4",
-        "erklaerung": "Aus einem Wechselschritt kraftvoll abspringen und die Beine gestreckt in den Spagat spreizen.",
+        "erklaerung": "Beidbeiniger Absprung auf dem Balken, voller Streckung in der Flugphase, 120-Grad-Spreizung.",
+        "kriterien": ["Mindestens 120 Grad Spreizwinkel", "Gestreckte Beine und Fußspitzen", "Sichere Landung auf dem Balken"],
         "voruebungen": [
-          {
-            "id": "vu_lk_balken_spagat",
-            "name": "Spagatsprung auf der Bodenlinie",
-            "erklaerung": "Sprunghöhe und volle Kniestreckung auf einer aufgeklebten Linie am Boden perfektionieren."
-          }
+          {"id": "vu_lk_balken_streck120", "name": "Strecksprung auf dem Bodenbalken", "erklaerung": "Auf einem niedrigen Übungsbalken springen."},
+          {"id": "vu_lk_balken_streck120_b", "name": "Strecksprung mit Landung einfrieren", "erklaerung": "Die Landeposition einfrieren und 2 Sekunden halten."}
         ]
       },
       {
-        "id": "lk_balken_handstand",
-        "titel": "Handstand (2 Sekunden gehalten) oder Handstandabrollen",
+        "id": "lk_balken_rolle_vorw",
+        "titel": "Rolle vorwärts auf dem Balken",
         "wertigkeit": "A",
         "punkte": 0.1,
-        "kategorie": "Akrobatik",
+        "kategorie": "Akrobatik langsam",
         "ab_stufe": "LK4",
-        "erklaerung": "Hände greifen seitlich um den Balken, Beine bis in die Senkrechte schließen, Schultern stabil halten.",
+        "schluessel": true,
+        "erklaerung": "Hände greifen seitlich um den Balken, rund über den Rücken in den Sitz rollen.",
+        "kriterien": ["Daumen oben, Finger greifen seitlich", "Runder Rücken ohne Seitwärtskippen", "Flüssige Bewegung ohne Zwischenstopp"],
         "voruebungen": [
-          {
-            "id": "vu_lk_balken_hs",
-            "name": "Handstand auf dem Bodenbalken",
-            "erklaerung": "Griffposition und Ausbalancieren über die Finger auf niedriger Höhe üben."
-          }
+          {"id": "vu_lk_balken_rolle", "name": "Rolle vorwärts auf der Turnbank", "erklaerung": "Seitliches Umfassen der Kanten auf der Turnbank automatisieren."},
+          {"id": "vu_lk_balken_rolle_b", "name": "Seitlich umfassen am Bodenbalken", "erklaerung": "Auf dem niedrigen Übungsbalken die Hände seitlich um den Balken legen."}
         ]
       },
       {
-        "id": "lk_balken_360_drehung",
-        "titel": "1/1 Drehung (360°) im Passé",
+        "id": "lk_balken_drehung_180",
+        "titel": "1/2 Drehung (180°) auf einem Bein",
         "wertigkeit": "A",
         "punkte": 0.1,
         "kategorie": "Drehung",
-        "ab_stufe": "LK3",
-        "erklaerung": "Auf einem Fußballen eine vollständige 360°-Drehung ausführen, ohne die Ferse abzusetzen.",
+        "ab_stufe": "LK4",
+        "schluessel": true,
+        "erklaerung": "Auf einem Fußballen eine 180-Grad-Drehung ausführen.",
+        "kriterien": ["Volle 180 Grad Drehung auf einem Bein", "Hoher Ballenstand ohne Fersenabsetzen", "Ruhige Drehung"],
         "voruebungen": [
-          {
-            "id": "vu_lk_balken_360",
-            "name": "360°-Drehung auf dem Bodenbalken",
-            "erklaerung": "Mit schnellem Kopfdrehen (Spotting) auf einem niedrigen Balken trainieren."
-          }
+          {"id": "vu_lk_balken_dreh180", "name": "Drehung auf der umgedrehten Turnbank", "erklaerung": "Auf der schmalen Leiste der Turnbank 1/2 Drehungen üben."},
+          {"id": "vu_lk_balken_dreh180_b", "name": "Ballendrehungen an der Bodenlinie", "erklaerung": "Auf einer Bodenlinie kontrolliert um 180 Grad drehen."}
         ]
       },
       {
-        "id": "lk_balken_rad",
-        "titel": "Rad (Handstandüberschlag seitwärts)",
-        "wertigkeit": "A",
-        "punkte": 0.1,
-        "kategorie": "Akrobatik",
+        "id": "lk_balken_spagatsprung_150",
+        "titel": "Spagatsprung 150°",
+        "wertigkeit": "B",
+        "punkte": 0.2,
+        "kategorie": "Gymnastischer Sprung",
         "ab_stufe": "LK3",
-"erklaerung": "Hände nacheinander auf den Balken setzen, über den senkrechten Handstand schwingen und in den Seit- oder Querstand landen.",
-"voruebungen": [
-{
-"id": "vu_lk_balken_rad",
-"name": "Rad auf dem niedrigen Balken mit Matten-Umrandung",
-"erklaerung": "Niedrigen Balken links und rechts mit Matten auslegen, um Angst vor dem Abrutschen abzubauen."
-}
-]
-},
-{
-"id": "lk_balken_scherensprung",
-"titel": "Scherensprung / Wechselsprung (150°–180°)",
-"wertigkeit": "B",
-"punkte": 0.2,
-"kategorie": "Gymnastischer Sprung",
-"ab_stufe": "LK3",
-"erklaerung": "Im Sprung Beine nach vorne wechseln und in den vollen Spagat spreizen, weich auf dem Balken landen.",
-"voruebungen": [
-{
-"id": "vu_lk_balken_schere",
-"name": "Wechselsprung auf dem Bodenbalken",
-"erklaerung": "Saubere Landung mit hintereinander gesetzten Füßen auf der schmalen Fläche trainieren."
-}
-]
-},
-{
-"id": "lk_balken_bogengang",
-"titel": "Bogengang rückwärts (Walkover)",
-"wertigkeit": "B",
-"punkte": 0.2,
-"kategorie": "Akrobatik",
-"ab_stufe": "LK2",
-"erklaerung": "Aus dem Stand rückwärts in die Brücke abbiegen, Hände auf den Balken setzen und mit gespreizten Beinen durchziehen.",
-"voruebungen": [
-{
-"id": "vu_lk_balken_bogen",
-"name": "Bogengang rückwärts auf einer Bodenlinie",
-"erklaerung": "Hände exakt auf eine 10 cm breite Linie setzen und die Beine gestreckt nachziehen."
-}
-]
-},
-{
-"id": "lk_balken_flickflack",
-"titel": "Flick-Flack (Handstandüberschlag rückwärts)",
-"wertigkeit": "B",
-"punkte": 0.2,
-"kategorie": "Akrobatik mit Flugphase",
-"ab_stufe": "LK2",
-"erklaerung": "Rückwärts auf den Balken springen, Hände greifen seitlich um die Kanten und drücken kraftvoll in den Stand ab.",
-"voruebungen": [
-{
-"id": "vu_lk_balken_ff",
-"name": "Flick-Flack auf dem gepolsterten Bodenbalken",
-"erklaerung": "Mit Balkenpolster (Beam Pad) auf dem niedrigen Balken Sicherheit gewinnen."
-}
-]
-},
-{
-"id": "lk_balken_salto_abgang",
-"titel": "Abgang: Salto rückwärts gehockt oder gestreckt",
-"wertigkeit": "B",
-"punkte": 0.2,
-"kategorie": "Abgang",
-"ab_stufe": "LK2",
-"erklaerung": "Vom Balkenende kraftvoll nach oben-hinten abspringen, Salto drehen und sicher auf der Matte landen.",
-"voruebungen": [
-{
-"id": "vu_lk_balken_salto",
-"name": "Salto rückwärts vom Kasten auf Weichboden",
-"erklaerung": "Absprung ohne Vorwärts-Kippen vom stabilen Kasten trainieren."
-}
-]
-},
-{
-"id": "lk_balken_menichelli",
-"titel": "Freies Rad (Aerial) oder Salto vorwärts auf dem Balken",
-"wertigkeit": "D",
-"punkte": 0.4,
-"kategorie": "Akrobatik mit Flugphase",
-"ab_stufe": "LK1",
-"erklaerung": "Ohne Handstütz über den Balken in den sicheren Stand turnen.",
-"voruebungen": [
-{
-"id": "vu_lk_balken_aerial",
-"name": "Freies Rad auf einer Bodenlinie / Bodenbalken",
-"erklaerung": "Exakte Spurhaltung beim Absprung und der Landung auf einer 10-cm-Linie."
-}
-]
-}
-]
-}
+        "schluessel": true,
+        "erklaerung": "Kraftvoller Absprung, volle 150-Grad-Beinspreizung in der Flugphase.",
+        "kriterien": ["Mindestens 150 Grad Beinspreizung", "Gestreckte Knie und Fußspitzen", "Kontrollierte Landung auf dem Balken"],
+        "voruebungen": [
+          {"id": "vu_lk_balken_spagat150", "name": "Spagatsprung aus dem Chassé", "erklaerung": "Den Anlauf mit dem Sprung verbinden."},
+          {"id": "vu_lk_balken_spagat150_b", "name": "Spagat auf dem Bodenbalken", "erklaerung": "Auf einem niedrigen Übungsbalken den Spagatsprung üben."}
+        ]
+      },
+      {
+        "id": "lk_balken_flickflack",
+        "titel": "Flick-Flack (Handstandüberschlag rückwärts)",
+        "wertigkeit": "B",
+        "punkte": 0.2,
+        "kategorie": "Akrobatik rückwärts",
+        "ab_stufe": "LK3",
+        "schluessel": true,
+        "erklaerung": "Rückwärts in den flüchtigen Handstand springen und kraftvoll in den Stand abdrücken.",
+        "kriterien": ["Schulter explosiv nach hinten abdrücken", "Beine gestreckt im Handstand", "Kontrollierte Landung auf dem Balken"],
+        "voruebungen": [
+          {"id": "vu_lk_balken_ff", "name": "Flick-Flack über die Flick-Flack-Rolle", "erklaerung": "Rückwärts-Absprung und Schulteröffnung trainieren."},
+          {"id": "vu_lk_balken_ff_b", "name": "Flick-Flack vom Ausfallschritt", "erklaerung": "Rückwärts-Absprung mit gerader Fluglinie üben."}
+        ]
+      },
+      {
+        "id": "lk_balken_salto_vw_gehockt",
+        "titel": "Salto vorwärts gehockt",
+        "wertigkeit": "B",
+        "punkte": 0.2,
+        "kategorie": "Akrobatik vorwärts",
+        "ab_stufe": "LK2",
+        "schluessel": true,
+        "erklaerung": "Aus dem Anlauf beidbeinig abspringen, kompakter Salto vorwärts in der Hocke.",
+        "kriterien": ["Komakter Absprung beidbeinig", "Knie fest angehockt", "Kontrollierte Landung auf dem Balken"],
+        "voruebungen": [
+          {"id": "vu_lk_balken_salto_vw", "name": "Salto vorwärts vom Sprungbrett auf Weichboden", "erklaerung": "Mit Brett-Unterstützung Höhe und Landekontrolle aufbauen."},
+          {"id": "vu_lk_balken_salto_vw_b", "name": "Salto vorwärts aus dem Stand", "erklaerung": "Ohne Brett-Unterstützung aus dem Stand üben."}
+        ]
+      },
+      {
+        "id": "lk_balken_salto_rw_gehockt",
+        "titel": "Salto rückwärts gehockt",
+        "wertigkeit": "C",
+        "punkte": 0.3,
+        "kategorie": "Akrobatik rückwärts",
+        "ab_stufe": "LK2",
+        "schluessel": true,
+        "erklaerung": "Nach Radwende oder Flick-Flack hoch abspringen, einmal rückwärts drehen und sicher landen.",
+        "kriterien": ["Knie zur richtigen Phase zur Brust gezogen", "Einmaliger Salto ohne Nachfassen", "Kontrollierte Landung auf dem Balken"],
+        "voruebungen": [
+          {"id": "vu_lk_balken_salto_rw", "name": "Salto rückwärts vom Trampolin auf Weichboden", "erklaerung": "Aufrechten Absprung nach oben und schnelles Anhocken üben."},
+          {"id": "vu_lk_balken_salto_rw_b", "name": "Salto rückwärts aus dem Stand", "erklaerung": "Ohne Trampolin-Unterstützung aus dem Stand üben."}
+        ]
+      },
+      {
+        "id": "lk_balken_drehung_360",
+        "titel": "1/1 Drehung (360°) im Passé",
+        "wertigkeit": "B",
+        "punkte": 0.2,
+        "kategorie": "Drehung",
+        "ab_stufe": "LK1",
+        "schluessel": true,
+        "erklaerung": "Auf einem Fußballen eine volle 360-Grad-Drehung im Passé ausführen.",
+        "kriterien": ["Volle 360 Grad Drehung auf einem Bein", "Passé-Position stabil", "Hoher Ballenstand, Ferse bleibt oben", "Ruhige Drehung"],
+        "voruebungen": [
+          {"id": "vu_lk_balken_dreh360", "name": "Passé-Stand halten (5 Sekunden)", "erklaerung": "Auf dem Balken im hohen Ballenstand balancieren."},
+          {"id": "vu_lk_balken_dreh360_b", "name": "3/4 Drehung im Passé mit Stopp", "erklaerung": "Kontrollierte Teil-Drehung im Passé üben."}
+        ]
+      },
+      {
+        "id": "lk_balken_salto_vw_gestreckt",
+        "titel": "Salto vorwärts gestreckt",
+        "wertigkeit": "C",
+        "punkte": 0.3,
+        "kategorie": "Akrobatik vorwärts",
+        "ab_stufe": "LK1",
+        "schluessel": true,
+        "erklaerung": "Aus dem Anlauf kompakter Salto vorwärts in gestreckter Haltung.",
+        "kriterien": ["Komakter Absprung beidbeinig", "Gestreckte Haltung in der Flugphase", "Kontrollierte Landung auf dem Balken"],
+        "voruebungen": [
+          {"id": "vu_lk_balken_sv_str", "name": "Salto vorwärts gestreckt auf Weichboden", "erklaerung": "Mit Sicherung in die Matte springen."},
+          {"id": "vu_lk_balken_sv_str_b", "name": "Salto vorwärts aus dem Stand", "erklaerung": "Ohne Anlauf aus dem Stand üben."}
+        ]
+      }
+    ]
+  }
 }

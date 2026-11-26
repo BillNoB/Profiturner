@@ -1,0 +1,402 @@
+﻿{
+  "geraet": "Sprung",
+  "id": "sprung",
+  "g_stufen": [
+    {
+      "stufe": "G1",
+      "d_note": 3.0,
+      "e_note": 10.0,
+      "bonus_max": 0,
+      "ausgangswert": 13.0,
+      "beschreibung": "Grundstufe 1 â€“ Anlauf, Absprung vom Sprungbrett und Aufhocken",
+      "schwierigkeitsgrad": 1,
+      "elemente": [
+        {
+          "id": "g1_sprung_1",
+          "titel": "Aufhocken auf den Mattenberg / Kasten",
+          "beschreibung": "ZÃ¼giger Anlauf, beidbeiniger Absprung vom Brett, HÃ¤nde stÃ¼tzen auf und FÃ¼ÃŸe hocken dazwischen.",
+          "punkte": 3.0,
+          "kriterien": ["Beidbeiniger Absprung", "Blick nach vorne gerichtet", "Knie werden aktiv zur Brust gezogen", "Sichere Landung im Stand"],
+          "voruebungen": [
+            {
+              "id": "vu_g1_sprung_1",
+              "name": "Strecksprung vom Reutherbrett",
+              "erklaerung": "Aus kurzem Anlauf beidbeinig auf das Brett springen und hoch auf die Weichbodenmatte landen."
+            },
+            {
+              "id": "vu_g1_sprung_1b",
+              "name": "Kniehochziehen aus dem Streksprung",
+              "erklaerung": "Aus dem Streksprung die Knie ohne HÃ¤nde aktiv zur Brust ziehen und auf den Beinen bleiben."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stufe": "G2",
+      "d_note": 4.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 14.0,
+      "beschreibung": "Grundstufe 2 â€“ SprunggrÃ¤tsche oder Hockwende",
+      "schwierigkeitsgrad": 2,
+      "elemente": [
+        {
+          "id": "g2_sprung_1",
+          "titel": "SprunggrÃ¤tsche Ã¼ber den Bock",
+          "beschreibung": "Kraftvoller Absprung, Beine gestreckt grÃ¤tschen und Ã¼ber das GerÃ¤t in den sicheren Stand turnen.",
+          "punkte": 4.0,
+          "kriterien": ["Gestreckte Knie in der Flugphase", "Schneller Abdruck der HÃ¤nde", "Hohe GrÃ¤tschung â€“ Beine bleiben weit geÃ¶ffnet", "Aufrechte Landung im Stand ohne Wackler"],
+          "voruebungen": [
+            {
+              "id": "vu_g2_sprung_1",
+              "name": "GrÃ¤tsch-Ãœbung am Boden",
+              "erklaerung": "Aus dem LiegestÃ¼tz mit den FÃ¼ÃŸen vorwÃ¤rts in die GrÃ¤tsche neben die HÃ¤nde springen."
+            },
+            {
+              "id": "vu_g2_sprung_1b",
+              "name": "SprunggrÃ¤tsche Ã¼ber den niedrigen Bock",
+              "erklaerung": "Mit kurzem Anlauf erst Ã¼ber den quer gestellten, niedrigen Bock â€“ dann mit vollem Anlauf wiederholen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stufe": "G3",
+      "d_note": 5.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 15.0,
+      "beschreibung": "Grundstufe 3 â€“ Sprunghocke Ã¼ber den quer gestellten Kasten",
+      "schwierigkeitsgrad": 3,
+      "elemente": [
+        {
+          "id": "g3_sprung_1",
+          "titel": "Sprunghocke Ã¼ber den Kasten (quer)",
+          "beschreibung": "Beidbeiniger Absprung, HÃ¼fte hochheben, Knie schnell zur Brust ziehen und Ã¼ber den Kasten in den Stand landen.",
+          "punkte": 5.0,
+          "kriterien": ["HÃ¼fte steigt Ã¼ber SchulterhÃ¶he", "Gestreckte Arme beim StÃ¼tz", "Anhocken erfolgt sofort nach Handkontakt", "Kontrollierte Landung im Stand"],
+          "voruebungen": [
+            {
+              "id": "vu_g3_sprung_1",
+              "name": "Aufhocken & sofortiger Strecksprung",
+              "erklaerung": "Ohne Pause auf den Kasten hocken und direkt mit einem Strecksprung abspringen."
+            },
+            {
+              "id": "vu_g3_sprung_1b",
+              "name": "Aufhocken Ã¼ber die Weichbodenmatte",
+              "erklaerung": "Aus dem Sprung die HÃ¤nde kurz auf die flache Matte setzen und sofort in den Hock drehen â€“ ohne Abdruck."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stufe": "G4",
+      "d_note": 6.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 16.0,
+      "beschreibung": "Grundstufe 4 â€“ Handstand-Abrollen auf den Mattenberg (Vorstufe Ãœberschlag)",
+      "schwierigkeitsgrad": 4,
+      "elemente": [
+        {
+          "id": "g4_sprung_1",
+          "titel": "Sprung in den Handstand & Abrollen (Mattenberg)",
+          "beschreibung": "Kraftvoller Absprung vom Brett, HÃ¤nde stÃ¼tzen auf dem Mattenberg (60â€“80 cm), in den Handstand schwingen und gestreckt auf die Matte hinter sich fallen.",
+          "punkte": 6.0,
+          "kriterien": ["Gestreckter KÃ¶rper beim Umfallen", "Blick auf die HÃ¤nde, Arme bleiben oben", "Deutliche Flugphase vor dem StÃ¼tz", "Sauberes Abrollen Ã¼ber die gesamte RÃ¼ckenflÃ¤che"],
+          "voruebungen": [
+            {
+              "id": "vu_g4_sprung_1",
+              "name": "Handstand-Umfallen aus dem Stand",
+              "erklaerung": "Vor dem Mattenberg in den Handstand schwingen und wie ein Brett auf die Matte hinter sich fallen."
+            },
+            {
+              "id": "vu_g4_sprung_1b",
+              "name": "Abrollen aus dem StÃ¼tz an der Wand",
+              "erklaerung": "Aus dem StÃ¼tz an der Wand kraftvoll abdrÃ¼cken und gestreckt auf die Matte hinter sich fallen â€“ ohne Absprung."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stufe": "G5",
+      "d_note": 7.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 17.0,
+      "beschreibung": "NTB-Pflichtprogramm 2026 â€“ Sprung; Anlauf mind. 15 m; Sprungbrett; Mattenblock 80 cm (Bonus: Mattenblock 90 cm)",
+      "schwierigkeitsgrad": 5,
+      "elemente": [
+        {
+          "id": "g5_sprung_1",
+          "titel": "HandstÃ¼tz-SprungÃ¼berschlag mit Abdruck und Landung im Stand mit Bogenspannung",
+          "beschreibung": "ZÃ¼giger Anlauf Ã¼ber mindestens 15 m, Absprung vom Brett, kurzer HandstÃ¼tz und aktiver Schulterabdruck in die gestreckte Flugphase, Landung im Stand mit Bogenspannung.",
+          "punkte": 7.0,
+          "kriterien": ["Beschleunigter Anlauf bis zum Sprungbrett", "Gestreckte Flugphase (HÃ¼ftwinkel max. 10Â° Abweichung)", "Aktiver Schulterabdruck", "Landung im Stand mit Bogenspannung (leichte, gespannte Ãœberstreckung mit offenem Arm-Rumpf-Winkel)"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_sprung_1",
+              "name": "Ãœberschlag mit Flugphase vom Sprungbrett",
+              "erklaerung": "Vom Brett in die Schultern springen, kurz gestreckt abdrÃ¼cken und auf die Matte hinter sich fallen â€“ ohne HandstÃ¼tz."
+            },
+            {
+              "id": "vu_g5_sprung_1b",
+              "name": "HandstandÃ¼berschlag Ã¼ber den Mattenberg",
+              "erklaerung": "Mit vollem Anlauf in den Handstand auf dem 80-cm-Mattenberg schwingen, aktiv abdrÃ¼cken und gestreckt landen."
+            }
+          ]
+        },
+        {
+          "id": "g5_sprung_2",
+          "titel": "Bonus â€“ Salto vorwÃ¤rts gehockt",
+          "beschreibung": "Dritter Sprung auf den 90-cm-Mattenblock: dynamischer Absprung vom Brett, kompakter Salto vorwÃ¤rts in der Hocke und kontrollierte Landung.",
+          "punkte": 1.0,
+          "kriterien": ["Dynamischer Absprung vom Sprungbrett", "Deutliche Hockphase", "Rechtzeitiges Ã–ffnen zur kontrollierten Landung"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_sprung_2",
+              "name": "Salto vorwÃ¤rts gehockt in die Schnitzelgrube",
+              "erklaerung": "Aus dem Stand oder mit kurzem Anlauf den Salto gehockt in die Grube trainieren â€“ Fokus auf kompakter Hockphase."
+            },
+            {
+              "id": "vu_g5_sprung_2b",
+              "name": "Salto vorwÃ¤rts gehockt vom Reutherbrett",
+              "erklaerung": "Vom Brett in den Salto gehockt auf die 80-cm-Matte â€“ erst mit Trainerhilfe, dann frei."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lk_bereich": {
+    "anforderungen": [
+      {
+        "stufe": "LK4",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "11,60 - 12,00 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = Sprung-D-Note (laut Tabelle) + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "z. B. Hocke/GrÃ¤tsche/Ãœberschlag: D-Note 1,60 - 2,00 + 10,00 E-Note = 11,60 - 12,00 Pkt."
+        },
+        "max_elemente": "1 Sprung (2 Versuche mÃ¶glich, besserer zÃ¤hlt)",
+        "schwierigkeit_info": "Sprungtisch (1,10 m â€“ 1,25 m) oder Mattenberg",
+        "pflicht_kriterien": [
+          "Sprunghocke oder SprunggrÃ¤tsche Ã¼ber den Sprungtisch (Ausgangswert ca. 11,60â€“12,00)",
+          "Alternativ: HandstandÃ¼berschlag auf den Mattenberg"
+        ]
+      },
+      {
+        "stufe": "LK3",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "12,00 - 12,40 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = Sprung-D-Note (laut Tabelle) + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "z. B. Ãœberschlag / 1/2 Drehung: D-Note 2,00 - 2,40 + 10,00 E-Note = 12,00 - 12,40 Pkt."
+        },
+        "max_elemente": "1 Sprung (2 Versuche mÃ¶glich)",
+        "schwierigkeit_info": "Sprungtisch (1,25 m)",
+        "pflicht_kriterien": [
+          "HandstandÃ¼berschlag vorwÃ¤rts Ã¼ber den Sprungtisch (Ausgangswert 12,40 Pkt.)",
+          "Alternativ: Yamashita (gebÃ¼ckter Ãœberschlag) oder Ãœberschlag mit 1/2 Drehung"
+        ]
+      },
+      {
+        "stufe": "LK2",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "12,40 - 13,20 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = Sprung-D-Note (laut Tabelle) + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "z. B. Yamashita / Tsukahara gehockt: D-Note 2,40 - 3,20 + 10,00 E-Note = 12,40 - 13,20 Pkt."
+        },
+        "max_elemente": "1 Sprung (2 Versuche mÃ¶glich)",
+        "schwierigkeit_info": "Sprungtisch (1,25 m)",
+        "pflicht_kriterien": [
+          "HandstandÃ¼berschlag vorwÃ¤rts (12,40 Pkt.) oder mit 1/2 / 1/1 Drehung (bis 13,20 Pkt.)",
+          "Alternativ: Tsukahara gehockt oder gebÃ¼ckt"
+        ]
+      },
+      {
+        "stufe": "LK1",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "12,80 - 13,40 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = Sprung-D-Note (laut Tabelle) + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "z. B. Ãœberschlag 1/1 / Tsukahara gebÃ¼ckt: D-Note 2,80 - 3,40 + 10,00 E-Note = 12,80 - 13,40 Pkt."
+        },
+        "max_elemente": "1 Sprung (2 Versuche mÃ¶glich)",
+        "schwierigkeit_info": "Sprungtisch (1,25 m)",
+        "pflicht_kriterien": [
+          "HandstandÃ¼berschlag mit 1/1 Drehung (13,20 Pkt.) oder 1,5 Drehungen",
+          "Tsukahara gehockt/gebÃ¼ckt/gestreckt oder Yurchenko"
+        ]
+      }
+    ],
+    "d_noten_tabelle": [
+      {
+        "stufe": "LK4",
+        "element": "Sprunghocke ueber den Sprungtisch / Graetsche ueber den Sprungtisch (nur LK4)",
+        "d_noten": "1,60 / 1,80 P."
+      },
+      {
+        "stufe": "LK4",
+        "element": "Handstuhlueberschlag",
+        "d_noten": "2,00 P."
+      },
+      {
+        "stufe": "LK3",
+        "element": "Handstuhlueberschlag mit 1/2 Drehung / Yamashita",
+        "d_noten": "2,40 P."
+      },
+      {
+        "stufe": "LK2",
+        "element": "Handstuhlueberschlag mit 1/1 Drehung",
+        "d_noten": "2,80 P."
+      },
+      {
+        "stufe": "LK2",
+        "element": "Tsukahara gehockt",
+        "d_noten": "3,20 P."
+      },
+      {
+        "stufe": "LK1",
+        "element": "Tsukahara gebueckt",
+        "d_noten": "3,40 P."
+      }
+    ],
+    "hinweis": "Fuer den Sprung wird 1 Sprung gewertet und bei 2 Spruengen ist der bessere entscheidend.",
+    "elemente": [
+      {
+        "id": "lk_sprung_hocke",
+        "titel": "Sprunghocke Ã¼ber den Sprungtisch",
+        "wertigkeit": "LK4",
+        "punkte": 1.6,
+        "kategorie": "StÃ¼tzsprung",
+        "ab_stufe": "LK4",
+        "erklaerung": "Kraftvoller Anlauf, Absprung vom Reutherbrett, kurzer HandstÃ¼tz auf dem Sprungtisch und Anhocken der Beine.",
+        "kriterien": ["Kraftvoller Anlauf bis zum Sprungbrett", "Schneller Absprung vom Reutherbrett", "Kompaktes Anhocken der Beine", "Sichere Landung im Stand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_sprung_hocke",
+            "name": "Sprunghocke Ã¼ber den quer gestellten Kasten",
+            "erklaerung": "Schnelles Anfersen und sofortige KÃ¶rperstreckung vor der Landung Ã¼ben."
+          },
+          {
+            "id": "vu_lk_sprung_hocke_b",
+            "name": "Sprunghocke auf dem niedrigen Kasten",
+            "erklaerung": "Die Sprunghocke mit kurzem Anlauf auf dem niedrigen Kasten Ã¼ben."
+          }
+        ]
+      },
+      {
+        "id": "lk_sprung_graetsche",
+        "titel": "SprunggrÃ¤tsche Ã¼ber den Sprungtisch",
+        "wertigkeit": "LK4",
+        "punkte": 1.6,
+        "kategorie": "StÃ¼tzsprung",
+        "ab_stufe": "LK4",
+        "erklaerung": "Kraftvoller Absprung vom Brett, HandstÃ¼tz auf dem Sprungtisch und gestrecktes GrÃ¤tschen der Beine.",
+        "kriterien": ["Gestreckte Beine in der Flugphase", "Schneller Armabdruck", "Hohe GrÃ¤tschung", "Aufrechte Landung im Stand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_sprung_graetsche",
+            "name": "SprunggrÃ¤tsche Ã¼ber den hochgestellten Bock",
+            "erklaerung": "Schnellen Armabdruck und aufrechte Landung trainieren."
+          },
+          {
+            "id": "vu_lk_sprung_graetsche_b",
+            "name": "SprunggrÃ¤tsche auf dem niedrigen Kasten",
+            "erklaerung": "Die SprunggrÃ¤tsche mit kurzem Anlauf auf dem niedrigen Kasten Ã¼ben."
+          }
+        ]
+      },
+      {
+        "id": "lk_sprung_ueberschlag",
+        "titel": "HandstandÃ¼berschlag vorwÃ¤rts (Sprungtisch)",
+        "wertigkeit": "LK3",
+        "punkte": 2.4,
+        "kategorie": "Ãœberschlag",
+        "ab_stufe": "LK3",
+        "erklaerung": "Dynamischer Absprung, Flug in den Handstand auf dem Sprungtisch, explosiver Schulterabdruck und gestreckte Landung.",
+        "kriterien": ["Dynamischer Absprung vom Sprungbrett", "Gestreckte Flugphase (HÃ¼ftwinkel max. 10Â° Abweichung)", "Aktiver Schulterabdruck", "Gestreckte Landung im Stand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_sprung_ueberschlag",
+            "name": "Ãœberschlag Ã¼ber den Mattenberg mit Brett",
+            "erklaerung": "Flugphase vor dem StÃ¼tz (First Flight) und explosiven Abdruck aus den Schultern trainieren."
+          },
+          {
+            "id": "vu_lk_sprung_ueberschlag_b",
+            "name": "Ãœberschlag mit halber Drehung",
+            "erklaerung": "Den Ãœberschlag mit 1/2 Drehung auf Weichboden Ã¼ben."
+          }
+        ]
+      },
+      {
+        "id": "lk_sprung_yamashita",
+        "titel": "Yamashita (HandstandÃ¼berschlag gebÃ¼ckt)",
+        "wertigkeit": "LK3",
+        "punkte": 2.4,
+        "kategorie": "Ãœberschlag",
+        "ab_stufe": "LK3",
+        "erklaerung": "Nach dem Handstandabdruck in der zweiten Flugphase kurz in der HÃ¼fte abknicken und vor der Landung wieder strecken.",
+        "kriterien": ["Dynamischer Absprung vom Sprungbrett", "Kontrolle Ã¼ber die zweite Flugphase", "Aktives HÃ¼ftwinkeln und Ã–ffnen", "Gestreckte Landung im Stand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_sprung_yama",
+            "name": "Ãœberschlag mit aktivem HÃ¼ftwinkeln auf Weichboden",
+            "erklaerung": "Kontrolle Ã¼ber die zweite Flugphase durch gezieltes Anwinkeln und Ã–ffnen."
+          },
+          {
+            "id": "vu_lk_sprung_yama_b",
+            "name": "Yamashita mit Weichboden",
+            "erklaerung": "Den Yamashita mit Weichboden-UnterstÃ¼tzung Ã¼ben."
+          }
+        ]
+      },
+      {
+        "id": "lk_sprung_ueberschlag_drehung",
+        "titel": "HandstandÃ¼berschlag mit 1/1 Drehung in der 2. Flugphase",
+        "wertigkeit": "LK1",
+        "punkte": 3.2,
+        "kategorie": "Ãœberschlag mit Drehung",
+        "ab_stufe": "LK2",
+        "erklaerung": "Nach dem Abdruck vom Sprungtisch in gestreckter Haltung eine volle 360Â°-Drehung um die LÃ¤ngsachse ausfÃ¼hren.",
+        "kriterien": ["Volle 360Â°-Drehung um die LÃ¤ngsachse", "Gestreckte Haltung im Flug", "Sauberer Schulterabdruck", "Kontrollierte Landung im Stand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_sprung_drehung",
+            "name": "Ãœberschlag mit 1/2 Drehung auf Weichboden",
+            "erklaerung": "Zuerst die halbe Drehung nach dem Schulterabdruck sicher beherrschen."
+          },
+          {
+            "id": "vu_lk_sprung_drehung_b",
+            "name": "Ãœberschlag mit 1/1 Drehung auf Weichboden",
+            "erklaerung": "Die volle Drehung mit Weichboden-UnterstÃ¼tzung Ã¼ben."
+          }
+        ]
+      },
+      {
+        "id": "lk_sprung_tsukahara",
+        "titel": "Tsukahara gehockt oder gebÃ¼ckt",
+        "wertigkeit": "LK1",
+        "punkte": 3.5,
+        "kategorie": "Tsukahara",
+        "ab_stufe": "LK2",
+        "erklaerung": "Anlauf mit 1/4- oder 1/2-Drehung auf den Sprungtisch und Salto rÃ¼ckwÃ¤rts in der zweiten Flugphase.",
+        "kriterien": ["Dynamischer Absprung vom Sprungbrett", "Kompakte Hockphase", "Sichere Drehung in der zweiten Flugphase", "Kontrollierte Landung im Stand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_sprung_tsuka",
+            "name": "Tsukahara-Vorbereitung in die Schnitzelgrube / Mattenberg",
+            "erklaerung": "Radwende-Absprung aufs Brett und StÃ¼tzphase auf dem Sprungtisch isoliert Ã¼ben."
+          },
+          {
+            "id": "vu_lk_sprung_tsuka_b",
+            "name": "Tsukahara mit Weichboden",
+            "erklaerung": "Den Tsukahara mit Weichboden-UnterstÃ¼tzung Ã¼ben."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -386,3 +386,170 @@ body {
   border: 1px solid #22c55e;
   color: #166534;
 }
+
+/* LK Kompositions-Infokarte */
+.lk-info-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+
+.lk-info-card summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lk-info-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.lk-info-card summary h2 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin: 0;
+}
+
+.lk-info-card[open] summary {
+  margin-bottom: 10px;
+}
+
+.lk-info-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.lk-info-body h3 {
+  font-size: 1rem;
+  color: var(--text);
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+
+.lk-info-body ul {
+  margin: 4px 0 8px 20px;
+  padding: 0;
+}
+
+.lk-info-body .lk-regeln p {
+  margin: 2px 0;
+}
+
+.d-noten-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.d-noten-table th,
+.d-noten-table td {
+  border: 1px solid var(--border);
+  padding: 6px 8px;
+  text-align: left;
+}
+
+.d-noten-table th {
+  background: var(--surface-soft);
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* Punktzahl-Orientierung in der Kuer-Infokarte */
+.punkte-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin: 10px 0;
+}
+
+.punkte-box h3 {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.punkte-box p {
+  margin: 4px 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.punkte-box .punkte-formel {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 8px 10px;
+  color: var(--text);
+}
+
+.progress-info {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.progress-info h2 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+/* Einklappbare Vorstufen-Anzeige (Unterstufen dynamisch) */
+.vorstufen-section {
+  margin-top: 8px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+  overflow: hidden;
+}
+
+.vorstufen-details {
+  border: none;
+  padding: 0;
+}
+
+.vorstufen-details summary {
+  background: var(--surface);
+  padding: 12px 16px;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  list-style: none;
+}
+
+.vorstufen-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.vorstufen-body {
+  padding: 12px 16px 16px 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.vorstufen-body .card {
+  padding: 16px;
+  gap: 10px;
+}
+
+/* Badge: Trainings- & Aufbauelement (wahl_uebung) */
+.badge-wahl {
+  background: var(--accent-soft);
+  color: #166534;
+}
+
+/* Badge: Schlüsselelement (einheitlich für Pflicht und Kür) */
+.badge-key {
+  background: var(--primary-soft);
+  color: var(--primary);
+}

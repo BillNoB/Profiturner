@@ -4,21 +4,70 @@
   "g_stufen": [
     {
       "stufe": "G1",
-      "ausgangswert": 11.0,
+      "d_note": 3.0,
+      "e_note": 10.0,
+      "bonus_max": 0,
+      "ausgangswert": 13.0,
       "beschreibung": "Grundstufe 1 – Anlauf, Absprung vom Sprungbrett und Aufhocken",
       "schwierigkeitsgrad": 1,
       "elemente": [
         {
           "id": "g1_sprung_1",
-          "titel": "Aufhocken auf den Mattenberg / Kasten",
+          "titel": "Strecksprung aus 2–3 Schritten Anlauf auf 3 kl. Kästen, Sprungbrett, 30 cm Matte",
           "beschreibung": "Zügiger Anlauf, beidbeiniger Absprung vom Brett, Hände stützen auf und Füße hocken dazwischen.",
-          "punkte": 4.0,
-          "kriterien": ["Beidbeiniger Absprung", "Blick nach vorne gerichtet"],
+          "punkte": 3.0,
+          "kriterien": ["Beidbeiniger Absprung", "Blick nach vorne gerichtet", "Knie werden aktiv zur Brust gezogen", "Sichere Landung im Stand"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g1_sprung_1",
               "name": "Strecksprung vom Reutherbrett",
               "erklaerung": "Aus kurzem Anlauf beidbeinig auf das Brett springen und hoch auf die Weichbodenmatte landen."
+            },
+            {
+              "id": "vu_g1_sprung_1b",
+              "name": "Kniehochziehen aus dem Strecksprung",
+              "erklaerung": "Aus dem Strecksprung die Knie ohne Hände aktiv zur Brust ziehen und auf den Beinen bleiben."
+            }
+          ]
+        },
+        {
+          "id": "g1_sprung_w1",
+          "titel": "Anlauf und Absprung vorbereiten",
+          "beschreibung": "Aus 2–3 Schritten zügig anlaufen und beidbeinig vom Sprungbrett abspringen – Vorbereitung auf den Strecksprung in G1.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Zügiger Anlauf", "Beidbeiniger Absprung vom Brett", "Körper aufrecht im Flug"],
+          "voruebungen": [
+            {
+              "id": "vu_g1_sprung_w1",
+              "name": "Anlauf üben",
+              "erklaerung": "Aus 2–3 Schritten zügig anlaufen und auf einer Linie landen."
+            },
+            {
+              "id": "vu_g1_sprung_w1b",
+              "name": "Absprung vom Brett",
+              "erklaerung": "Vom Brett beidbeinig abspringen und auf der Matte landen."
+            }
+          ]
+        },
+        {
+          "id": "g1_sprung_w2",
+          "titel": "Kniehochziehen vorbereiten",
+          "beschreibung": "Aus dem Stand die Knie aktiv zur Brust ziehen – Vorbereitung auf das Aufhocken in G1.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Knie aktiv zur Brust ziehen", "Oberkörper aufrecht", "Sichere Landung"],
+          "voruebungen": [
+            {
+              "id": "vu_g1_sprung_w2",
+              "name": "Knieheben aus dem Stand",
+              "erklaerung": "Aus dem Stand die Knie zur Brust ziehen."
+            },
+            {
+              "id": "vu_g1_sprung_w2b",
+              "name": "Kniehochziehen vom Sprungbrett",
+              "erklaerung": "Vom Brett abspringen und die Knie zur Brust ziehen."
             }
           ]
         }
@@ -26,21 +75,70 @@
     },
     {
       "stufe": "G2",
-      "ausgangswert": 12.0,
+      "d_note": 4.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 14.0,
       "beschreibung": "Grundstufe 2 – Sprunggrätsche oder Hockwende",
       "schwierigkeitsgrad": 2,
       "elemente": [
         {
           "id": "g2_sprung_1",
-          "titel": "Sprunggrätsche über den Bock",
+          "titel": "2–3 Schritte Anlauf, Sprung in den Handstand (Minitrampolin, 60 cm Mattenblock)",
           "beschreibung": "Kraftvoller Absprung, Beine gestreckt grätschen und über das Gerät in den sicheren Stand turnen.",
-          "punkte": 5.0,
-          "kriterien": ["Gestreckte Knie in der Flugphase", "Schneller Abdruck der Hände"],
+          "punkte": 4.0,
+          "kriterien": ["Gestreckte Knie in der Flugphase", "Schneller Abdruck der Hände", "Hohe Grätschung – Beine bleiben weit geöffnet", "Aufrechte Landung im Stand ohne Wackler"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g2_sprung_1",
               "name": "Grätsch-Übung am Boden",
               "erklaerung": "Aus dem Liegestütz mit den Füßen vorwärts in die Grätsche neben die Hände springen."
+            },
+            {
+              "id": "vu_g2_sprung_1b",
+              "name": "Sprunggrätsche über den niedrigen Bock",
+              "erklaerung": "Mit kurzem Anlauf erst über den quer gestellten, niedrigen Bock – dann mit vollem Anlauf wiederholen."
+            }
+          ]
+        },
+        {
+          "id": "g2_sprung_w1",
+          "titel": "Sprunggrätsche vorbereiten",
+          "beschreibung": "Aus dem Liegestütz die Füße in die Grätsche springen – Vorbereitung auf die Sprunggrätsche in G2.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Füße weit öffnen", "Gestreckte Beine", "Sichere Landung"],
+          "voruebungen": [
+            {
+              "id": "vu_g2_sprung_w1",
+              "name": "Grätschsprung am Boden",
+              "erklaerung": "Aus dem Liegestütz in die Grätsche springen."
+            },
+            {
+              "id": "vu_g2_sprung_w1b",
+              "name": "Grätsche über die Linie",
+              "erklaerung": "Über eine Bodenlinie in die Grätsche springen."
+            }
+          ]
+        },
+        {
+          "id": "g2_sprung_w2",
+          "titel": "Hockwende vorbereiten",
+          "beschreibung": "Aus dem Stand in den Hock drehen und aufstehen – Vorbereitung auf die Hockwende in G2.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Kontrollierter Hock", "Aufrechtes Aufstehen", "Kein Nachschwingen"],
+          "voruebungen": [
+            {
+              "id": "vu_g2_sprung_w2",
+              "name": "Hockwende am Boden",
+              "erklaerung": "Aus dem Stand in den Hock drehen und aufstehen."
+            },
+            {
+              "id": "vu_g2_sprung_w2b",
+              "name": "Hockwende vom Kasten",
+              "erklaerung": "Vom Kastenrand in den Hock drehen und landen."
             }
           ]
         }
@@ -48,21 +146,70 @@
     },
     {
       "stufe": "G3",
-      "ausgangswert": 13.0,
+      "d_note": 5.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 15.0,
       "beschreibung": "Grundstufe 3 – Sprunghocke über den quer gestellten Kasten",
       "schwierigkeitsgrad": 3,
       "elemente": [
         {
           "id": "g3_sprung_1",
-          "titel": "Sprunghocke über den Kasten (quer)",
+          "titel": "Handstütz-Sprungüberschlag (Anlauf mind. 10 m, Sprungbrett, Stütz 60 cm, Landung 70 cm) mit Abdruck und Landung in der Rückenlage",
           "beschreibung": "Beidbeiniger Absprung, Hüfte hochheben, Knie schnell zur Brust ziehen und über den Kasten in den Stand landen.",
-          "punkte": 6.0,
-          "kriterien": ["Hüfte steigt über Schulterhöhe", "Gestreckte Arme beim Stütz"],
+          "punkte": 5.0,
+          "kriterien": ["Hüfte steigt über Schulterhöhe", "Gestreckte Arme beim Stütz", "Anhocken erfolgt sofort nach Handkontakt", "Kontrollierte Landung im Stand"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g3_sprung_1",
               "name": "Aufhocken & sofortiger Strecksprung",
               "erklaerung": "Ohne Pause auf den Kasten hocken und direkt mit einem Strecksprung abspringen."
+            },
+            {
+              "id": "vu_g3_sprung_1b",
+              "name": "Aufhocken über die Weichbodenmatte",
+              "erklaerung": "Aus dem Sprung die Hände kurz auf die flache Matte setzen und sofort in den Hock drehen – ohne Abdruck."
+            }
+          ]
+        },
+        {
+          "id": "g3_sprung_w1",
+          "titel": "Aufhocken vorbereiten",
+          "beschreibung": "Vom Sprungbrett auf den Kasten hocken – Vorbereitung auf die Sprunghocke in G3.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Knie zur Brust ziehen", "Sichere Landung auf dem Kasten", "Aufrechtes Aufstehen"],
+          "voruebungen": [
+            {
+              "id": "vu_g3_sprung_w1",
+              "name": "Aufhocken auf den Kasten",
+              "erklaerung": "Vom Brett auf den Kasten hocken."
+            },
+            {
+              "id": "vu_g3_sprung_w1b",
+              "name": "Aufhocken mit Partner",
+              "erklaerung": "Der Partner stützt beim Aufhocken."
+            }
+          ]
+        },
+        {
+          "id": "g3_sprung_w2",
+          "titel": "Strecksprung vom Kasten vorbereiten",
+          "beschreibung": "Vom Kasten in den Strecksprung abspringen – Vorbereitung auf den Sprungüberschlag in G3.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Kraftvoller Absprung", "Gestreckter Körper", "Sichere Landung"],
+          "voruebungen": [
+            {
+              "id": "vu_g3_sprung_w2",
+              "name": "Strecksprung vom Kasten",
+              "erklaerung": "Vom Kasten in den Strecksprung abspringen."
+            },
+            {
+              "id": "vu_g3_sprung_w2b",
+              "name": "Strecksprung auf die Matte",
+              "erklaerung": "Vom Kasten auf die Matte in den Strecksprung landen."
             }
           ]
         }
@@ -70,21 +217,180 @@
     },
     {
       "stufe": "G4",
-      "ausgangswert": 14.0,
+      "d_note": 6.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 16.0,
       "beschreibung": "Grundstufe 4 – Handstand-Abrollen auf den Mattenberg (Vorstufe Überschlag)",
       "schwierigkeitsgrad": 4,
       "elemente": [
         {
           "id": "g4_sprung_1",
-          "titel": "Sprung in den Handstand & Abrollen (Mattenberg)",
-          "beschreibung": "Kraftvoller Absprung vom Brett, Hände stützen auf dem Mattenberg (60–80 cm), in den Handstand schwingen und gestreckt auf den Rücken fallen.",
-          "punkte": 7.0,
-          "kriterien": ["Gestreckter Körper beim Umfallen", "Blick auf die Hände, Arme bleiben oben"],
+          "titel": "1. Pflichtsprung: Handstütz-Sprungüberschlag (Anlauf mind. 15 m, Stütz 80 cm, Landung 90 cm) mit Abdruck in die Rückenlage",
+          "beschreibung": "Kraftvoller Absprung vom Brett, Hände stützen auf dem Mattenberg (60–80 cm), in den Handstand schwingen und gestreckt auf die Matte hinter sich fallen.",
+          "punkte": 3.0,
+          "schluessel": true,
+          "kriterien": ["Gestreckter Körper beim Umfallen", "Blick auf die Hände, Arme bleiben oben", "Deutliche Flugphase vor dem Stütz", "Sauberes Abrollen über die gesamte Rückenfläche"],
           "voruebungen": [
             {
               "id": "vu_g4_sprung_1",
               "name": "Handstand-Umfallen aus dem Stand",
-              "erklaerung": "Vor dem Mattenberg in den Handstand schwingen und wie ein Brett auf den Rücken fallen."
+              "erklaerung": "Vor dem Mattenberg in den Handstand schwingen und wie ein Brett auf die Matte hinter sich fallen."
+            },
+            {
+              "id": "vu_g4_sprung_1b",
+              "name": "Abrollen aus dem Stütz an der Wand",
+              "erklaerung": "Aus dem Stütz an der Wand kraftvoll abdrücken und gestreckt auf die Matte hinter sich fallen – ohne Absprung."
+            }
+          ]
+        },
+        {
+          "id": "g4_sprung_2",
+          "titel": "2. Pflichtsprung: Salto vorwärts gehockt auf 80 cm Mattenblock",
+          "beschreibung": "Dynamischer Absprung vom Brett, Salto vorwärts in der Hocke und kontrollierte Landung auf dem 80-cm-Mattenblock.",
+          "punkte": 3.0,
+          "schluessel": true,
+          "kriterien": ["Dynamischer Absprung vom Sprungbrett", "Komakter Salto in der Hocke", "Kontrollierte Landung auf der Matte"],
+          "voruebungen": [
+            {
+              "id": "vu_g4_sprung_2",
+              "name": "Salto vorwärts gehockt in die Schnitzelgrube",
+              "erklaerung": "Aus dem Stand oder mit kurzem Anlauf den Salto gehockt in die Grube trainieren – Fokus auf kompakte Hockphase."
+            },
+            {
+              "id": "vu_g4_sprung_2b",
+              "name": "Salto vorwärts gehockt vom Reutherbrett",
+              "erklaerung": "Vom Brett in den Salto gehockt auf die 80-cm-Matte – erst mit Trainerhilfe, dann frei."
+            }
+          ]
+        },
+        {
+          "id": "g4_sprung_w1",
+          "titel": "Handstand-Abrollen vorbereiten",
+          "beschreibung": "Vom Mattenberg in den Handstand schwingen und abrollen – Vorbereitung auf den Sprungüberschlag in G4.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Gestreckter Körper beim Umfallen", "Blick auf die Hände", "Sauberes Abrollen"],
+          "voruebungen": [
+            {
+              "id": "vu_g4_sprung_w1",
+              "name": "Handstand-Umfallen vom Kasten",
+              "erklaerung": "Vom Kasten in den Handstand schwingen und abfallen."
+            },
+            {
+              "id": "vu_g4_sprung_w1b",
+              "name": "Abrollen von der Wand",
+              "erklaerung": "Von der Wand abdrücken und abrollen."
+            }
+          ]
+        },
+        {
+          "id": "g4_sprung_w2",
+          "titel": "Salto vorwärts gehockt vorbereiten",
+          "beschreibung": "Vom Brett den Salto vorwärts gehockt üben – Vorbereitung auf den Salto in G4.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Komakter Absprung", "Hockphase", "Sichere Landung"],
+          "voruebungen": [
+            {
+              "id": "vu_g4_sprung_w2",
+              "name": "Salto gehockt auf die Matte",
+              "erklaerung": "Vom Brett den Salto gehockt auf die Matte."
+            },
+            {
+              "id": "vu_g4_sprung_w2b",
+              "name": "Salto gehockt mit Partner",
+              "erklaerung": "Der Partner stützt beim Salto."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stufe": "G5",
+      "d_note": 7.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 17.0,
+      "beschreibung": "NTB-Pflichtprogramm 2026 – Sprung; Anlauf mind. 15 m; Sprungbrett; Mattenblock 80 cm (Bonus: Mattenblock 90 cm)",
+      "schwierigkeitsgrad": 5,
+      "elemente": [
+        {
+          "id": "g5_sprung_1",
+          "titel": "Handstütz-Sprungüberschlag mit Abdruck und Landung im Stand mit Bogenspannung",
+          "beschreibung": "Zügiger Anlauf über mindestens 15 m, Absprung vom Brett, kurzer Handstütz und aktiver Schulterabdruck in die gestreckte Flugphase, Landung im Stand mit Bogenspannung.",
+          "punkte": 7.0,
+          "schluessel": true,
+          "kriterien": ["Beschleunigter Anlauf bis zum Sprungbrett", "Gestreckte Flugphase (Hüftwinkel max. 10° Abweichung)", "Aktiver Schulterabdruck", "Landung im Stand mit Bogenspannung (leichte, gespannte Überstreckung mit offenem Arm-Rumpf-Winkel)"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_sprung_1",
+              "name": "Überschlag mit Flugphase vom Sprungbrett",
+              "erklaerung": "Vom Brett in die Schultern springen, kurz gestreckt abdrücken und auf die Matte hinter sich fallen – ohne Handstütz."
+            },
+            {
+              "id": "vu_g5_sprung_1b",
+              "name": "Handstandüberschlag über den Mattenberg",
+              "erklaerung": "Mit vollem Anlauf in den Handstand auf dem 80-cm-Mattenberg schwingen, aktiv abdrücken und gestreckt landen."
+            }
+          ]
+        },
+        {
+          "id": "g5_sprung_2",
+          "titel": "Bonus – Salto vorwärts gehockt",
+          "beschreibung": "Dritter Sprung auf den 90-cm-Mattenblock: dynamischer Absprung vom Brett, kompakter Salto vorwärts in der Hocke und kontrollierte Landung.",
+          "punkte": 1.0,
+          "kriterien": ["Dynamischer Absprung vom Sprungbrett", "Deutliche Hockphase", "Rechtzeitiges Öffnen zur kontrollierten Landung"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_sprung_2",
+              "name": "Salto vorwärts gehockt in die Schnitzelgrube",
+              "erklaerung": "Aus dem Stand oder mit kurzem Anlauf den Salto gehockt in die Grube trainieren – Fokus auf kompakter Hockphase."
+            },
+            {
+              "id": "vu_g5_sprung_2b",
+              "name": "Salto vorwärts gehockt vom Reutherbrett",
+              "erklaerung": "Vom Brett in den Salto gehockt auf die 80-cm-Matte – erst mit Trainerhilfe, dann frei."
+            }
+          ]
+        },
+        {
+          "id": "g5_sprung_w1",
+          "titel": "Überschlag mit Flugphase vorbereiten",
+          "beschreibung": "Vom Brett die Flugphase vor dem Stütz üben – Vorbereitung auf den Überschlag in G5.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Kraftvoller Absprung", "Gestreckter Körper im Flug", "Sichere Landung"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_sprung_w1",
+              "name": "Überschlag auf den Mattenberg",
+              "erklaerung": "Vom Brett auf den Mattenberg überspringen."
+            },
+            {
+              "id": "vu_g5_sprung_w1b",
+              "name": "Flugphase vom Brett",
+              "erklaerung": "Vom Brett die Flugphase üben."
+            }
+          ]
+        },
+        {
+          "id": "g5_sprung_w2",
+          "titel": "Salto vorwärts gestreckt vorbereiten",
+          "beschreibung": "Vom Brett den Salto vorwärts gestreckt üben – Vorbereitung auf den Salto in G5.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Komakter Absprung", "Gestreckter Körper", "Sichere Landung"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_sprung_w2",
+              "name": "Salto gestreckt auf die Matte",
+              "erklaerung": "Vom Brett den Salto gestreckt auf die Matte."
+            },
+            {
+              "id": "vu_g5_sprung_w2b",
+              "name": "Salto gestreckt mit Partner",
+              "erklaerung": "Der Partner stützt beim Salto."
             }
           ]
         }
@@ -95,6 +401,11 @@
     "anforderungen": [
       {
         "stufe": "LK4",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "11,60 - 12,00 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = Sprung-D-Note (laut Tabelle) + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "z. B. Hocke/Grätsche/Überschlag: D-Note 1,60 - 2,00 + 10,00 E-Note = 11,60 - 12,00 Pkt."
+        },
         "max_elemente": "1 Sprung (2 Versuche möglich, besserer zählt)",
         "schwierigkeit_info": "Sprungtisch (1,10 m – 1,25 m) oder Mattenberg",
         "pflicht_kriterien": [
@@ -104,6 +415,11 @@
       },
       {
         "stufe": "LK3",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "12,00 - 12,40 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = Sprung-D-Note (laut Tabelle) + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "z. B. Überschlag / 1/2 Drehung: D-Note 2,00 - 2,40 + 10,00 E-Note = 12,00 - 12,40 Pkt."
+        },
         "max_elemente": "1 Sprung (2 Versuche möglich)",
         "schwierigkeit_info": "Sprungtisch (1,25 m)",
         "pflicht_kriterien": [
@@ -113,6 +429,11 @@
       },
       {
         "stufe": "LK2",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "12,40 - 13,20 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = Sprung-D-Note (laut Tabelle) + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "z. B. Yamashita / Tsukahara gehockt: D-Note 2,40 - 3,20 + 10,00 E-Note = 12,40 - 13,20 Pkt."
+        },
         "max_elemente": "1 Sprung (2 Versuche möglich)",
         "schwierigkeit_info": "Sprungtisch (1,25 m)",
         "pflicht_kriterien": [
@@ -122,6 +443,11 @@
       },
       {
         "stufe": "LK1",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "12,80 - 13,40 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = Sprung-D-Note (laut Tabelle) + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "z. B. Überschlag 1/1 / Tsukahara gebückt: D-Note 2,80 - 3,40 + 10,00 E-Note = 12,80 - 13,40 Pkt."
+        },
         "max_elemente": "1 Sprung (2 Versuche möglich)",
         "schwierigkeit_info": "Sprungtisch (1,25 m)",
         "pflicht_kriterien": [
@@ -130,6 +456,39 @@
         ]
       }
     ],
+    "d_noten_tabelle": [
+      {
+        "stufe": "LK4",
+        "element": "Sprunghocke ueber den Sprungtisch / Graetsche ueber den Sprungtisch (nur LK4)",
+        "d_noten": "1,60 / 1,80 P."
+      },
+      {
+        "stufe": "LK4",
+        "element": "Handstuhlueberschlag",
+        "d_noten": "2,00 P."
+      },
+      {
+        "stufe": "LK3",
+        "element": "Handstuhlueberschlag mit 1/2 Drehung / Yamashita",
+        "d_noten": "2,40 P."
+      },
+      {
+        "stufe": "LK2",
+        "element": "Handstuhlueberschlag mit 1/1 Drehung",
+        "d_noten": "2,80 P."
+      },
+      {
+        "stufe": "LK2",
+        "element": "Tsukahara gehockt",
+        "d_noten": "3,20 P."
+      },
+      {
+        "stufe": "LK1",
+        "element": "Tsukahara gebueckt",
+        "d_noten": "3,40 P."
+      }
+    ],
+    "hinweis": "Fuer den Sprung wird 1 Sprung gewertet und bei 2 Spruengen ist der bessere entscheidend.",
     "elemente": [
       {
         "id": "lk_sprung_hocke",
@@ -138,12 +497,19 @@
         "punkte": 1.6,
         "kategorie": "Stützsprung",
         "ab_stufe": "LK4",
+        "schluessel": true,
         "erklaerung": "Kraftvoller Anlauf, Absprung vom Reutherbrett, kurzer Handstütz auf dem Sprungtisch und Anhocken der Beine.",
+        "kriterien": ["Kraftvoller Anlauf bis zum Sprungbrett", "Schneller Absprung vom Reutherbrett", "Kompaktes Anhocken der Beine", "Sichere Landung im Stand"],
         "voruebungen": [
           {
             "id": "vu_lk_sprung_hocke",
             "name": "Sprunghocke über den quer gestellten Kasten",
             "erklaerung": "Schnelles Anfersen und sofortige Körperstreckung vor der Landung üben."
+          },
+          {
+            "id": "vu_lk_sprung_hocke_b",
+            "name": "Sprunghocke auf dem niedrigen Kasten",
+            "erklaerung": "Die Sprunghocke mit kurzem Anlauf auf dem niedrigen Kasten üben."
           }
         ]
       },
@@ -154,12 +520,19 @@
         "punkte": 1.6,
         "kategorie": "Stützsprung",
         "ab_stufe": "LK4",
+        "schluessel": true,
         "erklaerung": "Kraftvoller Absprung vom Brett, Handstütz auf dem Sprungtisch und gestrecktes Grätschen der Beine.",
+        "kriterien": ["Gestreckte Beine in der Flugphase", "Schneller Armabdruck", "Hohe Grätschung", "Aufrechte Landung im Stand"],
         "voruebungen": [
           {
             "id": "vu_lk_sprung_graetsche",
             "name": "Sprunggrätsche über den hochgestellten Bock",
             "erklaerung": "Schnellen Armabdruck und aufrechte Landung trainieren."
+          },
+          {
+            "id": "vu_lk_sprung_graetsche_b",
+            "name": "Sprunggrätsche auf dem niedrigen Kasten",
+            "erklaerung": "Die Sprunggrätsche mit kurzem Anlauf auf dem niedrigen Kasten üben."
           }
         ]
       },
@@ -170,12 +543,19 @@
         "punkte": 2.4,
         "kategorie": "Überschlag",
         "ab_stufe": "LK3",
+        "schluessel": true,
         "erklaerung": "Dynamischer Absprung, Flug in den Handstand auf dem Sprungtisch, explosiver Schulterabdruck und gestreckte Landung.",
+        "kriterien": ["Dynamischer Absprung vom Sprungbrett", "Gestreckte Flugphase (Hüftwinkel max. 10° Abweichung)", "Aktiver Schulterabdruck", "Gestreckte Landung im Stand"],
         "voruebungen": [
           {
             "id": "vu_lk_sprung_ueberschlag",
             "name": "Überschlag über den Mattenberg mit Brett",
             "erklaerung": "Flugphase vor dem Stütz (First Flight) und explosiven Abdruck aus den Schultern trainieren."
+          },
+          {
+            "id": "vu_lk_sprung_ueberschlag_b",
+            "name": "Überschlag mit halber Drehung",
+            "erklaerung": "Den Überschlag mit 1/2 Drehung auf Weichboden üben."
           }
         ]
       },
@@ -186,12 +566,19 @@
         "punkte": 2.4,
         "kategorie": "Überschlag",
         "ab_stufe": "LK3",
+        "schluessel": true,
         "erklaerung": "Nach dem Handstandabdruck in der zweiten Flugphase kurz in der Hüfte abknicken und vor der Landung wieder strecken.",
+        "kriterien": ["Dynamischer Absprung vom Sprungbrett", "Kontrolle über die zweite Flugphase", "Aktives Hüftwinkeln und Öffnen", "Gestreckte Landung im Stand"],
         "voruebungen": [
           {
             "id": "vu_lk_sprung_yama",
             "name": "Überschlag mit aktivem Hüftwinkeln auf Weichboden",
             "erklaerung": "Kontrolle über die zweite Flugphase durch gezieltes Anwinkeln und Öffnen."
+          },
+          {
+            "id": "vu_lk_sprung_yama_b",
+            "name": "Yamashita mit Weichboden",
+            "erklaerung": "Den Yamashita mit Weichboden-Unterstützung üben."
           }
         ]
       },
@@ -202,12 +589,19 @@
         "punkte": 3.2,
         "kategorie": "Überschlag mit Drehung",
         "ab_stufe": "LK2",
+        "schluessel": true,
         "erklaerung": "Nach dem Abdruck vom Sprungtisch in gestreckter Haltung eine volle 360°-Drehung um die Längsachse ausführen.",
+        "kriterien": ["Volle 360°-Drehung um die Längsachse", "Gestreckte Haltung im Flug", "Sauberer Schulterabdruck", "Kontrollierte Landung im Stand"],
         "voruebungen": [
           {
             "id": "vu_lk_sprung_drehung",
             "name": "Überschlag mit 1/2 Drehung auf Weichboden",
             "erklaerung": "Zuerst die halbe Drehung nach dem Schulterabdruck sicher beherrschen."
+          },
+          {
+            "id": "vu_lk_sprung_drehung_b",
+            "name": "Überschlag mit 1/1 Drehung auf Weichboden",
+            "erklaerung": "Die volle Drehung mit Weichboden-Unterstützung üben."
           }
         ]
       },
@@ -218,12 +612,63 @@
         "punkte": 3.5,
         "kategorie": "Tsukahara",
         "ab_stufe": "LK2",
+        "schluessel": true,
         "erklaerung": "Anlauf mit 1/4- oder 1/2-Drehung auf den Sprungtisch und Salto rückwärts in der zweiten Flugphase.",
+        "kriterien": ["Dynamischer Absprung vom Sprungbrett", "Kompakte Hockphase", "Sichere Drehung in der zweiten Flugphase", "Kontrollierte Landung im Stand"],
         "voruebungen": [
           {
             "id": "vu_lk_sprung_tsuka",
             "name": "Tsukahara-Vorbereitung in die Schnitzelgrube / Mattenberg",
             "erklaerung": "Radwende-Absprung aufs Brett und Stützphase auf dem Sprungtisch isoliert üben."
+          },
+          {
+            "id": "vu_lk_sprung_tsuka_b",
+            "name": "Tsukahara mit Weichboden",
+            "erklaerung": "Den Tsukahara mit Weichboden-Unterstützung üben."
+          }
+        ]
+      },
+      {
+        "id": "lk_sprung_tsukahara_gestreckt",
+        "titel": "Tsukahara gestreckt",
+        "wertigkeit": "LK1",
+        "punkte": 3.5,
+        "kategorie": "Tsukahara",
+        "ab_stufe": "LK1",
+        "erklaerung": "Anlauf mit 1/4- oder 1/2-Drehung auf den Sprungtisch und Salto rückwärts gestreckt in der zweiten Flugphase.",
+        "kriterien": ["Dynamischer Absprung vom Sprungbrett", "Gestreckte Haltung im Salto", "Sichere Drehung in der zweiten Flugphase", "Kontrollierte Landung im Stand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_sprung_tsuka_str",
+            "name": "Tsukahara gestreckt auf Weichboden",
+            "erklaerung": "Den Tsukahara gestreckt auf Weichboden üben."
+          },
+          {
+            "id": "vu_lk_sprung_tsuka_str_b",
+            "name": "Tsukahara gestreckt am Sprungtisch",
+            "erklaerung": "Den Tsukahara gestreckt am Sprungtisch üben."
+          }
+        ]
+      },
+      {
+        "id": "lk_sprung_yurchenko",
+        "titel": "Yurchenko (Rundat – Überschlag rückwärts)",
+        "wertigkeit": "LK1",
+        "punkte": 3.5,
+        "kategorie": "Yurchenko",
+        "ab_stufe": "LK1",
+        "erklaerung": "Rundat vorwärts zum Sprungtisch und Salto rückwärts in der zweiten Flugphase.",
+        "kriterien": ["Kraftvoller Rundat-Absprung", "Sicherer Handstand auf dem Sprungtisch", "Salter rückwärts in der zweiten Flugphase", "Kontrollierte Landung im Stand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_sprung_yurchenko",
+            "name": "Yurchenko-Vorbereitung am Sprungtisch",
+            "erklaerung": "Den Rundat-Absprung und die Stützphase isoliert üben."
+          },
+          {
+            "id": "vu_lk_sprung_yurchenko_b",
+            "name": "Yurchenko auf Weichboden",
+            "erklaerung": "Den Yurchenko auf Weichboden üben."
           }
         ]
       }

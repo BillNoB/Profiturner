@@ -52,12 +52,16 @@ function deletePhoto(id) {
   });
 }
 
+function isValidDeviceData(data, geraet) {
+  return !!data && data.id === geraet;
+}
+
 async function loadDeviceData(geraet) {
   const grid = document.getElementById("cards-grid");
   grid.innerHTML = "<p>Lade Übungen...</p>";
   try {
     // Check if we have embedded data available
-    if (window.EMBEDDED_DATA && window.EMBEDDED_DATA[geraet]) {
+    if (window.EMBEDDED_DATA && isValidDeviceData(window.EMBEDDED_DATA[geraet], geraet)) {
       currentData = window.EMBEDDED_DATA[geraet];
       renderFilters();
       await renderContent();
@@ -76,6 +80,7 @@ async function loadDeviceData(geraet) {
     
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     currentData = await res.json();
+    if (!isValidDeviceData(currentData, geraet)) throw new Error("Falsche Geraetedaten");
     
     // Update cache
     localStorage.setItem('ntb_cache_' + geraet, JSON.stringify(currentData));
@@ -88,9 +93,16 @@ async function loadDeviceData(geraet) {
       // For timeout, try to load from cache
       const cachedData = localStorage.getItem('ntb_cache_' + geraet);
       if (cachedData) {
-        currentData = JSON.parse(cachedData);
-        renderFilters();
-        await renderContent();
+        let parsed = null;
+        try { parsed = JSON.parse(cachedData); } catch (e) { parsed = null; }
+        if (isValidDeviceData(parsed, geraet)) {
+          currentData = parsed;
+          renderFilters();
+          await renderContent();
+        } else {
+          localStorage.removeItem('ntb_cache_' + geraet);
+          grid.innerHTML = `<div class="info-banner"><h2>Fehler beim Laden</h2><p>Konnte data/${geraet}.json nicht laden: Falsche Geraetedaten im Cache.</p></div>`;
+        }
       } else {
         grid.innerHTML = `<div class="info-banner"><h2>Keine Verbindung</h2><p>Server nicht erreichbar. Überprüfe deine Internetverbindung oder versuche es später erneut.</p></div>`;
       }
@@ -98,9 +110,16 @@ async function loadDeviceData(geraet) {
       // Try to load from cache if available
       const cachedData = localStorage.getItem('ntb_cache_' + geraet);
       if (cachedData) {
-        currentData = JSON.parse(cachedData);
-        renderFilters();
-        await renderContent();
+        let parsed = null;
+        try { parsed = JSON.parse(cachedData); } catch (e) { parsed = null; }
+        if (isValidDeviceData(parsed, geraet)) {
+          currentData = parsed;
+          renderFilters();
+          await renderContent();
+        } else {
+          localStorage.removeItem('ntb_cache_' + geraet);
+          grid.innerHTML = `<div class="info-banner"><h2>Fehler beim Laden</h2><p>Konnte data/${geraet}.json nicht laden: Falsche Geraetedaten im Cache.</p></div>`;
+        }
       } else {
         grid.innerHTML = `<div class="info-banner"><h2>Fehler beim Laden</h2><p>Konnte data/${geraet}.json nicht laden: ${err.message}</p></div>`;
       }
@@ -111,7 +130,7 @@ async function loadDeviceData(geraet) {
 function renderFilters() {
   const filterContainer = document.getElementById("level-filters");
   const options = currentMode === "pflicht"
-    ? ["Alle", "G1", "G2", "G3", "G4"]
+    ? ["Alle", "G1", "G2", "G3", "G4", "G5"]
     : ["Alle", "LK4", "LK3", "LK2", "LK1"];
 
   if (!options.includes(currentFilter)) {
@@ -187,6 +206,74 @@ async function createPhotoWidget(itemId, labelText) {
   return box;
 }
 
+function elementCardMarkup(el, stufeLabel) {
+  const isWahl = el.wahl_uebung === true;
+  const pointsBadge = isWahl
+    ? `<span class="badge badge-wahl">🏋️ Trainings- & Aufbauelement</span>`
+    : `<span class="badge badge-points">${el.punkte.toFixed(1)} Pkt.</span>`;
+  const keyBadge = el.schluessel
+    ? `<span class="badge badge-key">⭐ Schlüsselelement</span>`
+    : "";
+  return `<div class="card-header">
+    <h3 class="card-title">${el.titel}</h3>
+    <div class="badge-group">
+      <span class="badge badge-stage">${stufeLabel}</span>
+      ${pointsBadge}
+      ${keyBadge}
+    </div>
+  </div>
+  <p class="card-desc">${el.beschreibung}</p>
+  <div class="tags-list">
+    ${(el.kriterien || []).map((k) => `<span class="tag">✓ ${k}</span>`).join("")}
+  </div>`;
+}
+
+function punkteOrientierungBox(po) {
+  if (!po) return "";
+  return '<div class="punkte-box">' +
+    '<h3>So entsteht deine Punktzahl</h3>' +
+    '<p class="punkte-formel"><strong>Formel:</strong> ' + po.formel_kurz + '</p>' +
+    '<p><strong>Typischer Gesamtausgangswert:</strong> ' + po.typischer_gesamtwert + '</p>' +
+    '<p><strong>Rechenbeispiel:</strong> ' + po.rechenbeispiel + '</p>' +
+    '</div>';
+}
+
+function musikRegel(stufe) {
+  if (currentDevice !== "boden") return "ohne Musik";
+  if (stufe === "G3") return "Musik freiwillig";
+  if (stufe === "G4" || stufe === "G5") return "Pflichtmusik ohne Gesang oder Worte";
+  return "ohne Musik";
+}
+
+function gPunkteBox(s) {
+  var d = Number(s.d_note) || 0;
+  var e = (s.e_note === undefined || s.e_note === null) ? 10 : Number(s.e_note);
+  var b = Number(s.bonus_max) || 0;
+  var f = function (v) { return v.toFixed(2).replace(".", ","); };
+  return '<div class="punkte-box">' +
+    '<h3>So entsteht deine Punktzahl</h3>' +
+    '<p class="punkte-formel"><strong>Formel:</strong> Gesamtausgangswert = D-Note (Summe der Pflichtelemente) + 10,00 Pkt. E-Note (+ ggf. Bonus)</p>' +
+    '<p><strong>Zusammensetzung / Beispiel:</strong> D-Note: ' + f(d) + ' Pkt. + E-Note: ' + f(e) + ' Pkt. + max. Bonus: ' + f(b) + ' Pkt. = ' + f(d + e + b) + ' Pkt. (Kampfrichter ziehen Haltungsfehler von der 10,00 Pkt. E-Note ab).</p>' +
+    '</div>';
+}
+
+function gInfoCard(s) {
+  var n = (s.elemente || []).length;
+  var openAttr = (currentFilter === s.stufe) ? " open" : "";
+  var geraet = (currentData && currentData.geraet) ? currentData.geraet : "";
+  return '<details class="lk-info-card"' + openAttr + '>' +
+    '<summary><h2>Pflichtübung ' + s.stufe + ' (' + n + ' Elemente, feste Reihenfolge)</h2></summary>' +
+    '<div class="lk-info-body">' +
+      '<div class="lk-regeln">' +
+        '<p><strong>Gerät:</strong> ' + geraet + '</p>' +
+        '<p><strong>Rahmenbedingungen:</strong> ' + (s.beschreibung || "") + '</p>' +
+        '<p><strong>Musik:</strong> ' + musikRegel(s.stufe) + '</p>' +
+      '</div>' +
+      gPunkteBox(s) +
+    '</div>' +
+  '</details>';
+}
+
 async function renderContent() {
   const grid = document.getElementById("cards-grid");
   const banner = document.getElementById("info-banner");
@@ -201,29 +288,16 @@ async function renderContent() {
       (s) => currentFilter === "Alle" || s.stufe === currentFilter
     );
 
-    if (currentFilter !== "Alle" && stufen.length === 1) {
-      const s = stufen[0];
+    if (stufen.length) {
       banner.classList.remove("hidden");
-      banner.innerHTML = `<h2>${s.stufe} – Ausgangswert: ${s.ausgangswert.toFixed(1)} Pkt.</h2><p>${s.beschreibung}</p>`;
+      banner.innerHTML = stufen.map(gInfoCard).join("");
     }
 
     for (const stufeObj of stufen) {
       for (const el of stufeObj.elemente || []) {
         const card = document.createElement("article");
         card.className = "card";
-        card.innerHTML = `
-          <div class="card-header">
-            <h3 class="card-title">${el.titel}</h3>
-            <div class="badge-group">
-              <span class="badge badge-stage">${stufeObj.stufe}</span>
-              <span class="badge badge-points">${el.punkte.toFixed(1)} Pkt.</span>
-            </div>
-          </div>
-          <p class="card-desc">${el.beschreibung}</p>
-          <div class="tags-list">
-            ${(el.kriterien || []).map((k) => `<span class="tag">✓ ${k}</span>`).join("")}
-          </div>
-        `;
+        card.innerHTML = elementCardMarkup(el, stufeObj.stufe);
 
         card.appendChild(await createPhotoWidget(el.id, "Trainingsfoto hinzufügen"));
 
@@ -249,6 +323,55 @@ async function renderContent() {
         grid.appendChild(card);
       }
     }
+
+    // Einklappbare Vorstufen-Anzeige (Pflicht-Modus)
+    if (currentFilter && currentFilter.startsWith("G") && currentFilter !== "Alle") {
+      const currentNum = Number(currentFilter.slice(1));
+      const lowerStufen = (currentData.g_stufen || [])
+        .filter((s) => {
+          const n = Number(s.stufe.slice(1));
+          return Number.isInteger(n) && n >= 1 && n < currentNum;
+        })
+        .sort((a, b) => Number(a.stufe.slice(1)) - Number(b.stufe.slice(1)));
+
+      if (lowerStufen.length > 0) {
+        const vsSection = document.createElement("section");
+        vsSection.className = "vorstufen-section";
+        vsSection.innerHTML = `
+          <details class="vorstufen-details" open>
+            <summary>📚 Elemente & Grundlagen aus den Vorstufen (G1–G${currentNum - 1})</summary>
+            <div class="vorstufen-body"></div>
+          </details>
+        `;
+        const vsBody = vsSection.querySelector(".vorstufen-body");
+        for (const s of lowerStufen) {
+          for (const el of s.elemente || []) {
+            const card = document.createElement("article");
+            card.className = "card";
+            card.innerHTML = elementCardMarkup(el, s.stufe);
+            card.appendChild(await createPhotoWidget(el.id, "Trainingsfoto hinzufügen"));
+            for (const vu of el.voruebungen || []) {
+              const prep = document.createElement("div");
+              prep.className = "prep-box";
+              prep.innerHTML = `
+                <span class="prep-label">Vorübung zum Lernen</span>
+                <div class="prep-title">${vu.name}</div>
+                <p class="card-desc">${vu.erklaerung}</p>
+              `;
+              prep.appendChild(await createPhotoWidget(vu.id, "Foto zur Vorübung"));
+              card.appendChild(prep);
+            }
+            const progressButton = document.createElement("button");
+            progressButton.className = "progress-button";
+            progressButton.dataset.id = el.id;
+            updateProgressButton(progressButton, el.id);
+            card.appendChild(progressButton);
+            vsBody.appendChild(card);
+          }
+        }
+        grid.appendChild(vsSection);
+      }
+    }
   } else {
     const lk = currentData.lk_bereich;
     if (!lk) return;
@@ -260,15 +383,46 @@ async function renderContent() {
     if (matchingReqs.length > 0) {
       banner.classList.remove("hidden");
       banner.innerHTML = matchingReqs
-        .map(
-          (r) => `
-          <div style="margin-bottom: 14px;">
-            <h2>Anforderungen ${r.stufe} (${r.max_elemente})</h2>
-            <p><strong>Schwierigkeit:</strong> ${r.schwierigkeit_info}</p>
-            <ul>${(r.pflicht_kriterien || []).map((k) => `<li>${k}</li>`).join("")}</ul>
-          </div>
-        `
-        )
+        .map((r) => {
+          const dNoten = (lk.d_noten_tabelle || []).filter((d) => d.stufe === r.stufe);
+          const hinweis = r === matchingReqs[0] && lk.hinweis
+            ? `<p><strong>${lk.hinweis}</strong></p>`
+            : "";
+          return `
+          <details class="lk-info-card" ${currentFilter !== "Alle" ? "open" : ""}>
+            <summary><h2>Komposition ${r.stufe} (${r.max_elemente || r.regeln?.max_elemente})</h2></summary>
+            <div class="lk-info-body">
+              ${r.schwierigkeit_info ? `<p><strong>Schwierigkeit:</strong> ${r.schwierigkeit_info}</p>` : ""}
+              ${r.regeln ? `
+                <div class="lk-regeln">
+                  <p><strong>Max. Elemente:</strong> ${r.regeln.max_elemente}</p>
+                  <p><strong>Abgang min. Wertigkeit:</strong> ${r.regeln.abgang_min_wertigkeit}</p>
+                  ${(r.regeln.besonderheiten || []).length ? `<ul>${r.regeln.besonderheiten.map((b) => `<li>${b}</li>`).join("")}</ul>` : ""}
+                </div>
+              ` : ""}
+              ${(r.anforderungen || []).length ? `
+                <h3>Kompositionsanforderungen (je 0,50 P. = max. 2,50 P.)</h3>
+                <ul>${r.anforderungen.map((a) => `<li><strong>${a.ka}</strong> (${Number(a.punkte).toFixed(2)} P.): ${a.kriterium}</li>`).join("")}</ul>
+              ` : ""}
+              ${hinweis}
+              ${dNoten.length ? `
+                <h3>D-Noten-Tabelle</h3>
+                <table class="d-noten-table">
+                  <thead><tr><th>Stufe</th><th>Sprung</th><th>D-Note</th></tr></thead>
+                  <tbody>
+                    ${dNoten.map((d) => `<tr><td>${d.stufe}</td><td>${d.element}</td><td>${d.d_noten}</td></tr>`).join("")}
+                  </tbody>
+                </table>
+              ` : ""}
+              ${(r.pflicht_kriterien || []).length ? `
+                <h3>Pflicht-Kriterien</h3>
+                <ul>${r.pflicht_kriterien.map((k) => `<li>${k}</li>`).join("")}</ul>
+              ` : ""}
+              ${punkteOrientierungBox(r.punkte_orientierung)}
+            </div>
+          </details>
+        `;
+        })
         .join("");
     }
 
@@ -285,9 +439,13 @@ async function renderContent() {
           <div class="badge-group">
             <span class="badge badge-stage">${el.ab_stufe} | ${el.wertigkeit}</span>
             <span class="badge badge-points">+${el.punkte.toFixed(2)} Pkt.</span>
+            ${el.schluessel ? `<span class="badge badge-key">⭐ Schlüsselelement</span>` : ""}
           </div>
         </div>
-        <div class="tags-list"><span class="tag">${el.kategorie}</span></div>
+        <div class="tags-list">
+          <span class="tag">${el.kategorie}</span>
+          ${(el.kriterien || []).map((k) => `<span class="tag">✓ ${k}</span>`).join("")}
+        </div>
         <p class="card-desc">${el.erklaerung}</p>
       `;
 
@@ -313,6 +471,79 @@ async function renderContent() {
       card.appendChild(progressButton);
 
       grid.appendChild(card);
+    }
+
+    // Einklappbare Vorstufen-Anzeige (Kür-Modus)
+    const lkKuer = currentData.lk_bereich;
+    if (
+      lkKuer &&
+      currentFilter &&
+      currentFilter.startsWith("LK") &&
+      currentFilter !== "Alle"
+    ) {
+      const rankMap = { LK4: 1, LK3: 2, LK2: 3, LK1: 4 };
+      const currentRank = rankMap[currentFilter];
+      const lowerElements = (lkKuer.elemente || []).filter((el) => {
+        const r = rankMap[el.ab_stufe];
+        return r !== undefined && r < currentRank;
+      });
+      if (lowerElements.length > 0) {
+        let vorStufenText = "";
+        if (currentRank === 2) {
+          vorStufenText = "LK4";
+        } else if (currentRank === 3) {
+          vorStufenText = "LK4–LK3";
+        } else {
+          vorStufenText = "LK4–LK3–LK2";
+        }
+        const vsSection = document.createElement("section");
+        vsSection.className = "vorstufen-section";
+        vsSection.innerHTML = `
+          <details class="vorstufen-details" open>
+            <summary>📚 Weitere erlaubte Elemente aus Vorstufen (${vorStufenText})</summary>
+            <div class="vorstufen-body"></div>
+          </details>
+        `;
+        const vsBody = vsSection.querySelector(".vorstufen-body");
+        for (const el of lowerElements) {
+          const card = document.createElement("article");
+          card.className = "card";
+          card.innerHTML = `
+            <div class="card-header">
+              <h3 class="card-title">${el.titel}</h3>
+              <div class="badge-group">
+                <span class="badge badge-stage">${el.ab_stufe} | ${el.wertigkeit}</span>
+                <span class="badge badge-points">+${el.punkte.toFixed(2)} Pkt.</span>
+                ${el.schluessel ? `<span class="badge badge-key">⭐ Schlüsselelement</span>` : ""}
+              </div>
+            </div>
+            <div class="tags-list">
+              <span class="tag">${el.kategorie}</span>
+              ${(el.kriterien || []).map((k) => `<span class="tag">✓ ${k}</span>`).join("")}
+            </div>
+            <p class="card-desc">${el.erklaerung}</p>
+          `;
+          card.appendChild(await createPhotoWidget(el.id, "Trainingsfoto hinzufügen"));
+          for (const vu of el.voruebungen || []) {
+            const prep = document.createElement("div");
+            prep.className = "prep-box";
+            prep.innerHTML = `
+              <span class="prep-label">Vorübung zum Lernen</span>
+              <div class="prep-title">${vu.name}</div>
+              <p class="card-desc">${vu.erklaerung}</p>
+            `;
+            prep.appendChild(await createPhotoWidget(vu.id, "Foto zur Vorübung"));
+            card.appendChild(prep);
+          }
+          const progressButton = document.createElement("button");
+          progressButton.className = "progress-button";
+          progressButton.dataset.id = el.id;
+          updateProgressButton(progressButton, el.id);
+          card.appendChild(progressButton);
+          vsBody.appendChild(card);
+        }
+        grid.appendChild(vsSection);
+      }
     }
   }
 
@@ -346,7 +577,11 @@ async function preloadDeviceData() {
       
       if (response.ok) {
         const data = await response.json();
-        localStorage.setItem('ntb_cache_' + device, JSON.stringify(data));
+        if (isValidDeviceData(data, device)) {
+          localStorage.setItem('ntb_cache_' + device, JSON.stringify(data));
+        } else {
+          console.warn(`Ungueltige Geraetedaten fuer ${device}`);
+        }
       } else {
         console.warn(`Failed to load data for ${device}`);
       }
@@ -420,10 +655,15 @@ function updateProgressInfo() {
   
   if (totalElements > 0) {
     const infoBanner = document.getElementById("info-banner");
-    infoBanner.innerHTML = `
+    const oldInfo = infoBanner.querySelector(".progress-info");
+    if (oldInfo) oldInfo.remove();
+    const progressInfo = document.createElement("div");
+    progressInfo.className = "progress-info";
+    progressInfo.innerHTML = `
       <h2>Fortschritt: ${masteredElements} von ${totalElements} Elementen beherrscht</h2>
       <p>(${masteredElements}/${totalElements} - ${(masteredElements/totalElements*100).toFixed(0)}%)</p>
     `;
+    infoBanner.appendChild(progressInfo);
     infoBanner.classList.remove("hidden");
   }
 }
@@ -623,7 +863,7 @@ ${styleSheet}
     </nav>
 
     <div class="mode-tabs" id="mode-tabs">
-      <button class="mode-btn active" data-mode="pflicht">Pflicht (G1-G4)</button>
+      <button class="mode-btn active" data-mode="pflicht">Pflicht (G1-G5)</button>
       <button class="mode-btn" data-mode="kuer">Kür (LK1-LK4)</button>
     </div>
 
@@ -698,12 +938,16 @@ ${styleSheet}
       });
     }
     
+    function isValidDeviceData(data, geraet) {
+      return !!data && data.id === geraet;
+    }
+    
     async function loadDeviceData(geraet) {
       const grid = document.getElementById("cards-grid");
       grid.innerHTML = "<p>Lade Übungen...</p>";
       try {
         // Check if we have embedded data available
-        if (window.EMBEDDED_DATA && window.EMBEDDED_DATA[geraet]) {
+        if (window.EMBEDDED_DATA && isValidDeviceData(window.EMBEDDED_DATA[geraet], geraet)) {
           currentData = window.EMBEDDED_DATA[geraet];
           renderFilters();
           await renderContent();
@@ -722,6 +966,7 @@ ${styleSheet}
         
         if (!res.ok) throw new Error(\`HTTP \${res.status}\`);
         currentData = await res.json();
+        if (!isValidDeviceData(currentData, geraet)) throw new Error("Falsche Geraetedaten");
         
         // Update cache
         localStorage.setItem('ntb_cache_' + geraet, JSON.stringify(currentData));
@@ -734,9 +979,16 @@ ${styleSheet}
           // For timeout, try to load from cache
           const cachedData = localStorage.getItem('ntb_cache_' + geraet);
           if (cachedData) {
-            currentData = JSON.parse(cachedData);
-            renderFilters();
-            await renderContent();
+            let parsed = null;
+            try { parsed = JSON.parse(cachedData); } catch (e) { parsed = null; }
+            if (isValidDeviceData(parsed, geraet)) {
+              currentData = parsed;
+              renderFilters();
+              await renderContent();
+            } else {
+              localStorage.removeItem('ntb_cache_' + geraet);
+              grid.innerHTML = \`<div class="info-banner"><h2>Fehler beim Laden</h2><p>Konnte data/\${geraet}.json nicht laden: Falsche Geraetedaten im Cache.</p></div>\`;
+            }
           } else {
             grid.innerHTML = \`<div class="info-banner"><h2>Keine Verbindung</h2><p>Server nicht erreichbar. Überprüfe deine Internetverbindung oder versuche es später erneut.</p></div>\`;
           }
@@ -744,9 +996,16 @@ ${styleSheet}
           // Try to load from cache if available
           const cachedData = localStorage.getItem('ntb_cache_' + geraet);
           if (cachedData) {
-            currentData = JSON.parse(cachedData);
-            renderFilters();
-            await renderContent();
+            let parsed = null;
+            try { parsed = JSON.parse(cachedData); } catch (e) { parsed = null; }
+            if (isValidDeviceData(parsed, geraet)) {
+              currentData = parsed;
+              renderFilters();
+              await renderContent();
+            } else {
+              localStorage.removeItem('ntb_cache_' + geraet);
+              grid.innerHTML = \`<div class="info-banner"><h2>Fehler beim Laden</h2><p>Konnte data/\${geraet}.json nicht laden: Falsche Geraetedaten im Cache.</p></div>\`;
+            }
           } else {
             grid.innerHTML = \`<div class="info-banner"><h2>Fehler beim Laden</h2><p>Konnte data/\${geraet}.json nicht laden: \${err.message}</p></div>\`;
           }
@@ -757,7 +1016,7 @@ ${styleSheet}
     function renderFilters() {
       const filterContainer = document.getElementById("level-filters");
       const options = currentMode === "pflicht"
-        ? ["Alle", "G1", "G2", "G3", "G4"]
+        ? ["Alle", "G1", "G2", "G3", "G4", "G5"]
         : ["Alle", "LK4", "LK3", "LK2", "LK1"];
 
       if (!options.includes(currentFilter)) {
@@ -833,6 +1092,74 @@ ${styleSheet}
       return box;
     }
     
+    function elementCardMarkup(el, stufeLabel) {
+      const isWahl = el.wahl_uebung === true;
+      const pointsBadge = isWahl
+        ? \`<span class="badge badge-wahl">🏋️ Trainings- & Aufbauelement</span>\`
+        : \`<span class="badge badge-points">\${el.punkte.toFixed(1)} Pkt.</span>\`;
+      const keyBadge = el.schluessel
+        ? \`<span class="badge badge-key">⭐ Schlüsselelement</span>\`
+        : "";
+      return \`<div class="card-header">
+        <h3 class="card-title">\${el.titel}</h3>
+        <div class="badge-group">
+          <span class="badge badge-stage">\${stufeLabel}</span>
+          \${pointsBadge}
+          \${keyBadge}
+        </div>
+      </div>
+      <p class="card-desc">\${el.beschreibung}</p>
+      <div class="tags-list">
+        \${(el.kriterien || []).map((k) => \`<span class="tag">✓ \${k}</span>\`).join("")}
+      </div>\`;
+    }
+    
+    function punkteOrientierungBox(po) {
+      if (!po) return "";
+      return '<div class="punkte-box">' +
+        '<h3>So entsteht deine Punktzahl</h3>' +
+        '<p class="punkte-formel"><strong>Formel:</strong> ' + po.formel_kurz + '</p>' +
+        '<p><strong>Typischer Gesamtausgangswert:</strong> ' + po.typischer_gesamtwert + '</p>' +
+        '<p><strong>Rechenbeispiel:</strong> ' + po.rechenbeispiel + '</p>' +
+        '</div>';
+    }
+
+    function musikRegel(stufe) {
+      if (currentDevice !== "boden") return "ohne Musik";
+      if (stufe === "G3") return "Musik freiwillig";
+      if (stufe === "G4" || stufe === "G5") return "Pflichtmusik ohne Gesang oder Worte";
+      return "ohne Musik";
+    }
+
+    function gPunkteBox(s) {
+      var d = Number(s.d_note) || 0;
+      var e = (s.e_note === undefined || s.e_note === null) ? 10 : Number(s.e_note);
+      var b = Number(s.bonus_max) || 0;
+      var f = function (v) { return v.toFixed(2).replace(".", ","); };
+      return '<div class="punkte-box">' +
+        '<h3>So entsteht deine Punktzahl</h3>' +
+        '<p class="punkte-formel"><strong>Formel:</strong> Gesamtausgangswert = D-Note (Summe der Pflichtelemente) + 10,00 Pkt. E-Note (+ ggf. Bonus)</p>' +
+        '<p><strong>Zusammensetzung / Beispiel:</strong> D-Note: ' + f(d) + ' Pkt. + E-Note: ' + f(e) + ' Pkt. + max. Bonus: ' + f(b) + ' Pkt. = ' + f(d + e + b) + ' Pkt. (Kampfrichter ziehen Haltungsfehler von der 10,00 Pkt. E-Note ab).</p>' +
+        '</div>';
+    }
+
+    function gInfoCard(s) {
+      var n = (s.elemente || []).length;
+      var openAttr = (currentFilter === s.stufe) ? " open" : "";
+      var geraet = (currentData && currentData.geraet) ? currentData.geraet : "";
+      return '<details class="lk-info-card"' + openAttr + '>' +
+        '<summary><h2>Pflichtübung ' + s.stufe + ' (' + n + ' Elemente, feste Reihenfolge)</h2></summary>' +
+        '<div class="lk-info-body">' +
+          '<div class="lk-regeln">' +
+            '<p><strong>Gerät:</strong> ' + geraet + '</p>' +
+            '<p><strong>Rahmenbedingungen:</strong> ' + (s.beschreibung || "") + '</p>' +
+            '<p><strong>Musik:</strong> ' + musikRegel(s.stufe) + '</p>' +
+          '</div>' +
+          gPunkteBox(s) +
+        '</div>' +
+      '</details>';
+    }
+    
     async function renderContent() {
       const grid = document.getElementById("cards-grid");
       const banner = document.getElementById("info-banner");
@@ -847,29 +1174,16 @@ ${styleSheet}
           (s) => currentFilter === "Alle" || s.stufe === currentFilter
         );
 
-        if (currentFilter !== "Alle" && stufen.length === 1) {
-          const s = stufen[0];
+        if (stufen.length) {
           banner.classList.remove("hidden");
-          banner.innerHTML = \`<h2>\${s.stufe} – Ausgangswert: \${s.ausgangswert.toFixed(1)} Pkt.</h2><p>\${s.beschreibung}</p>\`;
+          banner.innerHTML = stufen.map(gInfoCard).join("");
         }
 
         for (const stufeObj of stufen) {
           for (const el of stufeObj.elemente || []) {
             const card = document.createElement("article");
             card.className = "card";
-            card.innerHTML = \`
-              <div class="card-header">
-                <h3 class="card-title">\${el.titel}</h3>
-                <div class="badge-group">
-                  <span class="badge badge-stage">\${stufeObj.stufe}</span>
-                  <span class="badge badge-points">\${el.punkte.toFixed(1)} Pkt.</span>
-                </div>
-              </div>
-              <p class="card-desc">\${el.beschreibung}</p>
-              <div class="tags-list">
-                \${(el.kriterien || []).map((k) => \`<span class="tag">✓ \${k}</span>\`).join("")}
-              </div>
-            \`;
+            card.innerHTML = elementCardMarkup(el, stufeObj.stufe);
 
             card.appendChild(await createPhotoWidget(el.id, "Trainingsfoto hinzufügen"));
 
@@ -895,6 +1209,55 @@ ${styleSheet}
             grid.appendChild(card);
           }
         }
+
+        // Einklappbare Vorstufen-Anzeige (Pflicht-Modus)
+        if (currentFilter && currentFilter.startsWith("G") && currentFilter !== "Alle") {
+          const currentNum = Number(currentFilter.slice(1));
+          const lowerStufen = (currentData.g_stufen || [])
+            .filter((s) => {
+              const n = Number(s.stufe.slice(1));
+              return Number.isInteger(n) && n >= 1 && n < currentNum;
+            })
+            .sort((a, b) => Number(a.stufe.slice(1)) - Number(b.stufe.slice(1)));
+
+          if (lowerStufen.length > 0) {
+            const vsSection = document.createElement("section");
+            vsSection.className = "vorstufen-section";
+            vsSection.innerHTML = \`
+              <details class="vorstufen-details" open>
+                <summary>📚 Elemente & Grundlagen aus den Vorstufen (G1–G\${currentNum - 1})</summary>
+                <div class="vorstufen-body"></div>
+              </details>
+            \`;
+            const vsBody = vsSection.querySelector(".vorstufen-body");
+            for (const s of lowerStufen) {
+              for (const el of s.elemente || []) {
+                const card = document.createElement("article");
+                card.className = "card";
+                card.innerHTML = elementCardMarkup(el, s.stufe);
+                card.appendChild(await createPhotoWidget(el.id, "Trainingsfoto hinzufügen"));
+                for (const vu of el.voruebungen || []) {
+                  const prep = document.createElement("div");
+                  prep.className = "prep-box";
+                  prep.innerHTML = \`
+                    <span class="prep-label">Vorübung zum Lernen</span>
+                    <div class="prep-title">\${vu.name}</div>
+                    <p class="card-desc">\${vu.erklaerung}</p>
+                  \`;
+                  prep.appendChild(await createPhotoWidget(vu.id, "Foto zur Vorübung"));
+                  card.appendChild(prep);
+                }
+                const progressButton = document.createElement("button");
+                progressButton.className = "progress-button";
+                progressButton.dataset.id = el.id;
+                updateProgressButton(progressButton, el.id);
+                card.appendChild(progressButton);
+                vsBody.appendChild(card);
+              }
+            }
+            grid.appendChild(vsSection);
+          }
+        }
       } else {
         const lk = currentData.lk_bereich;
         if (!lk) return;
@@ -906,15 +1269,46 @@ ${styleSheet}
         if (matchingReqs.length > 0) {
           banner.classList.remove("hidden");
           banner.innerHTML = matchingReqs
-            .map(
-              (r) => \`
-              <div style="margin-bottom: 14px;">
-                <h2>Anforderungen \${r.stufe} (\${r.max_elemente})</h2>
-                <p><strong>Schwierigkeit:</strong> \${r.schwierigkeit_info}</p>
-                <ul>\${(r.pflicht_kriterien || []).map((k) => \`<li>\${k}</li>\`).join("")}</ul>
-              </div>
-            \`
-            )
+            .map((r) => {
+              const dNoten = (lk.d_noten_tabelle || []).filter((d) => d.stufe === r.stufe);
+              const hinweis = r === matchingReqs[0] && lk.hinweis
+                ? \`<p><strong>\${lk.hinweis}</strong></p>\`
+                : "";
+              return \`
+              <details class="lk-info-card" \${currentFilter !== "Alle" ? "open" : ""}>
+                <summary><h2>Komposition \${r.stufe} (\${r.max_elemente || r.regeln?.max_elemente})</h2></summary>
+                <div class="lk-info-body">
+                  \${r.schwierigkeit_info ? \`<p><strong>Schwierigkeit:</strong> \${r.schwierigkeit_info}</p>\` : ""}
+                  \${r.regeln ? \`
+                    <div class="lk-regeln">
+                      <p><strong>Max. Elemente:</strong> \${r.regeln.max_elemente}</p>
+                      <p><strong>Abgang min. Wertigkeit:</strong> \${r.regeln.abgang_min_wertigkeit}</p>
+                      \${(r.regeln.besonderheiten || []).length ? \`<ul>\${r.regeln.besonderheiten.map((b) => \`<li>\${b}</li>\`).join("")}</ul>\` : ""}
+                    </div>
+                  \` : ""}
+                  \${(r.anforderungen || []).length ? \`
+                    <h3>Kompositionsanforderungen (je 0,50 P. = max. 2,50 P.)</h3>
+                    <ul>\${r.anforderungen.map((a) => \`<li><strong>\${a.ka}</strong> (\${Number(a.punkte).toFixed(2)} P.): \${a.kriterium}</li>\`).join("")}</ul>
+                  \` : ""}
+                  \${hinweis}
+                  \${dNoten.length ? \`
+                    <h3>D-Noten-Tabelle</h3>
+                    <table class="d-noten-table">
+                      <thead><tr><th>Stufe</th><th>Sprung</th><th>D-Note</th></tr></thead>
+                      <tbody>
+                        \${dNoten.map((d) => \`<tr><td>\${d.stufe}</td><td>\${d.element}</td><td>\${d.d_noten}</td></tr>\`).join("")}
+                      </tbody>
+                    </table>
+                  \` : ""}
+                  \${(r.pflicht_kriterien || []).length ? \`
+                    <h3>Pflicht-Kriterien</h3>
+                    <ul>\${r.pflicht_kriterien.map((k) => \`<li>\${k}</li>\`).join("")}</ul>
+                  \` : ""}
+                  \${punkteOrientierungBox(r.punkte_orientierung)}
+                </div>
+              </details>
+            \`;
+            })
             .join("");
         }
 
@@ -931,9 +1325,13 @@ ${styleSheet}
               <div class="badge-group">
                 <span class="badge badge-stage">\${el.ab_stufe} | \${el.wertigkeit}</span>
                 <span class="badge badge-points">+\${el.punkte.toFixed(2)} Pkt.</span>
+                \${el.schluessel ? \`<span class="badge badge-key">⭐ Schlüsselelement</span>\` : ""}
               </div>
             </div>
-            <div class="tags-list"><span class="tag">\${el.kategorie}</span></div>
+            <div class="tags-list">
+              <span class="tag">\${el.kategorie}</span>
+              \${(el.kriterien || []).map((k) => \`<span class="tag">✓ \${k}</span>\`).join("")}
+            </div>
             <p class="card-desc">\${el.erklaerung}</p>
           \`;
 
@@ -959,6 +1357,79 @@ ${styleSheet}
           card.appendChild(progressButton);
 
           grid.appendChild(card);
+        }
+
+        // Einklappbare Vorstufen-Anzeige (Kür-Modus)
+        const lkKuer = currentData.lk_bereich;
+        if (
+          lkKuer &&
+          currentFilter &&
+          currentFilter.startsWith("LK") &&
+          currentFilter !== "Alle"
+        ) {
+          const rankMap = { LK4: 1, LK3: 2, LK2: 3, LK1: 4 };
+          const currentRank = rankMap[currentFilter];
+          const lowerElements = (lkKuer.elemente || []).filter((el) => {
+            const r = rankMap[el.ab_stufe];
+            return r !== undefined && r < currentRank;
+          });
+          if (lowerElements.length > 0) {
+            let vorStufenText = "";
+            if (currentRank === 2) {
+              vorStufenText = "LK4";
+            } else if (currentRank === 3) {
+              vorStufenText = "LK4–LK3";
+            } else {
+              vorStufenText = "LK4–LK3–LK2";
+            }
+            const vsSection = document.createElement("section");
+            vsSection.className = "vorstufen-section";
+            vsSection.innerHTML = \`
+              <details class="vorstufen-details" open>
+                <summary>📚 Weitere erlaubte Elemente aus Vorstufen (\${vorStufenText})</summary>
+                <div class="vorstufen-body"></div>
+              </details>
+            \`;
+            const vsBody = vsSection.querySelector(".vorstufen-body");
+            for (const el of lowerElements) {
+              const card = document.createElement("article");
+              card.className = "card";
+              card.innerHTML = \`
+                <div class="card-header">
+                  <h3 class="card-title">\${el.titel}</h3>
+                  <div class="badge-group">
+                    <span class="badge badge-stage">\${el.ab_stufe} | \${el.wertigkeit}</span>
+                    <span class="badge badge-points">+\${el.punkte.toFixed(2)} Pkt.</span>
+                    \${el.schluessel ? \`<span class="badge badge-key">⭐ Schlüsselelement</span>\` : ""}
+                  </div>
+                </div>
+                <div class="tags-list">
+                  <span class="tag">\${el.kategorie}</span>
+                  \${(el.kriterien || []).map((k) => \`<span class="tag">✓ \${k}</span>\`).join("")}
+                </div>
+                <p class="card-desc">\${el.erklaerung}</p>
+              \`;
+              card.appendChild(await createPhotoWidget(el.id, "Trainingsfoto hinzufügen"));
+              for (const vu of el.voruebungen || []) {
+                const prep = document.createElement("div");
+                prep.className = "prep-box";
+                prep.innerHTML = \`
+                  <span class="prep-label">Vorübung zum Lernen</span>
+                  <div class="prep-title">\${vu.name}</div>
+                  <p class="card-desc">\${vu.erklaerung}</p>
+                \`;
+                prep.appendChild(await createPhotoWidget(vu.id, "Foto zur Vorübung"));
+                card.appendChild(prep);
+              }
+              const progressButton = document.createElement("button");
+              progressButton.className = "progress-button";
+              progressButton.dataset.id = el.id;
+              updateProgressButton(progressButton, el.id);
+              card.appendChild(progressButton);
+              vsBody.appendChild(card);
+            }
+            grid.appendChild(vsSection);
+          }
         }
       }
 
@@ -992,7 +1463,11 @@ ${styleSheet}
           
           if (response.ok) {
             const data = await response.json();
-            localStorage.setItem('ntb_cache_' + device, JSON.stringify(data));
+            if (isValidDeviceData(data, device)) {
+              localStorage.setItem('ntb_cache_' + device, JSON.stringify(data));
+            } else {
+              console.warn(\`Ungueltige Geraetedaten fuer \${device}\`);
+            }
           } else {
             console.warn(\`Failed to load data for \${device}\`);
           }
@@ -1066,10 +1541,15 @@ ${styleSheet}
       
       if (totalElements > 0) {
         const infoBanner = document.getElementById("info-banner");
-        infoBanner.innerHTML = \`
+        const oldInfo = infoBanner.querySelector(".progress-info");
+        if (oldInfo) oldInfo.remove();
+        const progressInfo = document.createElement("div");
+        progressInfo.className = "progress-info";
+        progressInfo.innerHTML = \`
           <h2>Fortschritt: \${masteredElements} von \${totalElements} Elementen beherrscht</h2>
           <p>(\${masteredElements}/\${totalElements} - \${(masteredElements/totalElements*100).toFixed(0)}%)</p>
         \`;
+        infoBanner.appendChild(progressInfo);
         infoBanner.classList.remove("hidden");
       }
     }

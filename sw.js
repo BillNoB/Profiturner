@@ -1,4 +1,4 @@
-const CACHE_NAME = "ntb-turnen-offline-v2";
+const CACHE_NAME = "ntb-turnen-offline-v11";
 const ASSETS = [
   "./",
   "./index.html",

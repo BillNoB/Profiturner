@@ -13,12 +13,13 @@
   - Benutzerdaten (eigene Trainingsfotos über iPad-Kamera/Galerie) werden lokal über **IndexedDB** gespeichert und über die eindeutige Element-/Vorübungs-ID (`id`) verknüpft.
 
 ## 3. Datenstruktur (`data/<geraet>.json`)
-- **Pflicht (`g_stufen`):** Enthält `G1` bis `G4` mit `stufe`, `ausgangswert`, `beschreibung`, `schwierigkeitsgrad` und dem Array `elemente` (`id`, `titel`, `beschreibung`, `punkte`, `kriterien`, `voruebungen`).
-- **Kür (`lk_bereich` - in Arbeit):** Enthält Anforderungen für `LK4`, `LK3`, `LK2`, `LK1` sowie einen Katalog an Kür-Elementen (`wertigkeit`: A/B/C/D, `punkte`, `kategorie`, `erklaerung`, `voruebungen`).
+- **Pflicht (`g_stufen`):** Enthält `G1` bis `G5` mit `stufe`, `d_note`, `bonus_max`, `ausgangswert` (Gesamtwert = 10 + d_note), `beschreibung`, `schwierigkeitsgrad` und dem Array `elemente` (`id`, `titel`, `beschreibung`, `punkte`, `kriterien`, `voruebungen`, optional `wahl_uebung: true` für Trainings-/Aufbauelemente, optional `schluessel: true` für Schlüssel-Elemente).
+- **Kür (`lk_bereich`):** Enthält Anforderungen für `LK4`, `LK3`, `LK2`, `LK1` sowie einen Katalog an Kür-Elementen (`wertigkeit`: A/B/C/D, `punkte`, `kategorie`, `erklaerung`, `voruebungen`, optional `schluessel: true` für Schlüssel-Elemente).
 
 ## 4. Aktueller Projektstand & Phasenplan
 - [x] **Phase 1 (Abgeschlossen):** PWA-Grundgerüst (`index.html`, `style.css`, `app.js`, `manifest.json`), IndexedDB-Foto-Upload & -Löschen, weiches iPad-Design.
-- [x] **Phase 2a (Abgeschlossen):** Alle 4 Geräte (`boden`, `balken`, `barren`, `sprung`) mit kompletten G-Stufen (`G1`–`G4`) inklusive Vorübungen und Stufen-Filter implemented.
-- [ ] **Phase 2b (Nächster Schritt):** Leistungsklassen (`LK1`–`LK4`) für alle 4 Geräte in die JSON-Dateien integrieren und einen Modus-Umschalter (`Pflicht (G-Stufen)` vs. `Kür (LK1–LK4)`) in der App einbauen.
-- [ ] **Phase 3 (Geplant):** Trainings-Fortschritt (Checkliste "Beherrsche ich") und Backup-Export/Import der IndexedDB-Fotos.
-- [ ] **Phase 4 (Zukunft):** KI-Videoanalyse über lokalen LM Studio Server (`Qwen 3.5 9B` Vision-Modell) für Haltungskorrektur und Kampfrichter-Auswertung.
+- [x] **Phase 2a (Abgeschlossen):** Alle 4 Geräte (`boden`, `balken`, `barren`, `sprung`) mit kompletten G-Stufen (`G1`–`G5`) inklusive Vorübungen, Stufen-Filter und `schluessel: true` Badge-Implementierung. Jede G-Stufe enthält 2–3 Wahl-/Aufbauelemente (`wahl_uebung: true`) am Ende.
+- [x] **Phase 2b (Abgeschlossen):** Leistungsklassen (`LK1`–`LK4`) für alle 4 Geräte mit Kompositionsanforderungen/Orientierungskarten; Modus-Umschalter (`Pflicht (G-Stufen)` vs. `Kür (LK1–LK4)`) implementiert. Wichtige Kür-Elemente mit `schluessel: true` markiert; 2–3 neue Kür-Elemente pro LK-Stufe ergänzt.
+- [x] **Phase 3 (Abgeschlossen):** Dynamische Vorstufen-Anzeige (einklappbare Sektionen mit Elementen aus niedrigeren Stufen im Pflicht- und Kür-Modus), `wahl_uebung`-Badge (🏋️ Trainings- & Aufbauelement) und `schluessel`-Badge (⭐ Schlüsselelement) in Pflicht & Kür, `exportStandaloneApp` mit gleicher Logik.
+- [x] **Phase 3b (Abgeschlossen):** Trainings-Fortschritt (Checkliste "Beherrsche ich") und Backup-Export/Import der IndexedDB-Fotos.
+- [ ] **Phase 4 (Nächster Schritt):** KI-Videoanalyse über Google Gemini API (Flash) für Haltungskorrektur und Kampfrichter-Auswertung.

@@ -4,7 +4,10 @@
   "g_stufen": [
     {
       "stufe": "G1",
-      "ausgangswert": 11.0,
+      "d_note": 3.0,
+      "e_note": 10.0,
+      "bonus_max": 0,
+      "ausgangswert": 13.0,
       "beschreibung": "Grundstufe 1 – Erste Rollen, Strecksprünge und Körperspannung",
       "schwierigkeitsgrad": 1,
       "elemente": [
@@ -12,13 +15,19 @@
           "id": "g1_boden_1",
           "titel": "Rolle vorwärts in den Stand",
           "beschreibung": "Aus dem Stand mit rundem Rücken abrollen und ohne Hilfe der Hände in den Stand aufstehen.",
-          "punkte": 3.0,
-          "kriterien": ["Kinn auf die Brust", "Geschlossene Beine beim Aufstehen"],
+          "punkte": 1.5,
+          "kriterien": ["Kinn auf die Brust", "Geschlossene Beine beim Aufstehen", "Gleichmäßiges, rundes Abrollen über den ganzen Rücken"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g1_boden_1",
               "name": "Schaukeln wie ein Päckchen",
               "erklaerung": "Auf dem Rücken liegend die Knie fest umfassen und vor- und zurückschaukeln."
+            },
+            {
+              "id": "vu_g1_boden_1b",
+              "name": "Rolle von der Kippmatte",
+              "erklaerung": "Auf einer leicht erhöhten Matte abrollen und die Hände kräftig nach vorn abdrücken, um Schwung aufzubauen."
             }
           ]
         },
@@ -26,13 +35,59 @@
           "id": "g1_boden_2",
           "titel": "Kerze (Schulterstand)",
           "beschreibung": "Aus der Rückenlage Hüfte und Beine senkrecht nach oben strecken, Hände stützen den Rücken.",
-          "punkte": 2.5,
-          "kriterien": ["Hüfte vollständig gestreckt", "Fußspitzen angezogen"],
+          "punkte": 1.5,
+          "kriterien": ["Hüfte vollständig gestreckt", "Fußspitzen angezogen", "Kein Hohlkreuz, Oberkörper gerade", "Hände fest angesetzt, Arme gestreckt"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g1_boden_2",
               "name": "Kerze an der Wand",
               "erklaerung": "Mit den Füßen an einer Wand nach oben wandern, bis der Rücken gerade ist."
+            },
+            {
+              "id": "vu_g1_boden_2b",
+              "name": "Kerze mit Partnerhilfe",
+              "erklaerung": "Der Partner stützt die Oberschenkel beim Hochdrücken und lässt langsam los."
+            }
+          ]
+        },
+        {
+          "id": "g1_boden_w1",
+          "titel": "Brücke auf dem Boden vorbereiten",
+          "beschreibung": "Aus der Rückenlage die Hüfte vorsichtig heben und die Körperspannung aufbauen – Vorbereitung auf die Brücke in G3.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Hüfte kontrolliert nach oben drücken", "Schultern über die Hände schieben", "Kurzes, ruhiges Halten der Endposition"],
+          "voruebungen": [
+            {
+              "id": "vu_g1_boden_w1",
+              "name": "Hüftheben aus der Rückenlage",
+              "erklaerung": "Auf dem Rücken liegend das Becken langsam heben und wieder senken."
+            },
+            {
+              "id": "vu_g1_boden_w1b",
+              "name": "Brücke mit Partnerhilfe",
+              "erklaerung": "Der Partner stützt die Hüfte beim ersten Hochdrücken."
+            }
+          ]
+        },
+        {
+          "id": "g1_boden_w2",
+          "titel": "Hockwende und Rolle vorbereiten",
+          "beschreibung": "Aus dem Hock mit geradem Rücken über die Füße rollen und wieder aufstehen – Vorbereitung auf Rad und Rolle rückwärts in G2.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Gleichmäßiges Abrollen über den Rücken", "Hände stabil neben den Schultern aufsetzen", "Kontrolliertes Aufstehen ohne Schwung"],
+          "voruebungen": [
+            {
+              "id": "vu_g1_boden_w2",
+              "name": "Rolle seitwärts über die Schulter",
+              "erklaerung": "Seitwärts über die gerundete Schulter rollen, Kinn auf die Brust."
+            },
+            {
+              "id": "vu_g1_boden_w2b",
+              "name": "Hockwende auf der Matte",
+              "erklaerung": "Aus dem Hockstand mit Schwung auf die Füße rollen und aufstehen."
             }
           ]
         }
@@ -40,7 +95,10 @@
     },
     {
       "stufe": "G2",
-      "ausgangswert": 12.0,
+      "d_note": 4.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 14.0,
       "beschreibung": "Grundstufe 2 – Rad, Handstand-Ansatz und Rolle rückwärts",
       "schwierigkeitsgrad": 2,
       "elemente": [
@@ -48,13 +106,19 @@
           "id": "g2_boden_1",
           "titel": "Rad (Handstandüberschlag seitwärts)",
           "beschreibung": "Aus dem Ausfallschritt Hände nacheinander aufsetzen, über den Handstand in den Stand turnen.",
-          "punkte": 4.0,
-          "kriterien": ["Gestreckte Beine und Arme", "Turnen auf einer gedachten Linie"],
+          "punkte": 2.5,
+          "kriterien": ["Gestreckte Beine und Arme", "Turnen auf einer gedachten Linie", "Beide Hände flach und nacheinander setzen", "Geschlossene Beine in der Handstandphase"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g2_boden_1",
               "name": "Rad über die Turnbank",
               "erklaerung": "Hände auf die Bank stützen und die Beine nacheinander auf die andere Seite schwingen."
+            },
+            {
+              "id": "vu_g2_boden_1b",
+              "name": "Rad aus dem Stand",
+              "erklaerung": "Ohne Ausfallschritt-Ansatz direkt aus dem Stand in das Rad laufen und beidbeinig abdrücken."
             }
           ]
         },
@@ -62,13 +126,59 @@
           "id": "g2_boden_2",
           "titel": "Rolle rückwärts in den Hockstand",
           "beschreibung": "Aus dem Hockstand rückwärts abrollen, Hände neben den Schultern aufsetzen und abdrücken.",
-          "punkte": 3.0,
-          "kriterien": ["Hände flach aufsetzen", "Kopf nicht belasten"],
+          "punkte": 1.5,
+          "kriterien": ["Hände flach aufsetzen", "Kopf nicht belasten", "Rundes Abrollen über die Schultern", "Explosiver Abdruck aus den Händen"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g2_boden_2",
               "name": "Rolle rückwärts auf der schiefen Ebene",
               "erklaerung": "Auf einem Sprungkeil bergab rollen, um Schwung und Armabdruck zu erleichtern."
+            },
+            {
+              "id": "vu_g2_boden_2b",
+              "name": "Rolle rückwärts von der Matte",
+              "erklaerung": "Auf einer erhöhten Matte im Hockstand beginnen und rückwärts bergab rollen, um den Abdruck zu erleichtern."
+            }
+          ]
+        },
+        {
+          "id": "g2_boden_w1",
+          "titel": "Handstand-Abrollen vorbereiten",
+          "beschreibung": "Aus dem Ausfallschritt in den Handstand drücken, kurz halten und rund abrollen – Vorbereitung auf den flüchtigen Handstand in G3.",
+          "punkte": 1.5,
+          "wahl_uebung": true,
+          "kriterien": ["Schultern voll geöffnet im Handstand", "Kurze deutliche Senkrechte", "Rundes, kontrolliertes Abrollen"],
+          "voruebungen": [
+            {
+              "id": "vu_g2_boden_w1",
+              "name": "Handstand-Ansatz auf der Matte",
+              "erklaerung": "Aus dem Ausfallschritt in den Handstand drücken, kurz halten."
+            },
+            {
+              "id": "vu_g2_boden_w1b",
+              "name": "Abrollen von der schiefen Ebene",
+              "erklaerung": "Vom Sprungkeil rund abrollen, Schwung aufbauen."
+            }
+          ]
+        },
+        {
+          "id": "g2_boden_w2",
+          "titel": "Flick-Flack über die Rolle vorbereiten",
+          "beschreibung": "Rückwärts-Absprung aus dem Stand mit Schulteröffnung über eine Rolle und gestreckten Beinen im Handstand – Vorbereitung auf den Flick-Flack in G2.",
+          "punkte": 1.0,
+          "wahl_uebung": true,
+          "kriterien": ["Rückwärts-Absprung aus dem Stand", "Schulteröffnung über die Rolle", "Gestreckte Beine im Handstand"],
+          "voruebungen": [
+            {
+              "id": "vu_g2_boden_w2",
+              "name": "Brücke abdrücken und Schwung holen",
+              "erklaerung": "Aus der Brücke mit den Händen abdrücken, Hüfte schieben."
+            },
+            {
+              "id": "vu_g2_boden_w2b",
+              "name": "Rolle rückwärts auf der Rolle",
+              "erklaerung": "Über eine Schaumstoffrolle rückwärts rollen, Hände stützen."
             }
           ]
         }
@@ -76,7 +186,10 @@
     },
     {
       "stufe": "G3",
-      "ausgangswert": 13.0,
+      "d_note": 5.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 15.0,
       "beschreibung": "Grundstufe 3 – Flüchtiger Handstand, Sprungverbindungen und Brücke",
       "schwierigkeitsgrad": 3,
       "elemente": [
@@ -84,13 +197,19 @@
           "id": "g3_boden_1",
           "titel": "Handstand (flüchtig) mit Abrollen",
           "beschreibung": "Aus dem Ausfallschritt in den senkrechten Handstand schwingen, kurz schließen und rund abrollen.",
-          "punkte": 4.5,
-          "kriterien": ["Schultern voll geöffnet", "Blick auf die Hände, Bauch fest"],
+          "punkte": 3.0,
+          "kriterien": ["Schultern voll geöffnet", "Blick auf die Hände, Bauch fest", "Kurze, deutliche Senkrechte im Handstand", "Rundes Abrollen ohne Schulterbruch"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g3_boden_1",
               "name": "Bauch-an-Wand-Handstand",
               "erklaerung": "Mit den Füßen an der Wand hochklettern, bis nur noch Fußspitzen und Nase die Wand berühren."
+            },
+            {
+              "id": "vu_g3_boden_1b",
+              "name": "Handstand aus dem Stand",
+              "erklaerung": "Ohne Anlauf in den senkrechten Handstand drücken, kurz schließen und rund abrollen."
             }
           ]
         },
@@ -98,13 +217,59 @@
           "id": "g3_boden_2",
           "titel": "Brücke aus der Rückenlage",
           "beschreibung": "Aus der Rückenlage Hände und Füße aufstellen und die Hüfte weit nach oben drücken (3 Sek. halten).",
-          "punkte": 3.5,
-          "kriterien": ["Schultern über die Hände schieben", "Gestreckte Arme"],
+          "punkte": 2.0,
+          "kriterien": ["Schultern über die Hände schieben", "Gestreckte Arme", "Hüfte maximal hoch, Beine gestreckt", "Stabile, ruhige Haltephase"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g3_boden_2",
               "name": "Schulter-Dehnung am Kasten",
               "erklaerung": "Hände auf einen Kasten stützen und den Oberkörper sanft nach unten federn."
+            },
+            {
+              "id": "vu_g3_boden_2b",
+              "name": "Brücke mit Unterstützung",
+              "erklaerung": "Beide Hände und Füße aufstellen, Partner stützt die Hüfte kurz beim Hochdrücken."
+            }
+          ]
+        },
+        {
+          "id": "g3_boden_w1",
+          "titel": "Rondat-Vorbereitung",
+          "beschreibung": "Seitenwärtiger Handstand-Ansatz mit Schwung, Beine geschlossen im Überschlag, kraftvoller Abdrück aus den Schultern – Vorbereitung auf die Radwende in G4.",
+          "punkte": 1.5,
+          "wahl_uebung": true,
+          "kriterien": ["Seitenwärtiger Handstand-Ansatz mit Schwung", "Beine geschlossen im Überschlag", "Kraftvoller Abdrück aus den Schultern"],
+          "voruebungen": [
+            {
+              "id": "vu_g3_boden_w1",
+              "name": "Radwende über die Turnbank",
+              "erklaerung": "Hände auf die Bank, Beine geschlossen darüber schwingen."
+            },
+            {
+              "id": "vu_g3_boden_w1b",
+              "name": "Rondat-Abdruck auf die Matte",
+              "erklaerung": "Aus dem Anlauf in den Überschlag, beide Hände zeitig setzen."
+            }
+          ]
+        },
+        {
+          "id": "g3_boden_w2",
+          "titel": "Salto rückwärts gehockt auf Weichboden",
+          "beschreibung": "Komakter Absprung beidbeinig, Knie fest zur Brust gezogen, kontrollierte Landung in der Weichbodenmatte – Vorbereitung auf Salto rückwärts in G3.",
+          "punkte": 1.5,
+          "wahl_uebung": true,
+          "kriterien": ["Komakter Absprung beidbeinig", "Knie fest zur Brust gezogen", "Kontrollierte Landung in der Weichbodenmatte"],
+          "voruebungen": [
+            {
+              "id": "vu_g3_boden_w2",
+              "name": "Salto rückwärts vom Sprungbrett auf Weichboden",
+              "erklaerung": "Mit Brett-Unterstützung Höhe und Drehung üben."
+            },
+            {
+              "id": "vu_g3_boden_w2b",
+              "name": "Anhocken und Aufrollen am Boden",
+              "erklaerung": "Aus dem Liegen die Knie zur Brust ziehen und aufrollen."
             }
           ]
         }
@@ -112,7 +277,10 @@
     },
     {
       "stufe": "G4",
-      "ausgangswert": 14.0,
+      "d_note": 6.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 16.0,
       "beschreibung": "Grundstufe 4 – Radwende, Spagat und gymnastische Sprünge",
       "schwierigkeitsgrad": 4,
       "elemente": [
@@ -120,13 +288,19 @@
           "id": "g4_boden_1",
           "titel": "Radwende (Round-off)",
           "beschreibung": "Mit Anlauf in das Rad ansetzen, Beine im Handstand schließen und kraftvoll beidbeinig abdrücken.",
-          "punkte": 5.0,
-          "kriterien": ["Schnelles Zuklappen der Beine", "Explosiver Abdruck aus den Schultern"],
+          "punkte": 3.5,
+          "kriterien": ["Schnelles Zuklappen der Beine", "Explosiver Abdruck aus den Schultern", "Beide Hände gleichzeitig und flach setzen", "Kraftvoller Ausschwung mit gestreckten Armen"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g4_boden_1",
               "name": "Radwende auf eine erhöhte Matte",
               "erklaerung": "Hände vor einer Turnmatte aufsetzen und mit geschlossenen Beinen auf die Matte landen."
+            },
+            {
+              "id": "vu_g4_boden_1b",
+              "name": "Radwende mit Hüftstütz des Partners",
+              "erklaerung": "Der Partner stützt die Hüfte beim Zuklappen, während du den explosiven Abdruck übst."
             }
           ]
         },
@@ -134,13 +308,342 @@
           "id": "g4_boden_2",
           "titel": "Spagatsprung (120°–150°)",
           "beschreibung": "Nach Wechselschritt kraftvoll abspringen und die Beine gestreckt in den Spagat spreizen.",
-          "punkte": 4.0,
-          "kriterien": ["Beide Knie und Fußspitzen gestreckt", "Aufrechter Oberkörper"],
+          "punkte": 2.5,
+          "kriterien": ["Beide Knie und Fußspitzen gestreckt", "Aufrechter Oberkörper", "Offener Hüftwinkel, Spreizung mind. 120 Grad", "Ruhige, kontrollierte Landung"],
+          "schluessel": true,
           "voruebungen": [
             {
               "id": "vu_g4_boden_2",
               "name": "Galoppsprünge mit hohem Kniehub",
               "erklaerung": "Dynamische Galoppsprünge durch die Halle zur Kräftigung des Absprungs."
+            },
+            {
+              "id": "vu_g4_boden_2b",
+              "name": "Hoher Seitwärtsschritt mit Spagathaltung",
+              "erklaerung": "Seitwärts schreiten und in jeder Schrittstellung kurz im vollen Spagat verharren."
+            }
+          ]
+        },
+        {
+          "id": "g4_boden_w1",
+          "titel": "Flick-Flack-Serie (2x)",
+          "beschreibung": "Zwei gestreckte Flick-Flack direkt hintereinander mit reaktiver Absprung ohne Zwischenschritt und gleicher Fluglinie – Vorbereitung auf Flick-Flack-Serien in G4.",
+          "punkte": 1.5,
+          "wahl_uebung": true,
+          "kriterien": ["Zwei gestreckte Flick-Flack direkt hintereinander", "Reaktiver Absprung ohne Zwischenschritt", "Gleiche Fluglinie einhalten"],
+          "voruebungen": [
+            {
+              "id": "vu_g4_boden_w1",
+              "name": "Flick-Flack über die Matte",
+              "erklaerung": "Mit Matten-Unterstützung die Serie flüssig turnen."
+            },
+            {
+              "id": "vu_g4_boden_w1b",
+              "name": "Rondat – Flick-Flack auf der Linie",
+              "erklaerung": "Den Übergang Rondat in Flick-Flack üben."
+            }
+          ]
+        },
+        {
+          "id": "g4_boden_w2",
+          "titel": "Salto vorwärts auf Weichboden",
+          "beschreibung": "Dynamischer Absprung vom Sprungbrett, kompakter Salto in der Hocke, sichere Landung auf der Weichbodenmatte – Vorbereitung auf Salto vorwärts in G4.",
+          "punkte": 1.5,
+          "wahl_uebung": true,
+          "kriterien": ["Dynamischer Absprung vom Sprungbrett", "Komakter Salto in der Hocke", "Sichere Landung auf der Weichbodenmatte"],
+          "voruebungen": [
+            {
+              "id": "vu_g4_boden_w2",
+              "name": "Salto vorwärts gehockt in die Schnitzelgrube",
+              "erklaerung": "Fokus kompakte Hockphase."
+            },
+            {
+              "id": "vu_g4_boden_w2b",
+              "name": "Salto vorwärts vom Brett auf die Matte",
+              "erklaerung": "Mit Trainerhilfe, dann frei."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stufe": "G5",
+      "d_note": 7.0,
+      "e_note": 10.0,
+      "bonus_max": 1.0,
+      "ausgangswert": 17.0,
+      "beschreibung": "NTB-Pflichtprogramm 2026 – Boden (Pflichtmusik: Instrumentalmusik ohne Gesang oder Worte, sonst Abzug 1.00 P; Bonus bis 1.00 P)",
+      "schwierigkeitsgrad": 5,
+      "elemente": [
+        {
+          "id": "g5_boden_1",
+          "titel": "Verbindung: (Schritt) Anhüpfer, Rondat – 2x Flick-Flack",
+          "beschreibung": "(Schritt-)Anhüpfer, Rondat (0.5 P), zwei Flick-Flack (je 0.5 P) und reaktiver Absprung zum Strecksprung mit Landung.",
+          "schluessel": true,
+          "punkte": 1.5,
+          "kriterien": ["Beschleunigter (Schritt-)Anhüpfer mit klarem Rondat-Abdruck", "Zwei gestreckte Flick-Flack auf der Bewegungslinie", "Reaktiver Absprung ohne Zwischenschritt", "Strecksprung mit sicherer Landung"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_boden_1",
+              "name": "Rondat – Flick-Flack – Strecksprung auf der Bodenlinie",
+              "erklaerung": "Die Verbindung in ruhigem Tempo auf einer Linie üben."
+            },
+            {
+              "id": "vu_g5_boden_1b",
+              "name": "Reaktiver Absprung nach Flick-Flack an der Wand",
+              "erklaerung": "Nach dem Flick-Flack explosiv in die Streckung abspringen, mit Wandhilfe."
+            }
+          ]
+        },
+        {
+          "id": "g5_boden_2",
+          "titel": "Felgrolle in den Handstand",
+          "beschreibung": "Felgrolle mit gestreckten Armen in den Handstand und beliebiges Absenken in den Stand.",
+          "schluessel": true,
+          "punkte": 0.5,
+          "kriterien": ["Erreichen der Senkrechten (max. 30 Grad Abweichung)", "Gestreckte Arme beim Hochdrücken", "Kontrolliertes Absenken in den Stand"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_boden_2",
+              "name": "Felgrolle mit gestreckten Armen am Boden",
+              "erklaerung": "Die Felgrolle mit gestreckten Armen üben, Fokus auf die Senkrechte."
+            },
+            {
+              "id": "vu_g5_boden_2b",
+              "name": "Felgrolle in den Handstand mit Wandhilfe",
+              "erklaerung": "In den Handstand an der Wand drücken und die Senkrechte halten."
+            }
+          ]
+        },
+        {
+          "id": "g5_boden_3",
+          "titel": "Spagat aus dem Strecksitz (beide Seiten, ohne Handstütz)",
+          "beschreibung": "Aus dem Strecksitz aktives Öffnen in den Spagat, kurzes Verharren, Schließen in den Strecksitz – beide Seiten, Arme in der Seithalte, ohne Handstütz.",
+          "punkte": 0.5,
+          "kriterien": ["Aktives Öffnen in den Spagat ohne Handstütz", "Kurzes Verharren im Spagat, Winkelabweichung max. 45 Grad", "Beide Seiten ausgeführt, sauberes Schließen in den Strecksitz"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_boden_3",
+              "name": "Aktives Öffnen in den Spagat im Sitz",
+              "erklaerung": "Aus dem Langsitz die Beine aktiv in den Spagat öffnen und verharren."
+            },
+            {
+              "id": "vu_g5_boden_3b",
+              "name": "Spagat aus dem Strecksitz mit Armbewegung",
+              "erklaerung": "Die Arme in der Seithalte stabil halten, ohne Abstützen der Hände."
+            }
+          ]
+        },
+        {
+          "id": "g5_boden_4",
+          "titel": "Gymnastische Kombination: Durchschlagsprung (135°) + Spagatsprung (160°)",
+          "schluessel": true,
+          "beschreibung": "Tänzerische Passage: Durchschlagsprung mit mindestens 135 Grad Spreizwinkel.",
+          "punkte": 1.0,
+          "kriterien": ["Mindestens 135 Grad Spreizwinkel", "Gestreckte Beine und Fußspitzen (Body Shape)", "Ausreichende Sprunghöhe", "Saubere Landung in der Kombination"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_boden_4",
+              "name": "Durchschlagsprung am Boden",
+              "erklaerung": "Den Durchschlagsprung mit 135 Grad aus dem Stand üben."
+            },
+            {
+              "id": "vu_g5_boden_4b",
+              "name": "Durchschlagsprung aus dem Chassé",
+              "erklaerung": "Die tänzerische Vorbereitung mit dem Sprung verbinden."
+            }
+          ]
+        },
+        {
+          "id": "g5_boden_5",
+          "titel": "Spagatsprung 160° (Fortsetzung der Kombination)",
+          "beschreibung": "Direkte Fortsetzung der tänzerischen Passage: Spagatsprung mit mindestens 160 Grad Spreizwinkel.",
+          "punkte": 0.5,
+          "kriterien": ["Mindestens 160 Grad Spreizwinkel", "Body Shape und Höhe sauber gehalten", "Harmonische Fortsetzung ohne Zwischenschritt"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_boden_5",
+              "name": "Spagatsprung 160° am Boden",
+              "erklaerung": "Den Spagatsprung mit 160 Grad Spreizung üben."
+            },
+            {
+              "id": "vu_g5_boden_5b",
+              "name": "Durchschlagsprung – Spagatsprung als Kombination",
+              "erklaerung": "Die Kombination im langsamen Tempo verbinden."
+            }
+          ]
+        },
+        {
+          "id": "g5_boden_6",
+          "titel": "1/1 Drehung einbeinig im Passé",
+          "beschreibung": "Enge Schrittstellung, 1/1 Drehung auf einem Bein im Passé, Arme in der Hochhalte – kein Fersenheben vor Drehbeginn.",
+          "punkte": 0.5,
+          "kriterien": ["Kein Heben der Ferse vor Drehbeginn", "Geschlossene Passé-Position", "Hoher Ballenstand und präzise Drehung (Body Shape)"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_boden_6",
+              "name": "1/1 Drehung im Passé auf der Bodenlinie",
+              "erklaerung": "Die Drehung mit festem Blickpunkt auf einer Linie üben."
+            },
+            {
+              "id": "vu_g5_boden_6b",
+              "name": "Passé-Position an der Wand",
+              "erklaerung": "Die Passé-Position mit Hochhalte stabil halten."
+            }
+          ]
+        },
+        {
+          "id": "g5_boden_7",
+          "titel": "Rolle vorwärts – Absprung in den Handstand mit 1/2 Drehung – Abrollen",
+          "beschreibung": "Rolle vorwärts, direkt Absprung in den Handstand (gehockt oder gegrätscht) mit 1/2 Drehung zum Abrollen, Aufrichten mit gestreckten Beinen.",
+          "punkte": 0.5,
+          "kriterien": ["Direkter Übergang von der Rolle zum Absprung ohne Pause", "Handstand mit 1/2 Drehung und Abrollen", "Aufrichten mit gestreckten Beinen ohne Nachfassen"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_boden_7",
+              "name": "Rolle vorwärts – Absprung in den Handstand",
+              "erklaerung": "Den Übergang Rolle–Absprung auf dem Boden üben."
+            },
+            {
+              "id": "vu_g5_boden_7b",
+              "name": "Handstand mit 1/2 Drehung zum Abrollen",
+              "erklaerung": "Mit Sicherung die halbe Drehung und das Abrollen üben."
+            }
+          ]
+        },
+        {
+          "id": "g5_boden_8",
+          "titel": "Anhüpfer Schrittüberschlag vorwärts",
+          "schluessel": true,
+          "beschreibung": "(Schritt-)Anhüpfer und Schrittüberschlag vorwärts mit Flugphase nach dem Handabdruck und aufrechter Landung.",
+          "punkte": 1.0,
+          "kriterien": ["Kräftiger Abdruck mit Flugphase nach dem Handabdruck", "Gestreckte Hüfte im Überschlag", "Aufrechte Landung mit sicherem Stand"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_boden_8",
+              "name": "Schrittüberschlag am Boden",
+              "erklaerung": "Den Schrittüberschlag mit Abdruck und Flugphase üben."
+            },
+            {
+              "id": "vu_g5_boden_8b",
+              "name": "Anhüpfer – Schrittüberschlag über Mattenberg",
+              "erklaerung": "Aus dem Anhüpfer über einen niedrigen Mattenberg turnen."
+            }
+          ]
+        },
+        {
+          "id": "g5_boden_9",
+          "titel": "Quergrätschsprung 135° – Rebound",
+          "beschreibung": "Kombination: Quergrätschsprung mit 135 Grad Spreizwinkel und deutlichem Rebound.",
+          "punkte": 0.5,
+          "kriterien": ["Mindestens 135 Grad Quergrätsche", "Deutlicher Rebound nach der Landung", "Body Shape und Höhe sauber"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_boden_9",
+              "name": "Quergrätschsprung am Boden",
+              "erklaerung": "Den Quergrätschsprung mit 135 Grad üben."
+            },
+            {
+              "id": "vu_g5_boden_9b",
+              "name": "Rebound nach der Landung",
+              "erklaerung": "Nach der Landung sofort reaktiv in die nächste Aktion federn."
+            }
+          ]
+        },
+        {
+          "id": "g5_boden_10",
+          "titel": "Quergrätschsprung 135° – andere Seite (Fortsetzung)",
+          "beschreibung": "Fortsetzung der Kombination: Quergrätschsprung 135° auf der anderen Seite.",
+          "punkte": 0.5,
+          "kriterien": ["Gleiche Qualität auf der zweiten Seite", "Mindestens 135 Grad Quergrätsche", "Body Shape und Höhe sauber"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_boden_10",
+              "name": "Quergrätschsprung andere Seite am Boden",
+              "erklaerung": "Die zweite Seite isoliert üben."
+            },
+            {
+              "id": "vu_g5_boden_10b",
+              "name": "Beidseitige Quergrätschsprung-Kombination",
+              "erklaerung": "Beide Sprünge im Wechsel verbinden."
+            }
+          ]
+        },
+        {
+          "id": "g5_boden_11",
+          "titel": "Bonus – Verbindung mit 3x Flick-Flack oder Salto rückwärts gehockt (ersetzt Pos. 1)",
+          "beschreibung": "(Schritt-)Anhüpfer, Rondat – 3x Flick-Flack – reaktiver Strecksprung ODER Rondat – Flick-Flack – Salto rückwärts gehockt als Bonusvariante von Position 1.",
+          "punkte": 0.5,
+          "kriterien": ["Drei gestreckte Flick-Flack auf der Linie bzw. Salto rückwärts gehockt mit Landung", "Reaktiver Absprung mit Strecksprung", "Saubere Landung ohne Zwischenschritt"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_boden_11",
+              "name": "3x Flick-Flack auf der Bodenlinie",
+              "erklaerung": "Die dreifache Flick-Flack-Folge auf einer Linie üben."
+            },
+            {
+              "id": "vu_g5_boden_11b",
+              "name": "Salto rückwärts gehockt nach Flick-Flack",
+              "erklaerung": "Mit Sicherung den Salto rückwärts gehockt in die Weichbodenmatte üben."
+            }
+          ]
+        },
+        {
+          "id": "g5_boden_12",
+          "titel": "Bonus – Salto vorwärts (max. 5 Schritte Anlauf)",
+          "beschreibung": "Zusätzlicher Bonus am Ende: Salto vorwärts mit maximal 5 Schritten Anlauf.",
+          "punkte": 0.5,
+          "kriterien": ["Maximal 5 Schritte Anlauf", "Kompakter Salto vorwärts mit gestreckter Haltung", "Kontrollierte Landung im Stand"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_boden_12",
+              "name": "Salto vorwärts in die Schnitzelgrube",
+              "erklaerung": "Den Salto vorwärts mit kurzem Anlauf in die Grube üben."
+            },
+            {
+              "id": "vu_g5_boden_12b",
+              "name": "Salto vorwärts auf die Weichbodenmatte",
+              "erklaerung": "Mit Sicherung auf die Matte springen."
+            }
+          ]
+        },
+        {
+          "id": "g5_boden_w1",
+          "titel": "Salto rückwärts gestreckt (Weichboden)",
+          "beschreibung": "Gestreckter Körper im Salto, einmalige Drehung ohne Nachfassen, kontrollierte Landung im Stand auf der Weichbodenmatte.",
+          "punkte": 0.5,
+          "wahl_uebung": true,
+          "kriterien": ["Gestreckter Körper im Salto", "Einmalige Drehung ohne Nachfassen", "Kontrollierte Landung im Stand"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_boden_w1",
+              "name": "Salto rückwärts gestreckt auf Weichboden",
+              "erklaerung": "Mit Sicherung in die Matte."
+            },
+            {
+              "id": "vu_g5_boden_w1b",
+              "name": "Salto rückwärts mit 1/2 Drehung auf Weichboden",
+              "erklaerung": "Späte Schraube einleiten."
+            }
+          ]
+        },
+        {
+          "id": "g5_boden_w2",
+          "titel": "Verbindungstraining mit Pflichtmusik",
+          "beschreibung": "Übungsabfolge im Rhythmus der Musik, flüssige Übergänge zwischen Elementen, ausdrucksstarke tanzartige Passagen.",
+          "punkte": 0.5,
+          "wahl_uebung": true,
+          "kriterien": ["Übungsabfolge im Rhythmus der Musik", "Flüssige Übergänge zwischen Elementen", "Ausdrucksstarke, tanzartige Passagen"],
+          "voruebungen": [
+            {
+              "id": "vu_g5_boden_w2",
+              "name": "Kombination ohne Musik im Zeitmaß",
+              "erklaerung": "Die Pflichtabfolge im Takt zählen."
+            },
+            {
+              "id": "vu_g5_boden_w2b",
+              "name": "Tanzlerische Einleitung vor dem ersten Element",
+              "erklaerung": "Auftritt und erste Bewegung zur Musik."
             }
           ]
         }
@@ -151,6 +654,46 @@
     "anforderungen": [
       {
         "stufe": "LK4",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "ca. 13,10 - 13,60 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = (Summe der gewerteten Elemente × 2) + bis zu 2,50 Pkt. Kompositionsanforderungen + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "6 Elemente à NE/A ≈ 0,80 × 2 = 1,60 D-Wert + 2,00 KA + 10,00 E-Note = 13,60 Pkt."
+        },
+        "regeln": {
+          "max_elemente": "5 bis 7 Elemente (Kür auf Musik, 60–90 Sek.)",
+          "abgang_min_wertigkeit": "NE (0,05 P.)",
+          "besonderheiten": [
+            "Die fünf Kompositionsanforderungen ergeben zusammen maximal 2,50 Punkte Kompositionswert.",
+            "Die Abgangswerte (KA5) betragen minimal NE (0,05 P.)"
+          ]
+        },
+        "anforderungen": [
+          {
+            "ka": "KA1",
+            "punkte": 0.5,
+            "kriterium": "Tänzerische Passage mit mindestens 120 Grad Spreizung im Sprung."
+          },
+          {
+            "ka": "KA2",
+            "punkte": 0.5,
+            "kriterium": "Akro- oder gemischte Verbindung aus zwei Elementen (z. B. Rad + Radwende)."
+          },
+          {
+            "ka": "KA3",
+            "punkte": 0.5,
+            "kriterium": "Akrobatik ohne Flugphase mit stabiler Landung."
+          },
+          {
+            "ka": "KA4",
+            "punkte": 0.5,
+            "kriterium": "Akrobatik mit Flugphase (Flick-Flack) oder mit Salto-Schraube."
+          },
+          {
+            "ka": "KA5",
+            "punkte": 0.5,
+            "kriterium": "Abgangswert: mindestens NE (0,05 P.)."
+          }
+        ],
         "max_elemente": "5 bis 7 Elemente (Kür auf Musik, 60–90 Sek.)",
         "schwierigkeit_info": "Mind. A-Teile (0,10 Pkt.), max. 2 B-Teile erlaubt",
         "pflicht_kriterien": [
@@ -162,6 +705,46 @@
       },
       {
         "stufe": "LK3",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "ca. 13,90 - 14,50 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = (Summe der gewerteten Elemente × 2) + bis zu 2,50 Pkt. Kompositionsanforderungen + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "5× A-Teil + 2× B-Teil = 0,90 × 2 = 1,80 D-Wert + 2,50 KA + 10,00 E-Note = 14,30 Pkt."
+        },
+        "regeln": {
+          "max_elemente": "6 bis 7 Elemente (Kür auf Musik)",
+          "abgang_min_wertigkeit": "A-Teil (0,10 P.)",
+          "besonderheiten": [
+            "Die fünf Kompositionsanforderungen ergeben zusammen maximal 2,50 Punkte Kompositionswert.",
+            "Die Abgangswerte (KA5) betragen minimal A-Teil (0,10 P.)."
+          ]
+        },
+        "anforderungen": [
+          {
+            "ka": "KA1",
+            "punkte": 0.5,
+            "kriterium": "Tänzerische Passage mit mindestens 150 Grad Spreizung im Sprung."
+          },
+          {
+            "ka": "KA2",
+            "punkte": 0.5,
+            "kriterium": "Akro- oder gemischte Verbindung mit Serie und mindestens einem Flugphasen-Element (z. B. Radwende + Flick-Flack)."
+          },
+          {
+            "ka": "KA3",
+            "punkte": 0.5,
+            "kriterium": "Akrobatik ohne Flugphase mit stabiler Landung."
+          },
+          {
+            "ka": "KA4",
+            "punkte": 0.5,
+            "kriterium": "Akrobatik mit Flugphase (Flick-Flack) oder mit Salto-Schraube."
+          },
+          {
+            "ka": "KA5",
+            "punkte": 0.5,
+            "kriterium": "Abgangswert: mindestens A-Teil (0,10 P.)."
+          }
+        ],
         "max_elemente": "6 bis 7 Elemente (Kür auf Musik)",
         "schwierigkeit_info": "A- und B-Teile (B = 0,20 Pkt.), max. 1 C-Teil erlaubt",
         "pflicht_kriterien": [
@@ -173,6 +756,46 @@
       },
       {
         "stufe": "LK2",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "ca. 14,50 - 15,30 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = (Summe der gewerteten Elemente × 2) + bis zu 2,50 Pkt. Kompositionsanforderungen + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "4× A-Teil + 3× B-Teil = 1,00 × 2 = 2,00 D-Wert + 2,50 KA + 10,00 E-Note = 14,50 Pkt."
+        },
+        "regeln": {
+          "max_elemente": "7 bis 8 Elemente (Kür auf Musik)",
+          "abgang_min_wertigkeit": "A-Teil (0,10 P.)",
+          "besonderheiten": [
+            "Die fünf Kompositionsanforderungen ergeben zusammen maximal 2,50 Punkte Kompositionswert.",
+            "Die Abgangswerte (KA5) betragen minimal A-Teil (0,10 P.)."
+          ]
+        },
+        "anforderungen": [
+          {
+            "ka": "KA1",
+            "punkte": 0.5,
+            "kriterium": "Tänzerische Passage mit mindestens 180 Grad Spreizung im Sprung."
+          },
+          {
+            "ka": "KA2",
+            "punkte": 0.5,
+            "kriterium": "Akro- oder gemischte Verbindung mit Salto (z. B. Radwende + Flick-Flack + Salto rückwärts)."
+          },
+          {
+            "ka": "KA3",
+            "punkte": 0.5,
+            "kriterium": "Akrobatik mit Salto (Salto vorwärts gehockt) mit stabiler Landung."
+          },
+          {
+            "ka": "KA4",
+            "punkte": 0.5,
+            "kriterium": "Akrobatik mit Flugphase oder mit Salto-Schraube."
+          },
+          {
+            "ka": "KA5",
+            "punkte": 0.5,
+            "kriterium": "Abgangswert: mindestens A-Teil (0,10 P.)."
+          }
+        ],
         "max_elemente": "7 bis 8 Elemente (Kür auf Musik)",
         "schwierigkeit_info": "A-, B- und C-Teile (C = 0,30 Pkt.), mind. 2 B-Teile",
         "pflicht_kriterien": [
@@ -184,6 +807,46 @@
       },
       {
         "stufe": "LK1",
+        "punkte_orientierung": {
+          "typischer_gesamtwert": "ca. 15,20 - 16,50 Pkt.",
+          "formel_kurz": "Gesamtausgangswert = (Summe der gewerteten Elemente × 2) + bis zu 2,50 Pkt. Kompositionsanforderungen + 10,00 Pkt. E-Note",
+          "rechenbeispiel": "3× A + 4× B + 1× C = 1,40 × 2 = 2,80 D-Wert + 2,50 KA + 10,00 E-Note = 15,30 Pkt."
+        },
+        "regeln": {
+          "max_elemente": "8 Elemente (Kür auf Musik)",
+          "abgang_min_wertigkeit": "B-Teil (0,20 P.)",
+          "besonderheiten": [
+            "Die fünf Kompositionsanforderungen ergeben zusammen maximal 2,50 Punkte Kompositionswert.",
+            "Die Abgangswerte (KA5) betragen minimal B-Teil (0,20 P.)."
+          ]
+        },
+        "anforderungen": [
+          {
+            "ka": "KA1",
+            "punkte": 0.5,
+            "kriterium": "Tänzerische Passage mit mindestens 180 Grad Spreizung im Sprung."
+          },
+          {
+            "ka": "KA2",
+            "punkte": 0.5,
+            "kriterium": "Akro- oder gemischte Verbindung mit Salto (z. B. Radwende + Flick-Flack + Salto rückwärts)."
+          },
+          {
+            "ka": "KA3",
+            "punkte": 0.5,
+            "kriterium": "Akrobatik mit Salto (Salto vorwärts gehockt) mit stabiler Landung."
+          },
+          {
+            "ka": "KA4",
+            "punkte": 0.5,
+            "kriterium": "Akrobatik mit Flugphase oder mit Salto-Schraube (Salto rückwärts gestreckt)."
+          },
+          {
+            "ka": "KA5",
+            "punkte": 0.5,
+            "kriterium": "Abgangswert: mindestens B-Teil (0,20 P.)."
+          }
+        ],
         "max_elemente": "8 Elemente (Kür auf Musik)",
         "schwierigkeit_info": "B-, C- und D-Teile (D = 0,40 Pkt.), mind. 1 C-Teil",
         "pflicht_kriterien": [
@@ -197,49 +860,70 @@
     "elemente": [
       {
         "id": "lk_boden_spagatsprung_180",
+        "schluessel": true,
         "titel": "Spagatsprung (180°) / Schersprung",
         "wertigkeit": "A",
         "punkte": 0.1,
         "kategorie": "Gymnastischer Sprung",
         "ab_stufe": "LK4",
         "erklaerung": "Kraftvoller Absprung aus dem Wechselschritt, volle 180°-Beinspreizung in der Flugphase mit gestreckten Knien.",
+        "kriterien": ["Volle 180 Grad Beinspreizung in der Flugphase", "Gestreckte Knie und Oberkoerper in der Flugphase", "Ruhige kontrollierte Landung"],
         "voruebungen": [
           {
             "id": "vu_lk_boden_spagat180",
             "name": "Spagatsprung aus dem Stand mit Schwungbein",
             "erklaerung": "Aktiven Schwungbeineinsatz und aufrechte Oberkörperhaltung ohne Vorlehnen trainieren."
+          },
+          {
+            "id": "vu_lk_boden_spagatsprung_180_b",
+            "name": "Spagat mit Landung auf beiden Beinen",
+            "erklaerung": "Sicherer Absprung und kontrollierte Landung in den Stand."
           }
         ]
       },
       {
         "id": "lk_boden_bogengang_vw_rw",
+        "schluessel": true,
         "titel": "Bogengang vorwärts oder rückwärts",
         "wertigkeit": "A",
         "punkte": 0.1,
         "kategorie": "Akrobatik langsam",
         "ab_stufe": "LK4",
         "erklaerung": "Fließender Übergang durch den gespreizten Handstand mit maximaler Schulter- und Hüftbeweglichkeit.",
+        "kriterien": ["Fließender Bogengang ohne Haltepause", "Maximale Schulterbeweglichkeit im Handstand", "Geschlossene Hüftposition ohne Hohlkreuz", "Rundum flüssige Landung in den Stand"],
         "voruebungen": [
           {
             "id": "vu_lk_boden_bogen",
             "name": "Abdrücken aus der Brücke in den Stand",
             "erklaerung": "Aus der Brücke mit den Händen abdrücken und die Hüfte nach vorne schieben."
+          },
+          {
+            "id": "vu_lk_boden_bogen_b",
+            "name": "Bogengang mit Mattenlauf",
+            "erklaerung": "Bogengang auf einer erhöhten Matte fließen lassen."
           }
         ]
       },
       {
         "id": "lk_boden_ueberschlag_vw",
+        "schluessel": true,
         "titel": "Handstandüberschlag vorwärts (ein- oder beidbeinig)",
         "wertigkeit": "A",
         "punkte": 0.1,
         "kategorie": "Akrobatik vorwärts",
         "ab_stufe": "LK4",
         "erklaerung": "Mit Anlauf kraftvoll in den Handstand stützen, Schultern explosiv abdrücken und mit gestrecktem Körper in den Stand landen.",
+        "kriterien": ["Schultern explosiv abdrücken", "Beine gestreckt im Handstand", "Gedachte Linie im Handstand", "Kontrollierte Landung in den Stand"],
         "voruebungen": [
           {
             "id": "vu_lk_boden_ueberschlag",
             "name": "Handstandüberschlag auf den Mattenberg",
             "erklaerung": "Hände vor dem Mattenberg aufsetzen und über den Handstand in den Stand auf der Matte landen."
+          },
+          {
+            "id": "vu_lk_boden_ueberschlag_b",
+            "name": "Handstandueberschlag mit Landung",
+            "erklaerung": "Handstandueberschlag auf der Weichbodenmatte ueben."
           }
         ]
       },
@@ -248,113 +932,381 @@
         "titel": "1/1 Drehung (360°) im Passé oder Standwaage",
         "wertigkeit": "A",
         "punkte": 0.1,
-        "kategorie": "Drehung",
+        "kategorie": "Dreigung",
         "ab_stufe": "LK3",
-"erklaerung": "Auf einem Fußballen eine volle 360°-Drehung ausführen, Ferse bleibt bis zum Abschluss oben.",
-"voruebungen": [
-{
-"id": "vu_lk_boden_dreh360",
-"name": "1/2 und 3/4 Drehungen mit Stopp",
-"erklaerung": "Gleichgewicht im hohen Ballenstand stabilisieren, bevor die volle Drehung geturnt wird."
-}
-]
-},
-{
-"id": "lk_boden_flickflack",
-"titel": "Flick-Flack (Handstandüberschlag rückwärts)",
-"wertigkeit": "A",
-"punkte": 0.1,
-"kategorie": "Akrobatik rückwärts",
-"ab_stufe": "LK3",
-"erklaerung": "Aus dem Stand oder nach Radwende rückwärts in den flüchtigen Handstand springen und kraftvoll in den Stand abdrücken.",
-"voruebungen": [
-{
-"id": "vu_lk_boden_ff",
-"name": "Flick-Flack über die Flick-Flack-Rolle / Mattenberg",
-"erklaerung": "Rückwärts-Absprung und Schulteröffnung mit Unterstützung einer Schaumstoffrolle trainieren."
-}
-]
-},
-{
-"id": "lk_boden_salto_vw_gehockt",
-"titel": "Salto vorwärts gehockt",
-"wertigkeit": "A",
-"punkte": 0.1,
-"kategorie": "Akrobatik vorwärts",
-"ab_stufe": "LK3",
-"erklaerung": "Aus dem Anlauf beidbeinig abspringen, Hüfte hochheben, Knie fest anhocken und vorwärts in den Stand landen.",
-"voruebungen": [
-{
-"id": "vu_lk_boden_salto_vw",
-"name": "Salto vorwärts vom Sprungbrett auf Weichboden",
-"erklaerung": "Mit Sprungbrett-Unterstützung Höhe und Landekontrolle aufbauen."
-}
-]
-},
-{
-"id": "lk_boden_salto_rw_gehockt",
-"titel": "Salto rückwärts gehockt",
-"wertigkeit": "A",
-"punkte": 0.1,
-"kategorie": "Akrobatik rückwärts",
-"ab_stufe": "LK2",
-"erklaerung": "Nach Radwende oder Flick-Flack hoch abspringen, Knie zur Brust ziehen, einmal rückwärts drehen und sicher landen.",
-"voruebungen": [
-{
-"id": "vu_lk_boden_salto_rw",
-"name": "Salto rückwärts vom Trampolin auf Weichboden",
-"erklaerung": "Aufrechten Absprung nach oben und schnelles Anhocken auf dem Minitrampolin üben."
-}
-]
-},
-{
-"id": "lk_boden_sprungverbindung_b",
-"titel": "Sprung-Kombination: Spagatsprung + Wolfssprung / Hocksprung mit 1/1 Drehung",
-"wertigkeit": "B",
-"punkte": 0.2,
-"kategorie": "Gymnastischer Sprung",
-"ab_stufe": "LK2",
-"erklaerung": "Direkte Verbindung zweier gymnastischer Sprünge ohne Zwischenschritt.",
-"voruebungen": [
-{
-"id": "vu_lk_boden_sprungkombi",
-"name": "Prellabsprünge aus der Landung",
-"erklaerung": "Sofortiges Weiterfedern nach der ersten Landung auf dem Vorfuß üben."
-}
-]
-},
-{
-"id": "lk_boden_salto_rw_gestreckt",
-"titel": "Salto rückwärts gestreckt",
-"wertigkeit": "B",
-"punkte": 0.2,
-"kategorie": "Akrobatik rückwärts",
-"ab_stufe": "LK1",
-"erklaerung": "Nach Radwende + Flick-Flack mit völlig gestrecktem Körper hoch abspringen und rückwärts in den Stand drehen.",
-"voruebungen": [
-{
-"id": "vu_lk_boden_salto_str",
-"name": "Gestreckter Salto auf den erhöhten Mattenberg",
-"erklaerung": "Körperspannung halten, ohne die Hüfte einzuknicken."
-}
-]
-},
-{
-"id": "lk_boden_salto_schraube",
-"titel": "Salto rückwärts gestreckt mit 1/1 Schraube (360°)",
-"wertigkeit": "C",
-"punkte": 0.3,
-"kategorie": "Akrobatik rückwärts",
-"ab_stufe": "LK1",
-"erklaerung": "Nach Radwende + Flick-Flack hoch abspringen, Körper strecken und eine volle Längsachsendrehung ausführen.",
-"voruebungen": [
-{
-"id": "vu_lk_boden_schraube",
-"name": "Salto rückwärts mit 1/2 Schraube auf Weichboden",
-"erklaerung": "Spätes Einleiten der Schraube nach Erreichen der maximalen Flughöhe trainieren."
-}
-]
-}
-]
-}
+        "erklaerung": "Auf einem Fußballen eine volle 360°-Drehung ausführen, Ferse bleibt bis zum Abschluss oben.",
+        "kriterien": ["Volle 360 Grad Drehung auf einem Bein", "Fersen nicht vor Drehbeginn heben", "Geschlossene Passemasse oder Standwaage stabil", "Ruhige Drehung mit hohem Ballenstand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_dreh360",
+            "name": "1/2 und 3/4 Drehungen mit Stopp",
+            "erklaerung": "Gleichgewicht im hohen Ballenstand stabilisieren, bevor die volle Drehung geturnt wird."
+          },
+          {
+            "id": "vu_lk_boden_dreh360_b",
+            "name": "Vollstande Drehung mit Stopp",
+            "erklaerung": "Vollstande Drehung mit Stopp trainieren."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_flickflack",
+        "schluessel": true,
+        "titel": "Flick-Flack (Handstandüberschlag rückwärts)",
+        "wertigkeit": "A",
+        "punkte": 0.1,
+        "kategorie": "Akrobatik rückwärts",
+        "ab_stufe": "LK3",
+        "erklaerung": "Aus dem Stand oder nach Radwende rückwärts in den flüchtigen Handstand springen und kraftvoll in den Stand abdrücken.",
+        "kriterien": ["Schulter explosiv nach hinten abdrücken", "Rückenlage über die Schulter", "Beine gestreckt im Handstand", "Kraftvoller Abdruck aus den Beinen"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_ff",
+            "name": "Flick-Flack über die Flick-Flack-Rolle / Mattenberg",
+            "erklaerung": "Rückwärts-Absprung und Schulteröffnung mit Unterstützung einer Schaumstoffrolle trainieren."
+          },
+          {
+            "id": "vu_lk_boden_flickflack_b",
+            "name": "Flick-Flack aus dem Ausfallschritt",
+            "erklaerung": "Rückwärts-Absprung aus dem Ausfallschritt mit gerader Fluglinie üben."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_salto_vw_gehockt",
+        "schluessel": true,
+        "titel": "Salto vorwärts gehockt",
+        "wertigkeit": "A",
+        "punkte": 0.1,
+        "kategorie": "Akrobatik vorwärts",
+        "ab_stufe": "LK3",
+        "erklaerung": "Aus dem Anlauf beidbeinig abspringen, Hüfte hochheben, Knie fest anhocken und vorwärts in den Stand landen.",
+        "kriterien": ["Knie fest angehockt", "Absprung kompakt beidbeinig", "Beine gestreckt in der Flugphase", "Kontrollierte Landung in den Stand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_salto_vw",
+            "name": "Salto vorwärts vom Sprungbrett auf Weichboden",
+            "erklaerung": "Mit Sprungbrett-Unterstützung Höhe und Landekontrolle aufbauen."
+          },
+          {
+            "id": "vu_lk_boden_salto_vw_b",
+            "name": "Salto vorwärts aus dem Stand",
+            "erklaerung": "Ohne Sprungbrett-Unterstützung den Salto vorwärts gehockt aus dem Stand üben."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_salto_rw_gehockt",
+        "schluessel": true,
+        "kriterien": ["Knie zur richtigen Phase zur Brust gezogen", "Einmaliger Salto ohne Nachfassen", "Kontrollierte Landung in den Stand"],
+        "titel": "Salto rückwärts gehockt",
+        "wertigkeit": "A",
+        "punkte": 0.1,
+        "kategorie": "Akrobatik rückwärts",
+        "ab_stufe": "LK2",
+        "erklaerung": "Nach Radwende oder Flick-Flack hoch abspringen, Knie zur Brust ziehen, einmal rückwärts drehen und sicher landen.",
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_salto_rw",
+            "name": "Salto rückwärts vom Trampolin auf Weichboden",
+            "erklaerung": "Aufrechten Absprung nach oben und schnelles Anhocken auf dem Minitrampolin üben."
+          },
+          {
+            "id": "vu_lk_boden_salto_rw_b",
+            "name": "Salto rückwärts aus dem Stand",
+            "erklaerung": "Ohne Trampolin-Unterstützung den Salto rückwärts gehockt aus dem Stand üben."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_sprungverbindung_b",
+        "schluessel": true,
+        "kriterien": ["Direkter Wechsel ohne Haltepause", "Saubere Landung ohne Abknicken", "Kompakter Absprung ohne Schwungverlust"],
+        "titel": "Sprung-Kombination: Spagatsprung + Wolfssprung / Hocksprung mit 1/1 Drehung",
+        "wertigkeit": "B",
+        "punkte": 0.2,
+        "kategorie": "Gymnastischer Sprung",
+        "ab_stufe": "LK2",
+        "erklaerung": "Direkte Verbindung zweier gymnastischer Sprünge ohne Zwischenschritt.",
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_sprungkombi",
+            "name": "Prellabsprünge aus der Landung",
+            "erklaerung": "Sofortiges Weiterfedern nach der ersten Landung auf dem Vorfuß üben."
+          },
+          {
+            "id": "vu_lk_boden_sprungkombi_b",
+            "name": "Wolfssprung mit Hocksprung verknüpfen",
+            "erklaerung": "Die Landung des Wolfssprungs direkt in den Hocksprung übergeben, ohne Schwungverlust."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_salto_rw_gestreckt",
+        "schluessel": true,
+        "kriterien": ["Gestreckte Beine und Oberkoerper", "Kein Nachfassen in der Drehung", "Kontrollierte Landung in den Stand"],
+        "titel": "Salto rückwärts gestreckt",
+        "wertigkeit": "B",
+        "punkte": 0.2,
+        "kategorie": "Akrobatik rückwärts",
+        "ab_stufe": "LK1",
+        "erklaerung": "Nach Radwende + Flick-Flack mit völlig gestrecktem Körper hoch abspringen und rückwärts in den Stand drehen.",
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_salto_str",
+            "name": "Gestreckter Salto auf den erhöhten Mattenberg",
+            "erklaerung": "Körperspannung halten, ohne die Hüfte einzuknicken."
+          },
+          {
+            "id": "vu_lk_boden_salto_str_b",
+            "name": "Salto rückwärts gestreckt aus dem Stand",
+            "erklaerung": "Ohne erhöhte Matte den Salto rückwärts gestreckt aus dem Stand üben."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_salto_schraube",
+        "schluessel": true,
+        "kriterien": ["Volle 360 Grad Drehung auf einem Bein", "Gestreckte Beine und Oberkoerper beim Absprung", "Saubere Schraube mit stabiler Flugphase", "Kontrollierte Landung in den Stand"],
+        "titel": "Salto rückwärts gestreckt mit 1/1 Schraube (360°)",
+        "wertigkeit": "C",
+        "punkte": 0.3,
+        "kategorie": "Akrobatik rückwärts",
+        "ab_stufe": "LK1",
+        "erklaerung": "Nach Radwende + Flick-Flack hoch abspringen, Körper strecken und eine volle Längsachsdrehung ausführen.",
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_schraube",
+            "name": "Salto rückwärts mit 1/2 Schraube auf Weichboden",
+            "erklaerung": "Spätes Einleiten der Schraube nach Erreichen der maximalen Flughöhe trainieren."
+          },
+          {
+            "id": "vu_lk_boden_schraube_b",
+            "name": "Salto rückwärts mit 1/2 Schraube aus dem Stand",
+            "erklaerung": "Ohne Weichboden-Unterstützung den Salto rückwärts mit 1/2 Schraube aus dem Stand üben."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_abgang_ueberschlag_vw",
+        "titel": "Abgang: Handstützüberschlag vorwärts",
+        "wertigkeit": "A",
+        "punkte": 0.1,
+        "kategorie": "Abgang",
+        "ab_stufe": "LK2",
+        "erklaerung": "Mit Anlauf kraftvoll in den Handstand stützen, Schultern explosiv abdrücken und mit gestrecktem Körper in den Stand landen als Abgang.",
+        "kriterien": ["Schultern explosiv abdrücken", "Beine gestreckt im Handstand", "Gedachte Linie im Handstand", "Kontrollierte Landung in den Stand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_abgang_ueberschlag_vw",
+            "name": "Handstandüberschlag auf den Mattenberg",
+            "erklaerung": "Hände vor dem Mattenberg aufsetzen und über den Handstand in den Stand auf der Matte landen."
+          },
+          {
+            "id": "vu_lk_boden_abgang_ueberschlag_vw_b",
+            "name": "Handstandüberschlag aus dem Stand",
+            "erklaerung": "Den Handstandüberschlag ohne Anlauf aus dem Stand üben."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_abgang_salto_vw_gestreckt",
+        "titel": "Abgang: Salto vorwärts gestreckt",
+        "wertigkeit": "B",
+        "punkte": 0.2,
+        "kategorie": "Abgang",
+        "ab_stufe": "LK1",
+        "erklaerung": "Aus dem Anlauf beidbeinig abspringen, Hüfte hochheben und mit gestrecktem Körper vorwärts in den Stand landen als Abgang.",
+        "kriterien": ["Absprung kompakt beidbeinig", "Gestreckte Haltung in der Flugphase", "Kontrollierte Landung in den Stand", "Ausreichende Flughöhe"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_abgang_salto_vw_str",
+            "name": "Salto vorwärts gestreckt auf Weichboden",
+            "erklaerung": "Den Salto vorwärts gestreckt auf Weichboden üben."
+          },
+          {
+            "id": "vu_lk_boden_abgang_salto_vw_str_b",
+            "name": "Salto vorwärts gestreckt aus dem Stand",
+            "erklaerung": "Den Salto vorwärts gestreckt ohne Anlauf aus dem Stand üben."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_wolfssprung_140",
+        "titel": "Wolfssprung (140°)",
+        "wertigkeit": "A",
+        "punkte": 0.1,
+        "kategorie": "Gymnastischer Sprung",
+        "ab_stufe": "LK4",
+        "erklaerung": "Kraftvoller Absprung, volle 140-Grad-Beinspreizung in der Flugphase mit gestreckten Knien.",
+        "kriterien": ["Mindestens 140 Grad Beinspreizung", "Gestreckte Knie und Fußspitzen", "Kontrollierte Landung im Stand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_wolf",
+            "name": "Wolfssprung aus dem Chassé",
+            "erklaerung": "Aktive Beinarbeit und aufrechte Haltung."
+          },
+          {
+            "id": "vu_lk_boden_wolf_b",
+            "name": "Spreizsprung mit Landung",
+            "erklaerung": "Sichere Landung auf beiden Beinen."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_huepfer_drehung",
+        "titel": "Hüpfsprung mit 1/2 Drehung",
+        "wertigkeit": "A",
+        "punkte": 0.1,
+        "kategorie": "Gymnastischer Sprung",
+        "ab_stufe": "LK4",
+        "erklaerung": "Absprung aus dem Stand mit 180-Grad-Drehung in der Flugphase.",
+        "kriterien": ["Volle 180-Grad-Drehung in der Luft", "Körper gestreckt in der Flugphase", "Ruhige Landung ohne Ausfallschritt"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_huepf",
+            "name": "1/2 Drehung vom Sprung ab",
+            "erklaerung": "Vom Absprung kontrolliert drehen."
+          },
+          {
+            "id": "vu_lk_boden_huepf_b",
+            "name": "Drehsprung auf der Matte",
+            "erklaerung": "Sichere Landung üben."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_radwende",
+        "titel": "Radwende (Round-off)",
+        "wertigkeit": "A",
+        "punkte": 0.1,
+        "kategorie": "Akrobatik langsam",
+        "ab_stufe": "LK3",
+        "erklaerung": "Mit Anlauf ins Rad setzen, Beine im Handstand schließen, kraftvoll beidbeinig abdrücken.",
+        "kriterien": ["Schnelles Zuklappen der Beine", "Explosiver Schulterabdruck", "Gedachte Linie einhalten"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_rw",
+            "name": "Radwende auf erhöhte Matte",
+            "erklaerung": "Hände vor Matte, geschlossen landen."
+          },
+          {
+            "id": "vu_lk_boden_rw_b",
+            "name": "Radwende mit Partnerstütz",
+            "erklaerung": "Partner stützt Hüfte beim Zuklappen."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_salto_vw_gestreckt_lk3",
+        "titel": "Salto vorwärts gestreckt",
+        "wertigkeit": "B",
+        "punkte": 0.2,
+        "kategorie": "Akrobatik vorwärts",
+        "ab_stufe": "LK3",
+        "erklaerung": "Aus dem Anlauf kompakter Salto vorwärts in gestreckter Haltung.",
+        "kriterien": ["Komakter Absprung beidbeinig", "Gestreckte Haltung in der Flugphase", "Kontrollierte Landung"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_sv",
+            "name": "Salto vorwärts gestreckt auf Weichboden",
+            "erklaerung": "Mit Sicherung."
+          },
+          {
+            "id": "vu_lk_boden_sv_b",
+            "name": "Salto vorwärts aus dem Stand",
+            "erklaerung": "Ohne Anlauf üben."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_ueberschlag_rw",
+        "titel": "Überschlag rückwärts",
+        "wertigkeit": "B",
+        "punkte": 0.2,
+        "kategorie": "Akrobatik rückwärts",
+        "ab_stufe": "LK2",
+        "erklaerung": "Rückwärts über den Handstand mit Flugphase und sicherer Landung.",
+        "kriterien": ["Schulter explosiv abdrücken", "Gestreckter Körper im Handstand", "Kontrollierte Landung im Stand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_ur",
+            "name": "Überschlag rückwärts über Rolle",
+            "erklaerung": "Mit Schaumstoffrolle Unterstützung."
+          },
+          {
+            "id": "vu_lk_boden_ur_b",
+            "name": "Flick-Flack in den Überschlag",
+            "erklaerung": "Den Übergang üben."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_salto_rw_gestreckt_lk2",
+        "titel": "Salto rückwärts gestreckt",
+        "wertigkeit": "B",
+        "punkte": 0.2,
+        "kategorie": "Akrobatik rückwärts",
+        "ab_stufe": "LK2",
+        "erklaerung": "Nach Radwende + Flick-Flack hoch abspringen und rückwärts gestreckt drehen.",
+        "kriterien": ["Ausreichende Flughöhe", "Gestreckte kompakte Haltung", "Sichere Landung im Stand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_srg",
+            "name": "Salto rückwärts gestreckt auf Mattenberg",
+            "erklaerung": "Körperspannung halten."
+          },
+          {
+            "id": "vu_lk_boden_srg_b",
+            "name": "Salto rückwärts aus dem Stand",
+            "erklaerung": "Mit Sicherung."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_doppelsalto_vw",
+        "titel": "Doppelsalto vorwärts (Weichboden)",
+        "wertigkeit": "D",
+        "punkte": 0.4,
+        "kategorie": "Akrobatik vorwärts",
+        "ab_stufe": "LK1",
+        "erklaerung": "Zwei direkte Salti vorwärts in Folge auf der Weichbodenmatte.",
+        "kriterien": ["Zwei kompakte Salti ohne Pause", "Ausreichende Höhe beider Salti", "Kontrollierte Endlandung"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_ds",
+            "name": "Einzel-Salto vorwärts gestreckt",
+            "erklaerung": "Den Salto sicher beherrschen."
+          },
+          {
+            "id": "vu_lk_boden_ds_b",
+            "name": "Zwei Salti mit Pause verbinden",
+            "erklaerung": "Zwischenlandung kurz halten."
+          }
+        ]
+      },
+      {
+        "id": "lk_boden_salto_rw_2schraube",
+        "titel": "Salto rückwärts mit 2/1 Schraube",
+        "wertigkeit": "D",
+        "punkte": 0.4,
+        "kategorie": "Akrobatik rückwärts",
+        "ab_stufe": "LK1",
+        "erklaerung": "Salto rückwärts gestreckt mit zwei vollen Längsachsendrehungen.",
+        "kriterien": ["Zwei volle 360-Grad-Drehungen", "Gestreckte Haltung im Flug", "Stabile Landung im Stand"],
+        "voruebungen": [
+          {
+            "id": "vu_lk_boden_s2",
+            "name": "Salto rückwärts mit 1/1 Schraube",
+            "erklaerung": "Die einfache Schraube sichern."
+          },
+          {
+            "id": "vu_lk_boden_s2_b",
+            "name": "Späte Schraube auf Weichboden",
+            "erklaerung": "Drehung nach Flughöhe einleiten."
+          }
+        ]
+      }
+    ]
+  }
 }
